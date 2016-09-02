@@ -1,4 +1,4 @@
-# DeskoList (Alpha)
+# [Desko List (https://deskolist.com)
 
 Desko List is a new premium topsite for free. We provide a rich experience for users and administrators with many features to choose from and the feature list keeps growing strong.
 
@@ -33,5 +33,5 @@ We have plenty amazing features for you available and the list is only growing. 
 - Email website statistics
 - Recaptcha
 - Blacklist
--9 Pre installed widgets
+- 9 Pre installed widgets
 
