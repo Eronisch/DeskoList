@@ -2,16 +2,16 @@
 
 Desko List is a new premium topsite for free. We provide a rich experience for users and administrators with many features to choose from and the feature list keeps growing strong.
 
-## Modulair
+#### Modulair
 You can extend the functionality of Desko with widgets, plugins and themes. You decide how your topsite looks like, you can change anything.
 
-## Fast
+### Fast
 We are using some of the latest technologies. We are using ASP.NET which runs smoothly on IIS web servers and is also faster than any other web server.
 
-## Free
+### Free
 Desko is free to use, you may modify it to your needs and share it with others. It comes with the license GPLv3. We are free to use and this will never change.
 
-## Features
+### Features
 We have plenty amazing features for you available and the list is only growing. You can except more features in the near future from us.
 
 - Multi language support
