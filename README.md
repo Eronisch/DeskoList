@@ -1,4 +1,4 @@
-# [Desko List (https://deskolist.com)
+# Desko List (Pre Alpha) (https://deskolist.com)
 
 Desko List is a new premium topsite for free. We provide a rich experience for users and administrators with many features to choose from and the feature list keeps growing strong.
 
