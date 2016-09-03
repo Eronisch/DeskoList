@@ -1,0 +1,115 @@
+﻿@using Localization.Languages.Admin.Views.Websites
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Models.EditWebsiteModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm("Edit", "Websites", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m=> m.Id)
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.Info</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Url)
+                @Html.TextBoxFor(m => m.Url, new {@class="form-control"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Keywords)
+                @Html.TextBoxFor(m => m.Keywords, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Category)
+                @Html.DropDownListFor(m => m.Category, Model.Categories, new {@class = "form-control"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m=> m.IsSponsored)
+                <div class="checkbox">
+                    <label>@Html.CheckBoxFor(m => m.IsSponsored) @Localization.Languages.Views.Shared.Global.UpperCaseYes</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.Banner</div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>
+                    @Html.CheckBoxFor(m => m.UseBannerUrl, new { @id = "UseBannerUrl" })
+                    @BasicWebsite.InfoLocalRemoteBanner
+                </label>
+            </div>
+            <div class="form-group">
+                <div id="bannerFile" style="display: @(Model.UseBannerUrl ? "none" : "block")">
+                    @Html.LabelFor(m => m.BannerFile)
+                    @Html.TextBoxFor(m => m.BannerFile, new { type = "file" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div id="bannerUrl" style="display: @(Model.UseBannerUrl ? "block" : "none")">
+                    @Html.LabelFor(m => m.BannerUrl)
+                    @Html.TextBoxFor(m => m.BannerUrl, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.Server</div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <small>@BasicWebsite.ServerDescription</small>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ServerIp)
+                    @Html.TextBoxFor(m => m.ServerIp, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ServerPort)
+                    @Html.TextBoxFor(m => m.ServerPort, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-default" value="@Edit.Update" />
+}
+
+@section footer{
+    <script>
+        $(document).ready(function () {
+            $('#UseBannerUrl').on('ifChanged', function () {
+                $('#bannerFile').toggle();
+                $('#bannerUrl').toggle();
+            });
+        });
+    </script>
+}

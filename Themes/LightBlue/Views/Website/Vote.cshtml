@@ -1,0 +1,45 @@
+﻿@using Core.Business.Settings
+@using Localization.Languages.Views.Website
+@model Topsite.Models.VoteModel
+@{
+    Layout = null;
+}
+
+<head>
+    <title>@Vote.VoteTitle: @Model.WebsiteTitle - @SettingsHelper.Title</title>
+    <link href="/Themes/LightBlue/Content/Custom.css" rel="stylesheet">
+    <link href="~/Themes/LightBlue/Content/Bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <div id="voteContainer">
+                <div id="logo"><img src="/Themes/LightBlue/Content/Images/vote/Vote.png" alt="@Vote.Logo" title="@Vote.Logo" /></div>
+                
+                @{Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Messages.cshtml");}
+
+                <div class="bar">
+                    <div class="topMenu"><p>
+                        @Vote.PleaseClick <strong>@Model.Answer</strong> @Vote.ToVote</p></div>
+                    <div class="content">
+                        <div id="padding10">
+                            @using (Html.BeginForm("Vote", "Website"))
+                            {
+                                @Html.AntiForgeryToken()
+                                
+                                @Html.HiddenFor(m=> m.Id)
+                                @Html.HiddenFor(m=> m.Redirect)
+                                
+                                <input type="submit" id="dog" value="Dog" class="spaceright" name="Answer"/>
+                                <input type="submit" id="cat" value="Cat" class="spaceright" name="Answer"/>
+                                <input type="submit" id="bunny" value="Bunny" class="spaceright" name="Answer"/>
+                                <input type="submit" id="duck" value="Duck" name="Answer"/>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

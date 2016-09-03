@@ -1,0 +1,69 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Pages
+<div id="viewPages" class="resultsTable nav-tabs-custom">
+    <ul class="nav nav-tabs pull-right">
+        <li>@Html.ActionLink(Index.AddPage, "Add", null, new { @class = "btn btn-default btn-sm" })</li>
+        <li class="pull-left header"><i class="fa fa-th"></i> @Index.ViewPages</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <table id="pagesTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>@Index.Id</th>
+                        <th>@Index.Title</th>
+                        <th data-hide="phone, tablet">@Index.Description</th>
+                        <th data-hide="phone, tablet">@Common.Edit</th>
+                        <th data-hide="phone, tablet">@Common.Delete</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div id="deletePageModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">@Index.DeletePage: <span id="pageTitle"></span></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>@Index.ConfirmPageDeleteMessage</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                            <a href="" id="urlDelete" class="btn btn-primary">@Index.DeletePage</a>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div><!-- /.tab-pane -->
+    </div><!-- /.tab-content -->
+</div>
+
+
+@section Footer{
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/fooTable")
+
+    <script type="text/javascript">
+        $(function() {
+            setupFooTable.init('#pagesTable', '/Administration/Pages/GetPages', "@Common.Search", 5);
+
+            $('#pagesTable').on('click', 'a[data-id="deletePage"]', function (e) {
+
+                var pageTitle = $(this).closest('tr').find('td:eq(1)').text();
+
+                var deletePageLink = $(this).attr('href');
+
+                $('#deletePageModal #urlDelete').attr('href', deletePageLink);
+
+                $('#deletePageModal #pageTitle').text(pageTitle);
+
+                $('#deletePageModal').modal('show');
+
+                return false;
+            });
+
+        });
+    </script>
+}

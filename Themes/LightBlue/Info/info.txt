@@ -1,0 +1,5 @@
+<Info>
+<Name>Light Blue</Name>
+<Map>LightBlue</Map>
+<Description>A light blue theme</Description>
+</Info>

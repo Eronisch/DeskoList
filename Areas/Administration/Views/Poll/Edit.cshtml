@@ -1,0 +1,37 @@
+﻿@using Localization.Languages.Admin.Views.Poll
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Poll.EditPollModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    <div id="addPoll" class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.EditTitle</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Question)
+                @Html.TextBoxFor(m => m.Question, new { @class = "form-control" })
+            </div>
+
+            <div id="answers">
+                @for (int i = 0; Model.Answers.Count() > i; i++)
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Answers[i].Answer)
+                        @Html.TextBoxFor(m => m.Answers[i].Answer, new { @class = "form-control" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="@Edit.Update" class="btn btn-default" />
+}

@@ -1,0 +1,440 @@
+﻿/* Footable */
+/*.footable {
+    border: 3px solid #3C8DBC;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+}
+
+    .footable > thead > tr > th, .footable > thead > tr > td {
+        background-color: #3C8DBC;
+        border: 1px solid #3C8DBC;
+    }
+
+    .footable .table-striped > tbody > tr:nth-child(odd) > td, .footable .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #F5F5F5;
+    }
+
+    .footable > tfoot > tr > th, .footable > tfoot > tr > td {
+        border: 0;
+        background-color: transparent;
+        padding-top: 6px;
+        padding: 6px 0 0 6px;
+    }
+
+    .footable .footable-odd {
+        background-color: #FFFFFF;
+    }*/
+.footable {
+    margin-top: 20px;
+}
+
+/* Websites - View */
+#websiteView #listInfo .col-md-4 {
+    font-weight: bold;
+}
+
+#websiteView .line {
+    padding-top: 5px;
+    border-top: 1px dashed #cecece;
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+}
+
+/* Reports - View */
+#reportView #report .col-md-1 {
+    font-weight: bold;
+}
+
+#reportView h3 {
+    margin: 15px 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+#reportView #report .line {
+    padding-top: 5px;
+    border-top: 1px dashed #cecece;
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+}
+
+/* Elmah index */
+#elmahIndex #cleanErrors {
+    margin-bottom: 15px;
+}
+
+/* Margins */
+.margin15 {
+    margin-top: 15px;
+}
+
+.margin10 {
+    margin-top: 10px;
+}
+
+
+/* Account - View */
+#accountView #listInfo .col-md-3 {
+    font-weight: bold;
+}
+
+#accountView .line {
+    padding-top: 5px;
+    border-top: 1px dashed #cecece;
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+}
+
+/* Settings */
+#settings .form-group > label {
+    font-weight: bold;
+    display: block;
+}
+
+    #settings .form-group > label span {
+        font-weight: normal;
+        position: relative;
+        top: 2px;
+        left: 5px;
+    }
+
+/* Modules - Index & Installed */
+#widgets .image {
+    height: 150px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#widgets .well > h4 {
+    text-shadow: 1px 1px #FFF;
+    text-align: center;
+    font-weight: bold;
+    color: #767676;
+    margin-top: 0;
+}
+
+#widgets .text-muted {
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#widgets #viewActivewidgets {
+    margin-bottom: 20px;
+}
+
+#widgets #installWidget {
+    margin-right: 10px;
+}
+
+#widgets .themeSectionName {
+    font-style: italic;
+    font-size: 11px;
+    padding-left: 3px;
+}
+
+#widgets #list {
+    margin-top: 15px;
+}
+
+/* Poll */
+#addPoll .fa-times {
+    color: red;
+        margin-top: 36px;
+}
+
+/* Modules-Edit */
+#editWidget ul {
+    list-style: none;
+}
+
+#editWidget .nav.nav-pills.nav-stacked > li > a {
+    background-color: #3c8dbc;
+    color: #fff;
+    border-radius: 4px;
+}
+
+#editWidget .nav.nav-pills.nav-stacked > li > ul > li > a {
+    display: block;
+    cursor: pointer;
+    padding: 2px 5px;
+}
+
+#editWidget .nav.nav-pills.nav-stacked > li > ul {
+    margin: 5px 0;
+}
+
+#editWidget .active {
+    background-color: #EAE9E9;
+    border-radius: 4px;
+    color: #000;
+    text-shadow: 1px 1px #fff;
+}
+
+#editWidget img {
+    margin-bottom: 15px;
+}
+
+/* Themes - Index */
+#themes .border {
+    border-left: 1px solid #DFDFDF;
+    margin: 0 10px;
+}
+
+#themes .actions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#themes .actions li {
+    margin-left: 10px;
+    padding: 0 15px 0 10px;
+    border-right: 1px solid #DFDFDF;
+    display: inline-block;
+}
+
+    #themes .actions li:first-child {
+        margin: 0;
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    #themes .actions li:last-child {
+        border-right: 0;
+    }
+
+#themes .col-md-3 {
+    overflow: hidden;
+    max-height: 275px;
+}
+
+    #themes .col-md-3 img {
+        cursor: zoom-in;
+    }
+
+#themes #themeList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    #themes #themeList > li {
+        padding-top: 25px;
+        margin-top: 25px;
+        border-top: 1px dashed #dfdfdf;
+    }
+
+        #themes #themeList > li:first-child {
+            border-top: 0;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+#themes h3 {
+    margin-top: 0;
+}
+
+#themes #activeTheme {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-style: italic;
+}
+
+/* Dashboard */
+#dashboard .minHeightBox {
+    min-height: 125px;
+}
+
+#dashboard #news {
+    padding: 10px;
+}
+
+#dashboard #dasboardBoxes .small-box {
+    min-height: 143px;
+    position: relative;
+}
+
+    #dashboard #dasboardBoxes .small-box > .small-box-footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+
+/* Settings - Updates */
+#updates h2 {
+    margin-top: 0;
+}
+
+#updates #systemUpdates {
+    min-height: 75px;
+}
+
+/* Top */
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4, .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p {
+    margin: 0 0 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Modal */
+.modal .modal-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Alerts */
+.alert h3 {
+    margin-top: 0;
+}
+
+/* Overall */
+a {
+    cursor: pointer;
+}
+
+/* Results Table */
+.resultsTable.nav-tabs-custom > .nav-tabs > li:not(.active) > a:hover, .resultsTable.nav-tabs-custom > .nav-tabs > li:not(.active) > a:focus, .resultsTable.nav-tabs-custom > .nav-tabs > li:not(.active) > a:active {
+    background-color: #f4f4f4 !important;
+    border-color: #ddd;
+}
+
+.resultsTable.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type {
+    margin-right: 10px;
+}
+
+/* Spaces */
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.no-margin-bottom {
+    margin-top: 0 !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+/* Side navigation */
+.skin-blue .left-side ul {
+    list-style: none;
+}
+
+.sidebar .sidebar-menu li a {
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+
+.sidebar .sidebar-menu a {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.sidebar .sidebar-menu li > ul {
+    padding-left: 10px;
+    background-color: #ECE9E9;
+}
+
+    .sidebar .sidebar-menu li > ul > li > a {
+        border-bottom: 0;
+    }
+
+.sidebar .sidebar-menu > li a .fa {
+    width: 20px;
+}
+
+.sidebar .sidebar-menu li {
+    border-bottom: 0 !important;
+}
+
+/* Checkbox */
+.checkbox .icheckbox_minimal {
+    margin-right: 5px;
+    margin-bottom: 1px;
+    margin-left: -20px;
+}
+
+/* DatePicker */
+.datepicker {
+    z-index: 1051 !important;
+}
+
+/* Filemanager */
+.ui-widget-content > .elfinder-button {
+    width: 24px;
+    height: 24px;
+}
+
+.elfinder-cwd-view-icons .elfinder-cwd-file .elfinder-cwd-filename.ui-state-hover, .elfinder-cwd table td.ui-state-hover, .elfinder-button-menu .ui-state-hover {
+    color: #000;
+    background-color: #CDCDCD;
+}
+
+.elfinder-button-search {
+    display: none !important;
+}
+
+/* Plugin */
+#pluginIndex .boxDescription {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+#pluginIndex .boxActivation {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    font-size: 12px;
+}
+
+#pluginIndex table td {
+    position: relative;
+    padding-left: 0;
+}
+
+#pluginIndex table {
+    margin-top: 7px;
+}
+
+    #pluginIndex table th {
+        padding-left: 0;
+    }
+
+#pluginIndex #installOrRepair {
+    margin-right: 5px;
+}
+
+#pluginIndex .amount, #pluginIndex .seperator {
+    color: #999999;
+}
+
+#pluginIndex .seperator {
+    margin: 0 5px;
+}
+
+#pluginIndex a.active {
+    font-weight: 600;
+    color: #000000;
+}
+
+@media screen and (max-width: 767px) {
+    #pluginIndex .table-responsive {
+        border: 0;
+    }
+}
+
+/* Languages */
+#languageIndex #loader {
+    width: 18px;
+    height: 18px;
+}

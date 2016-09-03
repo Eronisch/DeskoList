@@ -1,0 +1,56 @@
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Core.dll.config
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Core.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Core.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\BCrypt.Net.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Common.Logging.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Database.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\DatabaseXML.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Elmah.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Glimpse.AspNet.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Ionic.Zip.Reduced.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Localization.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Quartz.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\RequestReduce.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\SoundInTheory.DynamicImage.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\SoundInTheory.DynamicImage.Extensions.WebsiteScreenshot.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\WebActivatorEx.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\EntityFramework.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\DatabaseXML.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Database.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\Localization.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\BCrypt.Net.xml
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\RequestReduce.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\EntityFramework.xml
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\bin\Debug\nl\Localization.resources.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\obj\Debug\Core.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Business\obj\Debug\Core.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\obj\Debug\Core.csprojResolveAssemblyReference.cache
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Core.dll.config
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Core.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Core.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\BCrypt.Net.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Common.Logging.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Database.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\DatabaseXML.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Elmah.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Glimpse.AspNet.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Ionic.Zip.Reduced.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Localization.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Microsoft.Web.Infrastructure.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Newtonsoft.Json.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Quartz.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\SoundInTheory.DynamicImage.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\SoundInTheory.DynamicImage.Extensions.WebsiteScreenshot.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\WebActivatorEx.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\EntityFramework.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\DatabaseXML.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Database.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\Localization.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\BCrypt.Net.xml
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\RequestReduce.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\bin\Debug\EntityFramework.xml
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\obj\Debug\Core.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Business\obj\Debug\Core.pdb

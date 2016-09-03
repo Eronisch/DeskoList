@@ -1,0 +1,28 @@
+﻿@model Topsite_Reset.Models.ResetModel
+<div id="resetModule">
+    <div class="bar">
+        <div class="topMenu">
+            <h1>@Topsite_Reset.Localization.Reset.MenuName</h1>
+        </div>
+        <div class="content">
+            <div class="padding10">
+                <div id="countDown">
+                    <script>
+                        $(function() {
+                            var d = new Date(Date.UTC(@Model.DateCronjobServer.Year, @Model.DateCronjobServer.Month - 1, @Model.DateCronjobServer.Day, @Model.DateCronjobServer.Hour, @Model.DateCronjobServer.Minute, @Model.DateCronjobServer.Second));
+                            $('#defaultCountdown').countdown({
+                                until: d,
+                                layout: '{dn} {dl}, {hn} {hl}, {mn} {ml} and {sn} {sl}'
+                            });
+                        });
+                    </script>
+                    <div id="defaultCountdown"></div>
+
+                    <p id="timeZone">@Model.TimeZone</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="@Model.JavascriptPath"></script>
+</div>

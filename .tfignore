@@ -1,0 +1,63 @@
+###################################### 
+# Ignore .txt files in this folder 
+\*.txt
+#
+# Ignore .xml files in this folder and all its sub-folders
+*.xml
+#
+# Ignore caching files
+*.cache
+#
+# Ignore user files
+*.user
+#
+# Ignore all files in the Temp sub-folder
+\Bin
+#
+# Ignore all files in the obj folder
+\obj
+#
+# Ignore pdb files
+*.pdb
+\Topsite.sln.ide\edbres00002.jrs
+\Topsite.sln.ide\storage.ide
+\Views\Home\TestiedePestie.txt
+\Widgets\Categories-Jamie_Knoef\categories.png
+\Widgets\Categories-Jamie_Knoef\Web.config
+\Widgets\Categories-Jamie_Knoef\Sql\1.0-install.sql
+\Widgets\Categories-Jamie_Knoef\Sql\1.0-uninstall.sql
+\Widgets\Categories-Jamie_Knoef\Views\Web.config
+\Widgets\Categories-Jamie_Knoef\Views\Categories\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\go\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Home\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Join\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\LoadWebsites\index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Login\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Maintenance\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\AddWebsite.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\Api.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\Codes.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\Edit.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\GetCode.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Mywebsites\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\News\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Page\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\CP_Navigation.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Footer.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Messages.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Navigation.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Report.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Search.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Thumbnail.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Partials\Website.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Request\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Reset\Step1.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Reset\Step2.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Search\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Shared\Error.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Statistics\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Vote\Index.cshtml
+\Themes\2_-_Autoinstalled_LightBlue-Jamie_Knoef\Views\Website\Index.cshtml
+\Themes\LightBlue\LightBlue.zip
+\Topsite.sln.ide\edb.chk
+\Topsite.sln.ide\edbres00001.jrs

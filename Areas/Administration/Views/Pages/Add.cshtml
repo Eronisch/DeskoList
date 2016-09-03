@@ -1,0 +1,56 @@
+﻿@using Localization.Languages.Admin.Views.Pages
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Pages.BasicPageViewModel
+           
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    <div id="addPage" class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Add.AddPage</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Keywords)
+                @Html.TextAreaFor(m => m.Keywords, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Content)
+                @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = 6 })
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="@Add.AddPage" class="btn btn-default" />
+}
+
+@section Head{
+    <link href="~/Areas/Administration/Content/Css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
+}
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#addPage #Content").wysihtml5();
+        });
+    </script>
+}

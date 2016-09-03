@@ -1,0 +1,169 @@
+﻿@using Core.Extensions
+@using Localization.Languages.Views.Website
+@model Topsite.Models.ViewWebsiteModel
+
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Add this -->
+<script type="text/javascript"> var addthis_config = { "data_track_addressbar": false }; </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505ed5076fcb4671"></script>
+
+<div id="websiteView" class="bar">
+    <div itemscope itemtype="http://schema.org/WebSite">
+        <div itemprop="author" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="@Model.BundleWebsiteStatistics.Website.Title" />
+        </div>
+        <meta itemprop="datePublished" content="@Model.BundleWebsiteStatistics.Website.DateAdded.ToIso8601FormatString()" />
+        <meta itemprop="keywords" content="@Model.BundleWebsiteStatistics.Website.Keywords" />
+        <div class="topMenu">
+                <a href="@Url.Action("Go", "Website", new {User = Model.BundleWebsiteStatistics.Website.Username, Id = Model.BundleWebsiteStatistics.Website.Id})" itemprop="url"><h1 itemprop="name">@Model.BundleWebsiteStatistics.Website.Title</h1></a>
+        </div>
+        <div class="content">
+            <div class="bannerImage" id="pageBanner">
+                <img itemprop="image" src="@Model.BundleWebsiteStatistics.Website.GetBannerUrl()" alt="@Model.BundleWebsiteStatistics.Website.Title">
+                <p itemprop="description">@Model.BundleWebsiteStatistics.Website.Description</p>
+            </div>
+            <div class="horizontalBar"></div>
+            <div id="voteContainerRating">
+                <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+
+                    <div class="addthis_toolbox addthis_default_style ">
+                        <a class="addthis_button_preferred_1"></a>
+                        <a class="addthis_button_preferred_2"></a>
+                        <a class="addthis_button_compact"></a>
+                        <a class="addthis_counter addthis_bubble_style"></a>
+                    </div>
+
+                    <meta itemprop="ratingCount" content="@Model.BundleWebsiteStatistics.Website.AmountRatings" />
+                    <meta itemprop="reviewCount" content="@Model.BundleWebsiteStatistics.Website.AmountRatings" />
+                    <meta itemprop="worstRating" content="1" />
+
+                    <div id="ratingInfo">
+                        <img src="/Themes/LightBlue/Content/images/rating/@Model.BundleWebsiteStatistics.Website.AverageRatingRounded _Star-Rating.png" alt="@Model.BundleWebsiteStatistics.Website.AverageRatingDouble.ToZeroGbString() Star Rating">
+                        <p id="ratingDesc">
+                            Rating: <span itemprop="ratingValue">@Model.BundleWebsiteStatistics.Website.AverageRatingDouble.ToZeroGbString()</span>/<span itemprop="bestRating">5</span> - <span itemprop="ratingCount">@Model.BundleWebsiteStatistics.Website.AmountRatings</span> votes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bar">
+    <div class="topMenu"><h1>@View.Reviews</h1></div>
+    <div class="content">
+        <div class="fb-comments" data-href="@Request.Url" data-width="478" data-num-posts="10"></div>
+    </div>
+</div>
+
+<div class="bar">
+    <div class="topMenu"><h1>@View.Rate</h1></div>
+    <div class="content">
+        <div id="rating">
+
+            @if (!Model.HasRated)
+            {
+                using (Html.BeginForm("Rate", "Website", FormMethod.Post, new { id = "rateForm" }))
+                {
+                    @Html.HiddenFor(m => m.WebsiteRating.WebsiteId)
+                    @Html.HiddenFor(m => m.WebsiteRating.Rating)
+
+                    <ul id="ratingList" class="notRated">
+                        <li class="starOff"></li>
+                        <li class="starOff"></li>
+                        <li class="starOff"></li>
+                        <li class="starOff"></li>
+                        <li class="starOff"></li>
+                    </ul>
+                }
+            }
+            else
+            {
+                <ul id="ratingList">
+                    @for (int counter = 0; Model.BundleWebsiteStatistics.Website.AverageRatingRounded > counter; counter++)
+                    {
+                        <li class="starOn"></li>
+                    }
+                </ul>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div class="bar">
+    <div class="topMenu"><h1>@View.Statistics</h1></div>
+    <div class="content">
+        <div id="pageStatistics">
+            <div class="column" id="days">
+                <p class="titleStatistics">@View.DailyColumn</p>
+                <p>@View.AverageColumn</p>
+                <p>@View.AverageToday</p>
+                <p>@View.AverageYesterday</p>
+                @for (int statCounter = 2; Model.BundleWebsiteStatistics.In.Count() > statCounter; statCounter++)
+                {
+                    <p>@Model.BundleWebsiteStatistics.In[statCounter].Date.ToShortDateString()</p>
+                }
+                <p>Total</p>
+            </div>
+
+            <div class="column">
+                <p class="boldText">@View.UniqueInColumn</p>
+                <p>@Model.BundleWebsiteStatistics.GetUniqueInAverage()</p>
+                @foreach (var uniqueIn in Model.BundleWebsiteStatistics.UniqueIn)
+                {
+                    <p>@uniqueIn.Amount</p>
+                }
+                <p>@Model.BundleWebsiteStatistics.GetTotalUniqueIn()</p>
+            </div>
+
+            <div class="column">
+                <p class="boldText">@View.TotalIn</p>
+                <p>@Model.BundleWebsiteStatistics.GetInAverage()</p>
+                @foreach (var totalIn in Model.BundleWebsiteStatistics.In)
+                {
+                    <p>@totalIn.Amount</p>
+                }
+                <p>@Model.BundleWebsiteStatistics.GetTotalIn()</p>
+            </div>
+
+            <div class="column">
+                <p class="boldText">@View.UniqueOut</p>
+                <p>@Model.BundleWebsiteStatistics.GetUniqueOutAverage()</p>
+                @foreach (var uniqueOut in Model.BundleWebsiteStatistics.UniqueOut)
+                {
+                    <p>@uniqueOut.Amount</p>
+                }
+                <p>@Model.BundleWebsiteStatistics.GetTotalUniqueOut()</p>
+            </div>
+
+            <div class="column nospace-margin">
+                <p class="boldText">@View.TotalOut</p>
+                <p>@Model.BundleWebsiteStatistics.GetOutAverage()</p>
+                @foreach (var totalOut in Model.BundleWebsiteStatistics.Out)
+                {
+                    <p>@totalOut.Amount</p>
+                }
+                <p>@Model.BundleWebsiteStatistics.GetTotalOut()</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="/Themes/LightBlue/Content/scripts/Rating.js"></script>
+}

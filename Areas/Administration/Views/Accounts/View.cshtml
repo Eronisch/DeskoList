@@ -1,0 +1,130 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Users
+@model Topsite.Areas.Administration.Models.Account.AccountViewBundleModel
+
+<div id="accountView">
+    
+    <div id="listInfo">
+        <div class="row">
+            <div class="col-md-3">
+                @View.Id
+            </div>
+
+            <div class="col-md-8">
+                @Model.Account.Id
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.Username
+            </div>
+
+            <div class="col-md-8">
+                @Model.Account.Username
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.Email
+            </div>
+
+            <div class="col-md-8">
+                @Model.Account.Email
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.EmailVerified
+            </div>
+
+            <div class="col-md-8">
+                @(Model.Account.IsEmailVerified ? Common.Yes : Common.No)
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.BannedStartDate
+            </div>
+
+            <div class="col-md-8">
+                @(Model.Account.IsBanned ? Model.Account.BannedStartDate.ToString() : Common.NotSet)
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.BannedEndDate
+            </div>
+
+            <div class="col-md-8">
+                @(Model.Account.IsBanned ? Model.Account.BannedEndDate.ToString() : Common.NotSet)
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.LastLoginDate
+            </div>
+
+            <div class="col-md-8">
+                @Model.Account.LastLoginDate
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @View.RegistrationDate
+            </div>
+
+            <div class="col-md-8">
+                @Model.Account.RegistrationDate
+            </div>
+
+            <div class="col-md-12"><div class="line"></div></div>
+        </div>
+    </div>
+
+    <table class="table table-striped margin15">
+        <thead>
+            <tr>
+                <th>@View.TableWebsiteId</th>
+                <th>@View.TableWebsiteTitle</th>
+                <th>@View.TableWebsiteCategory</th>
+                <th>@View.TableWebsiteEnabled</th>
+                <th>@Common.View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var website in Model.Websites)
+            {
+                <tr>
+                    <td>@website.Id</td>
+                    <td>@website.Title</td>
+                    <td>@website.CategoryName</td>
+                    <td>
+                        @Html.Raw(website.Enabled ? "<span class='label label-success'>" + Common.Yes + "</span>" :
+                            "<span class='label label-warning'>" + Common.No + "</span>")</td>
+                    <td>@Html.ActionLink(Common.View, "View", "Websites", new { area = "Administration", id = website.Id }, new {@class="btn btn-info btn-xs"})</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

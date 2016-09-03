@@ -1,0 +1,21 @@
+﻿@using Localization.Languages.Views.Partials
+@using Topsite.Themes.LightBlue.Helpers
+@model Topsite.Models.BundleWebsitesRanking
+
+@if (Model.Websites.Any())
+{
+    Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Website.cshtml", Model);
+}
+else
+{
+    @Html.DisplayNoResultsFoundAlert()
+}
+
+@if (Model.Websites.Any())
+{
+      <!-- Ajax Call Load Websites Data -->
+    <div id="newwebsites"></div>
+    <div>
+        <input type="button" value="@WebsiteList.LoadMore" id="loadwebsites" class="btn btn-default" />
+    </div>
+}

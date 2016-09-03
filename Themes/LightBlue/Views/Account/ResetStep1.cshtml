@@ -1,0 +1,27 @@
+﻿@using Localization.Languages.Views.Account
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.ResetModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class='alert alert-danger'><h4>@Global.Error</h4>
+      @Html.ValidationSummary()
+    </div>
+}
+
+<div class="bar">
+    <div class="topMenu"><h1>@ResetStep1.MenuName</h1></div>
+    <div class="content">
+        <p class="nospace">@ResetStep1.Description</p>
+        @using (Html.BeginForm("ResetStep1", "Account"))
+        {
+            @Html.AntiForgeryToken()
+            
+            @Html.LabelFor(m => m.Username, new {@class = "margin10"})
+            @Html.TextBoxFor(m => m.Username)
+            
+            <input type="submit" value="@ResetStep1.NextStep" class="btn btn-default" />
+        }
+    </div>
+</div>

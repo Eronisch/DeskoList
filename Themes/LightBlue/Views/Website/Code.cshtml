@@ -1,0 +1,53 @@
+﻿@using Core.Business.Websites
+@using Localization.Languages.Views.Website
+@using Web.Account
+@model Topsite.Models.GetCodeModel
+
+
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+<div id="getCode">
+    <div class="bar">
+        <div class="topMenu"><h1>@GetCodes.MenuName</h1></div>
+        <div class="content">
+            <p class="nospace">@GetCodes.Description</p>
+
+            <img src="/Themes/LightBlue/Content/images/Joinus.gif" alt="@GetCodes.VoteImageAlt" class="margin10" />
+
+            <p><span class="smallBoldText">@GetCodes.WebsiteTitle:</span> @Model.Website.Title</p>
+            <p><span class="smallBoldText">@GetCodes.WebsiteDescription:</span> @Model.Website.Description</p>
+            <p><span class="smallBoldText">@GetCodes.WebsiteId:</span> @Model.Website.Id</p>
+
+            <textarea class="codelink"><a href="@WebsiteVoteHelper.GetVotingUrl(LoginHelper.GetUsername(), Model.Website.Id.ToString())"><img src="@WebsiteVoteHelper.GetVotingImage("Themes/LightBlue/Content/images/Joinus.gif")" alt="@Model.TopsiteTitle- Find your website!" title="Vote for @Model.Website.Title" border="0" /></a></textarea>
+
+            <div>
+                <h2>@GetCodes.Tips</h2>
+                <ul id="tips">
+                    <li>@GetCodes.Tip1: @WebsiteVoteHelper.GetVotingUrl(LoginHelper.GetUsername(), Model.Website.Id.ToString(), GetCodes.optionalRedirectUrl)</li>
+                    <li>@GetCodes.Tip2: @WebsiteVoteHelper.GetApiUrl(Model.Website.Id.ToString()) @GetCodes.ApiResponse</li>
+                </ul>
+            </div>
+
+            <div id="horizontalLine"></div>
+
+            <h2 id="api">@GetCodes.Api</h2>
+
+            <p>@GetCodes.ApiDescription</p>
+
+            <h2>@GetCodes.Instructions</h2>
+
+            <ul id="instruction">
+                <li>@GetCodes.InstructionStep1</li>
+                <li>@GetCodes.InstructionStep2</li>
+                <li>@GetCodes.InstructionStep3</li>
+                <li>@GetCodes.InstructionStep4</li>
+                <li>@GetCodes.InstructionStep5</li>
+                <li>@GetCodes.InstructionStep6</li>
+                <li>@GetCodes.InstructionStep7</li>
+            </ul>
+
+            <a href="/Themes/LightBlue/Content/download/api.zip" class="btn btn-default" target="_blank">@GetCodes.Download</a>
+
+        </div>
+    </div>
+</div>

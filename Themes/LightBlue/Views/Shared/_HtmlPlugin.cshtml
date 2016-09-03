@@ -1,0 +1,9 @@
+﻿@using Web.Plugin
+@foreach (var pluginHtml in Html.GetHtmlPlugins())
+{
+    <div class="bar">
+        <div class="content">
+            @pluginHtml
+        </div>
+    </div>
+}

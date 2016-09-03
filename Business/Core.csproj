@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6828F104-04C8-471E-B6E0-17095EDD1C02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\External\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.AspNet">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\External\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Quartz">
+      <HintPath>..\External\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestReduce">
+      <HintPath>..\packages\RequestReduce.1.8.76\Lib\net40\RequestReduce.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundInTheory.DynamicImage">
+      <HintPath>..\packages\DynamicImage.3.1.1\lib\net40\SoundInTheory.DynamicImage.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundInTheory.DynamicImage.Extensions.WebsiteScreenshot">
+      <HintPath>..\packages\DynamicImage.Extensions.WebsiteScreenshot.3.1.1\lib\net40\SoundInTheory.DynamicImage.Extensions.WebsiteScreenshot.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.2\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Account\AccountService.cs" />
+    <Compile Include="Business\Account\RequestService.cs" />
+    <Compile Include="Business\Account\ResetService.cs" />
+    <Compile Include="Business\Blacklist\BlackListService.cs" />
+    <Compile Include="Business\Breadcrumbs\AdminBreadCrumbsService.cs" />
+    <Compile Include="Business\Captcha\CaptchaService.cs" />
+    <Compile Include="Business\Contact\ContactService.cs" />
+    <Compile Include="Business\Date\DateHelper.cs" />
+    <Compile Include="Business\Dll\DllService.cs" />
+    <Compile Include="Business\Download\UpdateDownloadManager.cs" />
+    <Compile Include="Business\Elmah\ElmahService.cs" />
+    <Compile Include="Business\Email\EmailAccountService.cs" />
+    <Compile Include="Business\Email\EmailService.cs" />
+    <Compile Include="Business\Email\EmailTemplateService.cs" />
+    <Compile Include="Business\File\FileService.cs" />
+    <Compile Include="Business\Generator\Generator.cs" />
+    <Compile Include="Business\Categories\CategoryService.cs" />
+    <Compile Include="Business\Connection\ConnectionTestService.cs" />
+    <Compile Include="Business\Languages\CompareLanguageService.cs" />
+    <Compile Include="Business\Languages\ElFinderConfig.cs" />
+    <Compile Include="Business\Languages\LanguageDeleteService.cs" />
+    <Compile Include="Business\Languages\LanguageInstallerService.cs" />
+    <Compile Include="Business\Languages\LanguageService.cs" />
+    <Compile Include="Business\Languages\ReflectionLanguageService.cs" />
+    <Compile Include="Business\Languages\ResourceManagerCompareService.cs" />
+    <Compile Include="Business\Languages\TypeInfo.cs" />
+    <Compile Include="Business\Links\LinkService.cs" />
+    <Compile Include="Business\Navigation\AdminNavigationService.cs" />
+    <Compile Include="Business\Ping\PingService.cs" />
+    <Compile Include="Business\Pages\NavigationService.cs" />
+    <Compile Include="Business\Pages\DynamicPageService.cs" />
+    <Compile Include="Business\News\NewsService.cs" />
+    <Compile Include="Business\Pages\SeoPageService.cs" />
+    <Compile Include="Business\Plugin\PluginActions.cs" />
+    <Compile Include="Business\Plugin\PluginActivateService.cs" />
+    <Compile Include="Business\Plugin\PluginActionActivateService.cs" />
+    <Compile Include="Business\Plugin\PluginFilterActivateService.cs" />
+    <Compile Include="Business\Plugin\PluginFilters.cs" />
+    <Compile Include="Business\Plugin\PluginHookActivateService.cs" />
+    <Compile Include="Business\Plugin\PluginHooks.cs" />
+    <Compile Include="Business\Plugin\PluginActionStorageService.cs" />
+    <Compile Include="Business\Plugin\PluginFilterStorageService.cs" />
+    <Compile Include="Business\Plugin\PluginHookStorageService.cs" />
+    <Compile Include="Business\Plugin\PluginHtml.cs" />
+    <Compile Include="Business\Plugin\PluginHtmlSubscribeService.cs" />
+    <Compile Include="Business\Plugin\PluginInstallerService.cs" />
+    <Compile Include="Business\Plugin\PluginStorageService.cs" />
+    <Compile Include="Business\Plugin\PluginService.cs" />
+    <Compile Include="Business\Plugin\PluginStorage.cs" />
+    <Compile Include="Business\Plugin\PluginUpdateService.cs" />
+    <Compile Include="Business\Plugin\PluginDownloadManager.cs" />
+    <Compile Include="Business\Plugin\PluginSettingsService.cs" />
+    <Compile Include="Business\Plugin\PluginConfigService.cs" />
+    <Compile Include="Business\Plugin\PluginUninstallService.cs" />
+    <Compile Include="Business\Plugin\PluginEnableService.cs" />
+    <Compile Include="Business\Poll\PollService.cs" />
+    <Compile Include="Business\Rating\RatingService.cs" />
+    <Compile Include="Business\Reports\ReportsService.cs" />
+    <Compile Include="Business\Schedule\BootService.cs" />
+    <Compile Include="Business\Schedule\ScheduleService.cs" />
+    <Compile Include="Business\Settings\SettingsHelper.cs" />
+    <Compile Include="Business\Settings\SettingsService.cs" />
+    <Compile Include="Business\Software\SoftwareDownloadManager.cs" />
+    <Compile Include="Business\Software\SoftwareUpdateService.cs" />
+    <Compile Include="Business\Software\SoftwareSettings.cs" />
+    <Compile Include="Business\Software\VersionOrderingService.cs" />
+    <Compile Include="Business\Themes\ThemeConfigService.cs" />
+    <Compile Include="Business\Themes\ThemeInstallerService.cs" />
+    <Compile Include="Business\Themes\ThemeService.cs" />
+    <Compile Include="Business\Themes\ThemeSettingsService.cs" />
+    <Compile Include="Business\Themes\ThemeUninstallerService.cs" />
+    <Compile Include="Business\Themes\ThemeUpdateService.cs" />
+    <Compile Include="Business\Themes\ThemeDownloadManager.cs" />
+    <Compile Include="Business\ThirdParty\AbstractConfigService.cs" />
+    <Compile Include="Business\ThirdParty\IStartup.cs" />
+    <Compile Include="Business\ThirdParty\ThirdPartyActivator.cs" />
+    <Compile Include="Business\Thumbnail\ThumbnailService.cs" />
+    <Compile Include="Business\Url\UrlHelpers.cs" />
+    <Compile Include="Business\Url\UrlValidator.cs" />
+    <Compile Include="Business\Websites\RankingService.cs" />
+    <Compile Include="Business\Websites\WebsiteInService.cs" />
+    <Compile Include="Business\Websites\WebsiteOutService.cs" />
+    <Compile Include="Business\Websites\WebsiteVoteHelper.cs" />
+    <Compile Include="Business\Web\WebOnlineService.cs" />
+    <Compile Include="Business\Widgets\WidgetConfigService.cs" />
+    <Compile Include="Business\Widgets\WidgetDownloadManager.cs" />
+    <Compile Include="Business\Widgets\WidgetInstallerService.cs" />
+    <Compile Include="Business\Widgets\WidgetSettingsService.cs" />
+    <Compile Include="Business\Widgets\WidgetUninstallService.cs" />
+    <Compile Include="Business\Widgets\WidgetActivateService.cs" />
+    <Compile Include="Business\Widgets\WidgetService.cs" />
+    <Compile Include="Business\Widgets\WidgetUpdateService.cs" />
+    <Compile Include="Extensions\DateExtensions.cs" />
+    <Compile Include="Extensions\DoubleExtension.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Infrastructure\Elmah\ElmahSqlErrorLog.cs" />
+    <Compile Include="Infrastructure\Tasks\Daily Reset\DailyResetTask.cs" />
+    <Compile Include="Infrastructure\Tasks\Email\EmailTask.cs" />
+    <Compile Include="Infrastructure\Tasks\Ping\PingTask.cs" />
+    <Compile Include="Infrastructure\Tasks\Reset\ResetTask.cs" />
+    <Compile Include="Infrastructure\Tasks\ScheduleConfig.cs" />
+    <Compile Include="Infrastructure\Tasks\Update\UpdateTask.cs" />
+    <Compile Include="Infrastructure\Tasks\Thumbnail\ThumbnailTask.cs" />
+    <Compile Include="Models\Account\AccountSecurity.cs" />
+    <Compile Include="Models\Account\AccountSecurityQuestionModel.cs" />
+    <Compile Include="Models\Account\AccountType.cs" />
+    <Compile Include="Models\Account\OnlineModel.cs" />
+    <Compile Include="Models\BreadCrumbs\BreadCrumbsModel.cs" />
+    <Compile Include="Models\Install\InstallType.cs" />
+    <Compile Include="Models\Poll\PollAnswerModel.cs" />
+    <Compile Include="Models\Poll\PollResultModel.cs" />
+    <Compile Include="Models\Settings\SoftwareOpenUpdateModel.cs" />
+    <Compile Include="Models\ThirdParty\AdminBreadcrumbSettingsModel.cs" />
+    <Compile Include="Models\ThirdParty\AdminNavigationSettingsModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyDownloadUpdate.cs" />
+    <Compile Include="Models\ThirdParty\SqlScript.cs" />
+    <Compile Include="Models\Update\DownloadUpdate.cs" />
+    <Compile Include="Models\Update\OpenUpdateModel.cs" />
+    <Compile Include="Models\Update\UpdatingStatus.cs" />
+    <Compile Include="Models\Widgets\WidgetNavigationModel.cs" />
+    <Compile Include="Models\Widgets\WidgetOpenUpdateModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Models\Settings\BasicSettingsModel.cs" />
+    <Compile Include="Models\Settings\CaptchaModel.cs" />
+    <Compile Include="Models\Statistics\BundleStatisticsModel.cs" />
+    <Compile Include="Models\Statistics\BundleWebsiteStatisticsModel.cs" />
+    <Compile Include="Models\Statistics\MonthStatisticsModel.cs" />
+    <Compile Include="Business\Websites\WebsiteStatisticsService.cs" />
+    <Compile Include="Business\Websites\WebsiteService.cs" />
+    <Compile Include="Models\Account\AccountModel.cs" />
+    <Compile Include="Models\Account\EditAccountType.cs" />
+    <Compile Include="Models\Account\LoginType.cs" />
+    <Compile Include="Models\Account\RegisterType.cs" />
+    <Compile Include="Models\Account\RequestUsernameType.cs" />
+    <Compile Include="Models\Account\TypeEmailVerification.cs" />
+    <Compile Include="Models\Categories\CategoryModel.cs" />
+    <Compile Include="Models\Categories\CategorySeoModel.cs" />
+    <Compile Include="Models\Email\EmailAccountType.cs" />
+    <Compile Include="Models\Widgets\WidgetModel.cs" />
+    <Compile Include="Models\Widgets\WidgetSideType.cs" />
+    <Compile Include="Models\News\NewsModel.cs" />
+    <Compile Include="Models\Pages\PageModel.cs" />
+    <Compile Include="Models\Reports\AddReportType.cs" />
+    <Compile Include="Models\Seo\SeoModel.cs" />
+    <Compile Include="Models\Themes\ThemeSectionModel.cs" />
+    <Compile Include="Models\Vote\AnswerType.cs" />
+    <Compile Include="Models\Websites\AddWebsiteType.cs" />
+    <Compile Include="Models\Websites\JsonWebsiteModel.cs" />
+    <Compile Include="Models\Websites\RatingModel.cs" />
+    <Compile Include="Models\Websites\WebsiteError.cs" />
+    <Compile Include="Models\Websites\WebsiteModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseXML\DatabaseXML.csproj">
+      <Project>{248b2a33-bff5-4dd7-a679-a6925a2f98c8}</Project>
+      <Name>DatabaseXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{1ed679d9-f933-40f7-89e2-359ffd1c3350}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Localization\Localization.csproj">
+      <Project>{3451a52f-21d1-489b-abca-7893b5484b67}</Project>
+      <Name>Localization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Controller\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

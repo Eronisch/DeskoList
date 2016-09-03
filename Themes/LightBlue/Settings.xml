@@ -1,0 +1,24 @@
+﻿<Settings>
+    <Name>LightBlue</Name>
+    <Description>An elegant lightblue theme. This is the default theme. There are 9 modules included by default.</Description>
+    <Image>Info/theme.jpg</Image>
+    <Version>1.1</Version>
+    <Author>Jamie</Author>
+    <AuthorUrl>http://deskolist.com</AuthorUrl>
+
+    <Sections>
+	<Section>
+		<FriendlyName>Right Side2</FriendlyName>
+		<CodeName>RightSide</CodeName>
+	</Section>
+	<Section>
+		<FriendlyName>Left Side2</FriendlyName>
+		<CodeName>LeftSide</CodeName>
+	</Section>
+	<Section>
+		<FriendlyName>AndereFriendly</FriendlyName>
+		<CodeName>Andere</CodeName>
+	</Section>
+     </Sections>
+
+</Settings>

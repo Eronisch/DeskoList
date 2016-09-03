@@ -1,0 +1,568 @@
+﻿@model Topsite.Models.InstallModel
+
+@{
+    Layout = null;
+}
+
+@helper GetNextButton()
+{
+    <input type="button" class="btn btn-primary btn-sm pull-right next" value="Next" />
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DeskoList Installer</title>
+    <link href="@Url.Content("~/Install/Content/Stylesheets/Yeti-bootstrap.css")" rel="stylesheet" />
+    <link href="/Install/Content/Stylesheets/Installer.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DeskoList</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent" class="container">
+
+        <div id="alertInfo" class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            <strong>Read!</strong>
+
+            With the auto installer you can easily setup your new topsite.
+            <br />
+            You can always edit your settings later trough the administration panel.
+
+            <br /><br />
+            If you have questions about the software or if you have a bug to report, please signup on our forum and create a new thread to notify us
+            so we can take look at it. If it's a security exploit, please don't open a new thread, instead private message: Jamie.
+            This is to avoid people from exploiting the software.
+            <br /><br />
+            <a href="http://forum.deskolist.com" target="_blank">DeskoList Forum</a>
+        </div>
+
+        @if (!ViewData.ModelState.IsValid || TempData["Error"] != null)
+        {
+            <div class="alert alert-warning">
+                <h4>Error!</h4>
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <p>One or multiple field(s) were incorrect filled in, please correct your fields.</p>
+
+                    @Html.ValidationSummary()
+                }
+                else
+                {
+                    <p>An error occured during the installation.</p>
+
+                    <ul>
+                        <li>@TempData["Error"].ToString()</li>
+                    </ul>
+                }
+
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Steps</h4>
+                <div id="steps" class="list-group">
+                    <a href="#" id="databaseStep" class="list-group-item active">
+                        Database
+                    </a>
+                    <a href="#" id="accountStep" class="list-group-item">
+                        Account
+                    </a>
+                    <a href="#" id="emailStep" class="list-group-item">
+                        Email
+                    </a>
+                    <a href="#" id="cronjobsStep" class="list-group-item">
+                        Cronjobs
+                    </a>
+                    <a href="#" id="captchaStep" class="list-group-item">
+                        Captcha
+                    </a>
+                    <a href="#" id="settingsStep" class="list-group-item">
+                        Settings
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <h4>Form</h4>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Index", "AutoInstaller", FormMethod.Post, new { @class = "form-horizontal" }))
+                        {
+                            <div id="databaseForm" data-step="databaseStep">
+                                <h5>Database</h5>
+
+                                <p>If the database doesn't exist yet it will be created for you.</p>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.DatabaseHost, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.DatabaseHost, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.DatabaseName, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.DatabaseName, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.DatabaseUsername, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.DatabaseUsername, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.DatabasePassword, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.DatabasePassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div id="errorDatabase" class="alert smallAlert alert-danger">
+                                    <span class="errorIcon"></span>
+                                    Could not connect to the database
+                                </div>
+
+                                <div id="successDatabase" class="alert smallAlert alert-success">
+                                    <span class="successIcon"></span>
+                                    Succesfully connected to the database
+                                </div>
+
+                                <input type="button" class="btn btn-primary btn-sm pull-right next" value="Next" />
+                                <input type="button" id="btnValidateConnection" class="btn btn-default btn-sm pull-right" value="Validate Connection" />
+                            </div>
+
+                            <div id="accountForm" data-step="accountStep">
+                                <h5>Administrator Account</h5>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SecurityQuestion, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(m => m.SecurityQuestion, Model.SecurityQuestions, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SecurityAnswer, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SecurityAnswer, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                @GetNextButton()
+                            </div>
+
+                            <div id="emailForm" data-step="emailStep">
+                                <h5>No Reply - SMTP Server</h5>
+                                <p>
+                                    The e-mail account that is going to be used to send e-mails where you don't want to receive replies back from.
+                                    Example: An e-mail that has been send to an user to reset his password, you don't want to receive replies from this.
+                                </p>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NoReplyHost, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.NoReplyHost, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NoReplyUsername, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.NoReplyUsername, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NoReplyPassword, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.NoReplyPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NoReplyPort, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.NoReplyPort, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NoReplySecureConnection, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.NoReplySecureConnection) <span>Secure Connection.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="errorNoReply" class="alert smallAlert alert-danger">
+                                    <span class="errorIcon"></span>
+                                    Could not connect to the SMTP server.
+                                </div>
+
+                                <div id="successNoReply" class="alert smallAlert alert-success">
+                                    <span class="successIcon"></span>
+                                    <strong>We can only check if the SMTP server responds, it doesn't authenticate.</strong>
+                                    Succesfully connected to the SMTP server.
+                                </div>
+
+                                <h5>Reply - SMTP Server</h5>
+                                <p>The e-mail account that accepts replies from e-mails you have send to a user.</p>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ReplyHost, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.ReplyHost, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ReplyUsername, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.ReplyUsername, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ReplyPassword, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.ReplyPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ReplyPort, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.ReplyPort, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ReplySecureConnection, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.ReplySecureConnection) <span>Secure Connection.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="errorReply" class="alert smallAlert alert-danger">
+                                    <span class="errorIcon"></span>
+                                    Could not connect to the SMTP server.
+                                </div>
+
+                                <div id="successReply" class="alert smallAlert alert-success">
+                                    <span class="successIcon"></span>
+                                    <strong>We can only check if the SMTP server responds, it doesn't authenticate.</strong>
+                                    Succesfully connected to the SMTP server.
+                                </div>
+
+                                @GetNextButton()
+                                <input type="button" id="btnValidateEmailConnection" class="btn btn-default btn-sm pull-right" value="Validate email accounts" />
+                            </div>
+
+                            <div id="cronjobsForm" data-step="cronjobsStep">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsResetInAndOutsEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsResetInAndOutsEnabled) <span>Clean all the in & outs from the users websites.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsInAndOutCronJob, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsInAndOutCronJob, new { @class = "form-control" })
+                                        <a href="http://www.cronmaker.com/" target="_blank">Create here your cron expression.</a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsCreateUserWebsiteThumbnailsEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsEmailingUserStatisticsEnabled) <span> Create thumbnails of users websites.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsCreateUserWebsiteThumbnailsCronjob, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsCreateUserWebsiteThumbnailsCronjob, new { @class = "form-control" })
+                                        <a href="http://www.cronmaker.com/" target="_blank">Create here your cron expression.</a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsEmailingUserStatisticsEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsEmailingUserStatisticsEnabled) <span>Email users their website statistics (in & out) from the past 7 days.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsEmailUserStatisticsCronjob, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsEmailUserStatisticsCronjob, new { @class = "form-control" })
+                                        <a href="http://www.cronmaker.com/" target="_blank">Create here your cron expression.</a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsUserServerMonitoringEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsUserServerMonitoringEnabled) <span>Monitor the users servers.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsMonitorUserWebsitesCronjob, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsMonitorUserWebsitesCronjob, new { @class = "form-control" })
+                                        <a href="http://www.cronmaker.com/" target="_blank">Create here your cron expression.</a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsAutoUpdateEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsAutoUpdateEnabled) <span>  Automatically download and install updates for: Desko, widgets and themes.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsUpdateCronjob, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsUpdateCronjob, new { @class = "form-control" })
+                                        <a href="http://www.cronmaker.com/" target="_blank">Create here your cron expression.</a>
+                                    </div>
+                                </div>
+
+                                @GetNextButton()
+
+                            </div>
+
+                            <div id="captchaForm" data-step="captchaStep">
+                                <h5>Captcha</h5>
+
+                                <p>
+                                    We use reCaptcha from Google to ensure protection against bots.
+                                    To use this captcha you will have to create an account at Google Recaptcha.
+                                    <br />
+                                    Create your account: <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">here</a>.
+                                    When you have signed up you can create a new captcha and you will receive a site key and secret key.
+                                </p>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.CaptchaSiteKey, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.CaptchaSiteKey, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.CaptchaSecretKey, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.CaptchaSecretKey, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                @GetNextButton()
+
+                            </div>
+
+                            <div id="settingsForm" data-step="settingsStep">
+                                <h5>Settings</h5>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsLongTitle, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsLongTitle, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsShortTitle, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsShortTitle, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsDescription, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsDescription, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsKeywords, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsKeywords, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsSlogan, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsSlogan, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsAmountWebsites, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsAmountWebsites, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsUrl, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.SettingsUrl, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.LanguageId, new {@class = "col-md-2 control-label"})
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(m => m.LanguageId, Model.Languages, new {@class = "form-control"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.TimezoneId, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(m => m.TimezoneId, Model.Timezones, new { @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsEmailVerificationRequired, new {@class = "col-md-2 control-label"})
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsEmailVerificationRequired) <span>Email verification required.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.SettingsIsAdminVerificationRequired, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.SettingsIsAdminVerificationRequired) <span>New users have to be approved first by administrators before they can login and list their website.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.IsUpdateWhenIncorrectVersionEnabled, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.IsUpdateWhenIncorrectVersionEnabled)
+                                                <span>
+                                                    Install the update when the <u>software version</u> mismatches the update <u>software version</u>.
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="submit" value="Install" class="btn btn-primary pull-right btn-sm" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Install/Content/Scripts/JQuery.js"></script>
+    <script src="~/Install/Content/Scripts/bootstrap.js"></script>
+    <script src="~/Install/Content/Scripts/Installer.js"></script>
+</body>
+</html>

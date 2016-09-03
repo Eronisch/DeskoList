@@ -1,0 +1,64 @@
+﻿@using Localization.Languages.Views.Website
+@model IEnumerable<Core.Models.Websites.WebsiteModel>
+
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+<div id="myWebsites">
+    <div class="bar">
+        <div class="topMenu"><h1>@ViewAll.MenuName</h1></div>
+        <div class="content">
+            <p class="nospace">@ViewAll.Description @Html.ActionLink(ViewAll.linkHere, "Add", "Website")</p>
+
+            <ul>
+                @foreach (var website in Model)
+                {
+                    <li>
+                        <p class="titlewebsite"><small>#@website.Id</small> <span class="cleanWebsiteTitle">@website.Title</span></p>
+                        <p class="description">@website.Description</p>
+                        @Html.ActionLink("Edit", "Edit", "Website", new { id = website.Id }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", "Website", new { id = website.Id }, new { id = "spaceRight", @class = "btn btn-default delete-website" })
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewAll.DeleteModalClose</span></button>
+                    <h4 class="modal-title">@ViewAll.DeleteModalTitle: <span id="websiteTitle"></span></h4>
+                </div>
+                <div class="modal-body">
+                 <p>@ViewAll.DeleteModalBody</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="deleteWebite" class="btn btn-info">@ViewAll.DeleteModalConfirm</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@ViewAll.DeleteModalCancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            var clickedLink;
+
+            $('#myWebsites .delete-website').click(function (e) {
+                clickedLink = $(this).attr('href');
+                $('#deleteModal #websiteTitle').text($(this).parent().find('.cleanWebsiteTitle').text());
+                $('#deleteModal').modal('show');
+                e.preventDefault();
+            });
+
+            $('#deleteModal #deleteWebite').click(function() {
+                window.location.href = clickedLink;
+            });
+        });
+    </script>
+}

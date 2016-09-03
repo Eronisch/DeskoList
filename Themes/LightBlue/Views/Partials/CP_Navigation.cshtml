@@ -1,0 +1,16 @@
+﻿@using Localization.Languages.Views.Partials
+<div class="bar">
+    <div class="topMenu"><h1>@Cp_Navigation.MenuName</h1></div>
+    <div class="content">
+        <div id="cpnav">
+            <ul>
+                <li>@Html.ActionLink(Cp_Navigation.Home, "Index", "Cp")</li>
+                <li><span class="spacer"> - </span>@Html.ActionLink(Cp_Navigation.EditAccount, "Edit", "Account")</li>
+                <li><span class="spacer"> - </span>@Html.ActionLink(Cp_Navigation.MyWebsites, "ViewAll", "Website")</li>
+                <li><span class="spacer"> - </span>@Html.ActionLink(Cp_Navigation.MyWebsiteCodes, "Codes", "Website")</li>
+                <li><span class="spacer"> - </span>@Html.ActionLink(Cp_Navigation.MyWebsiteStatistics, "Statistics", "Website")</li>
+                <li><span class="spacer"> - </span>@Html.ActionLink(Cp_Navigation.Api, "Api", "Website")</li>
+            </ul>
+        </div>
+    </div>
+</div>

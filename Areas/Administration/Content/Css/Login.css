@@ -1,0 +1,40 @@
+﻿body, html{
+    background-color: #556677;
+    height: 100%;
+}
+
+#login-box.form-box{
+    width: 358px;
+    border: 1px solid #EFE6E6;
+    border-radius: 6px;
+    margin: 10% auto 0 auto;
+}
+
+#login-box .header{
+    background-color: #3399cc;
+}
+
+#login-box form{
+    background-color: #f0f0f0;
+       -webkit-box-shadow: 0px 7px 23px -3px rgba(81, 81, 81, 1);
+    -moz-box-shadow:    0px 7px 23px -3px rgba(81, 81, 81, 1);
+   box-shadow: 0px 7px 23px -3px rgba(81, 81, 81, 1);
+}
+
+#login-box .btn{
+    background-color: #3399cc;
+    color: #fff;
+}
+
+#login-box .btn:hover{
+    opacity: .7;
+}
+
+.alert {
+    border-radius: 0;
+    margin: 0;
+}
+
+.alert .close {
+    margin-right: 10px;
+}

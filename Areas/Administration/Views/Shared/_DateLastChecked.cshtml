@@ -1,0 +1,19 @@
+﻿@using Localization.Languages.Admin.Views.Settings
+@model DateTime?
+@{
+    Layout = null;
+}
+
+@if (Model.HasValue)
+{
+    @DateLastChecked.LastChecked<text>:</text>
+    @Model.Value.ToString("MMMM d, yyyy")
+    <text> </text>
+    @DateLastChecked.AtChecked
+    <text> </text>
+    @Model.Value.ToString("h:mm tt")
+}
+else
+{
+    @DateLastChecked.NeverChecked
+}

@@ -1,0 +1,20 @@
+﻿textarea {
+    max-width: 330px;
+    width: 330px;
+}
+
+#contact textarea { height: 120px; }
+
+#search-text input[type=text] {
+    background-color: #000;
+    bottom: 2px;
+}
+
+#search span {
+    bottom: 8px;
+    position: relative;
+}
+
+#searchIcon { right: 20px; }
+
+#navigation #home-image { top: 11px; }

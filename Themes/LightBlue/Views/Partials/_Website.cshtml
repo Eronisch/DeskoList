@@ -1,0 +1,55 @@
+﻿@using Core.Business.Date
+@using Localization.Languages.Views.Partials
+@using Topsite.Models
+@model Topsite.Models.BundleWebsitesRanking
+
+
+@foreach (var website in Model.Websites)
+{
+    <div class='ranking @(website.IsSponsored ? "isSponsored" : "NotSponsored")'>
+        
+        <div class="title">
+            <p>
+                @if (Model.IsMonitoringEnabled && !website.IsSponsored && website.IsOnline && website.MonitorDateChecked != null){<span class="onlineIcon" title="Checked @DateHelper.GetNiceDate((DateTime)website.MonitorDateChecked)"></span>}
+                else if (Model.IsMonitoringEnabled && !website.IsSponsored && !website.IsOnline && website.MonitorDateChecked != null){<span class="offlineIcon" title="Checked @DateHelper.GetNiceDate((DateTime)website.MonitorDateChecked)"></span>}
+                
+                @if (website.IsSponsored){<span class="sponsorIcon" title="@Website.Sponsor"></span>}
+                
+                <a href="@Url.Action("Go", "Website", new {User = website.Username, Id = website.Id})">@website.Title</a>
+            </p><div class="rightIcons"><a href="@Url.Action("View", "Website", new { User = website.Username, Id = website.Id})"><span class="home"></span></a><span class="stats"></span>@if(Model.IsThumbnailEnabled){<span class="preview"></span>}<span class="flag"></span></div>
+        </div>
+
+        <div class="box">
+            <div class="bannerImage"><a href="@Url.Action("Go", "Website", new {User = website.Username, Id = website.Id})"><img src="@website.GetBannerUrl()" alt="@website.Title" /></a></div>
+            <div class="text">@website.Description</div>
+            <div class="statsbox">
+                <div class="statsInner">
+                    <p class="leftRow nospace-margin">@Website.Visits: @website.UniqueVotesToday</p><p class="rightRow nospace-margin">@Website.Votes: @website.UniqueVotesToday</p>
+                </div>
+            </div>
+            <div class="horizontalBar"></div>
+            <div class="numberRank">
+                <div class="numberRankBox">
+                    <div class="number">
+                        #@(Model.StartIndex++)
+                    </div>
+                </div>
+            </div>
+            <div class="rating">
+                <img src='/Themes/LightBlue/Content/images/rating/@website.AverageRatingRounded%20_Star-Rating.png' alt='@website.AverageRatingDouble @Website.StarRating' />
+            </div>
+        </div>
+        <input class="username" name="username" type="hidden" value="@website.Username">
+        <input class="website" name="website" type="hidden" value="@website.Url">
+
+        <!-- Report Modal -->
+        @{Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Report.cshtml", new ReportUserModel {WebsiteId = website.Id, WebsiteTitle = website.Title});}
+
+        @if (Model.IsThumbnailEnabled)
+        {
+            <!-- Preview Modal -->
+            Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Thumbnail.cshtml", website);
+        }
+        
+    </div>
+}

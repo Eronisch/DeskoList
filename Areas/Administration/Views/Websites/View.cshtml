@@ -1,0 +1,191 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Controllers
+@model Topsite.Areas.Administration.Models.Websites.WebsiteViewBundleModel
+
+@{
+    if (Model.IsPartialView)
+    {
+        Layout = null;
+    }
+}
+
+<div id="websiteView">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="@Model.Website.GetBannerUrl()" />
+        </div>
+
+        <div class="col-md-6">
+            @if (Model.Website.HasThumbnail)
+            {
+                <img src="@Model.Website.GetThumbnail()" class="img-responsive" />
+            }
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div id="listInfo" class="col-md-4 margin15">
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Title
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.Title
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Description
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.Description
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Keywords
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.Keywords
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Url
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.Url
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Category
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.CategoryName
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Active
+                </div>
+
+                <div class="col-md-8">
+                    @Html.Raw(Model.Website.Enabled ? "<span class='label label-success'>" + Websites.Enabled + "</span>"
+                        : "<span class='label label-danger'>" + Websites.Disabled + "</span>")
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.DateAdded
+                </div>
+
+                <div class="col-md-8">
+                    @Model.Website.DateAdded.ToString()
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.Sponsored
+                </div>
+
+                <div class="col-md-8">
+                    @(Model.Website.IsSponsored ? Common.Yes : Common.No)
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.ServerIp
+                </div>
+
+                <div class="col-md-8">
+                    @(!string.IsNullOrEmpty(Model.Website.ServerIp) ? Model.Website.ServerIp : Common.NotSet)
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.ServerPort
+                </div>
+
+                <div class="col-md-8">
+                    @(Model.Website.ServerPort.HasValue ? Model.Website.ServerPort.ToString() : Common.NotSet)
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Websites.MonitorCheckedDate
+                </div>
+
+                <div class="col-md-8">
+                    @(Model.Website.MonitorDateChecked.HasValue ? Model.Website.MonitorDateChecked.Value.ToString() : Common.NotSet)
+                </div>
+
+                <div class="col-md-12"><div class="line"></div></div>
+            </div>
+        </div>
+
+        <div id="stats" class="col-md-12 margin15">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>@Websites.StatDate</th>
+                        <th>@Websites.StatUniqueIn</th>
+                        <th>@Websites.StatUniqueOut</th>
+                        <th>@Websites.StatTotalIn</th>
+                        <th>@Websites.StatTotalOut</th>
+                    </tr>
+                </thead>
+                @for (int counterStats = 0; Model.Statistics.In.Count() > counterStats; counterStats++)
+                {
+                    <tr>
+                        <td>@Model.Statistics.In[counterStats].Date.ToString("MMMM")</td>
+                        <td>@Model.Statistics.UniqueIn[counterStats].Amount</td>
+                        <td>@Model.Statistics.UniqueOut[counterStats].Amount</td>
+                        <td>@Model.Statistics.In[counterStats].Amount</td>
+                        <td>@Model.Statistics.Out[counterStats].Amount</td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>

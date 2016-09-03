@@ -1,0 +1,129 @@
+﻿@using Localization.Languages.Admin.Views.Dashboard
+@model Topsite.Areas.Administration.Models.Dashboard.DashboardModel
+
+<div id="dashboard" class="row">
+    <div id="dasboardBoxes" class="clearfix">
+
+        <!-- Users -->
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>
+                        @Model.AmountRegistrationsTotal
+                    </h3>
+                    <p>
+                        @Index.UserRegistrationsTotal
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="@Url.Action("Index", "Accounts")" class="small-box-footer">
+                    @Index.MoreInfo <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Websites -->
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>
+                        @Model.WebsitesTotal
+                    </h3>
+                    <p>
+                        @Index.WebsitesTotal
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-share"></i>
+                </div>
+                <a href="@Url.Action("Index", "Websites")" class="small-box-footer">
+                    @Index.MoreInfo <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Unique In -->
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-orange">
+                <div class="inner">
+                    <h3>
+                        @Model.UniqueInToday
+                    </h3>
+                    <p>
+                        @Index.InToday
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-connection-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unique Out -->
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>
+                        @Model.UniqueOutToday
+                    </h3>
+                    <p>
+                        @Index.OutToday
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-arrow-graph-up-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+        <div class="box box-primary minHeightBox">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-users"></i> @Index.Users</h3>
+            </div>
+            <div id="usersChart"></div>
+            <div class="overlay"></div>
+            <div class="loading-img"></div>
+        </div>
+
+        <div class="box box-success minHeightBox">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-external-link-square"></i> @Index.Websites</h3>
+            </div>
+            <div class="overlay"></div>
+            <div class="loading-img"></div>
+            <div id="websitesChart"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="box box-warning minHeightBox">
+            <div class="box-header">
+                <h3 class="box-title"><i class="fa fa-comments"></i> @Index.News</h3>
+            </div>
+            <div id="news"></div>
+            <div class="overlay"></div>
+            <div class="loading-img"></div>
+        </div>
+       
+    </div>
+</div>
+
+@section Head{
+    <link href="~/Areas/Administration/Content/Css/ionicons/Ionicons.css" rel="stylesheet" />
+    <link href="~/Areas/Administration/Content/Css/morris/morris.css" rel="stylesheet" />
+}
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/raphael/raphael.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/plugins/morris/morris.min.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/Dashboard.js"></script>
+
+    <script>
+        dashBoard.init("@Index.Users", "@Index.Websites");
+    </script>
+}

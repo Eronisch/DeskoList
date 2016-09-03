@@ -1,0 +1,17 @@
+﻿@using Localization.Languages.Views.Partials
+@model Topsite.Models.SearchModel
+
+<div id="search">
+    <div id="search-text">
+        <div itemscope itemtype="http://schema.org/WebSite">
+            <meta itemprop="url" content="@Model.BaseUrl/Search"/>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { itemprop = "potentialAction", itemscope = "", itemtype = "http://schema.org/SearchAction" }))
+            {
+                <meta itemprop="target" content="@Model.BaseUrl/Search?Text={Text}" />
+                <span id="searchText">@Search.SearchText</span>
+                <input type="submit" id="searchIcon" value=""/>
+                @Html.TextBoxFor(m => m.Text, new {id = "search-box", itemprop = "query-input"})
+            }
+        </div>
+    </div>
+</div>

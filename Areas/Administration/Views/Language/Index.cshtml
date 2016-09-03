@@ -1,0 +1,122 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Language
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Language.InstallLanguageModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+<div id="languageIndex" class="nav-tabs-custom">
+    <ul class="nav nav-tabs pull-right">
+        <li class="pull-right"><a id="btnInstall" class="text-muted" title="@Index.InstallOrUpdate"><i class="fa fa-plus"></i></a></li>
+        <li class="pull-left header">@Index.LanguageTitle (@Model.SelectedLanguage)</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>@Index.Name</th>
+                        <th data-hide="phone, tablet">@Index.CultureName</th>
+                        <th data-hide="phone, tablet">@Index.Abbreviation</th>
+                        <th data-hide="phone, tablet">@Common.Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var language in Model.Languages)
+                    {
+                        <tr>
+                            <td><img src="@Url.Content(string.Format("~/Areas/Administration/Content/Img/Flags/{0}", language.FlagName))" alt="@language.Name" /></td>
+                            <td>@language.Name</td>
+                            <td>@language.Culture</td>
+                            <td>@language.Abbreviation</td>
+                            <td>
+                                <input type="button" class="deleteBtn btn btn-xs btn-danger" value="@Common.Delete" />
+
+                                <div class="deleteModal modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">@Index.DeleteTitle @language.Name</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>@Index.ConfirmPageDeleteMessage</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                                                @Html.ActionLink(Index.DeleteBtn, "Delete", "Language", new {id = language.Id}, new { @class = "btn btn-primary" })
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!-- /.tab-pane -->
+
+        @if (Model.Compare)
+        {
+            <div id="compareResult"><img id="loader" src="@Url.Content("~/Areas/Administration/Content/img/ajax-loader.gif")" alt="Loader" /> @Index.Comparing</div>
+        }
+
+    </div><!-- /.tab-content -->
+
+    <div id="installModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               @using (Html.BeginForm("Index", "Language", FormMethod.Post, new { enctype = "multipart/form-data" }))
+               {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@Index.InstallOrUpdate</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>@Index.InstallDescription</p>
+
+                        @Html.TextBoxFor(m=> m.LanguageDll, new {type = "file"})
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="@Index.InstallBtn"/>
+                    </div>
+                }
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</div>
+
+
+@section Footer{
+
+    <script type="text/javascript">
+        $(function () {
+
+            if (window.location.search.toLowerCase() === "?compare=true") {
+                $.get('@Url.Action("CompareLanguage")').done(function (htmlData) {
+                    $('#compareResult').html(htmlData);
+                }).fail(function() {
+                    alert('An error occured, please check the error logs.');
+                });
+            }
+
+            $('#languageIndex .deleteBtn').on('click', function () {
+                $(this).parent().find('.deleteModal').modal('show');
+            });
+
+            $('#languageIndex #btnInstall').on('click', function () {
+                $('#languageIndex #installModal').modal('show');
+            });
+        });
+    </script>
+}

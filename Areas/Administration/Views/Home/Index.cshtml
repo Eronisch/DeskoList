@@ -1,0 +1,69 @@
+﻿@using Localization.Languages.Admin.Views.Home
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@using Web.Messages
+@model Topsite.Models.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@Home.AdminLogin</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    @Styles.Render("~/Areas/Administration/Content/Css")
+
+    <link href="~/Areas/Administration/Content/Css/Login.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/Responsive")
+    <![endif]-->
+
+</head>
+<body>
+
+    @if (TempData[MessageService.ErrorKey] != null)
+    {
+        @Html.GenerateError(Global.Error, TempData[MessageService.ErrorKey].ToString(), false)
+        ;
+    }
+    else if (!ViewData.ModelState.IsValid)
+    {
+        @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), false)
+        ;
+    }
+
+<div class="form-box" id="login-box">
+        <div class="header">@Home.MenuLogin</div>
+        @using (Html.BeginForm())
+        {
+            <div class="body bg-gray">
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = Home.Username })
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.Password, new {@class = "form-control", placeholder = Home.Password})
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                          @Html.CheckBoxFor(m=> m.RememberMe) @Home.RememberMe
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button type="submit" class="btn btn-block">@Home.Login</button>
+            </div>
+        }
+    </div>
+
+    <script src="~/Areas/Administration/Content/Javascript/JQuery.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/Bootstrap.js"></script>
+</body>
+</html>

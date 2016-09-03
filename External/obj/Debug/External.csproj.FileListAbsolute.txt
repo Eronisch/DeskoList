@@ -1,0 +1,5 @@
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\External\bin\Debug\External.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\External\bin\Debug\External.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\External\obj\Debug\External.csprojResolveAssemblyReference.cache
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\External\obj\Debug\External.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\External\obj\Debug\External.pdb

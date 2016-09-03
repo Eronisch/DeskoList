@@ -1,0 +1,127 @@
+﻿@using Localization.Languages.Admin.Views.Themes
+@model Topsite.Areas.Administration.Models.Themes.BundleViewThemesModel
+
+<div id="themes">
+
+    <div class="row">
+        <div class="col-md-12">
+            <button id="installOrUpdate" class="btn btn-default pull-right">@Index.InstallOrRepairTheme</button>
+        </div>
+    </div>
+
+    <ul id="themeList">
+        @foreach (var theme in Model.Themes)
+        {
+            <li>
+                <div class="row">
+                    @if (!string.IsNullOrEmpty(theme.ImagePath))
+                    {
+                        <div class="col-md-3">
+                            <a rel="group" href="@theme.ImagePath"><img src="@theme.ImagePath" alt="@theme.ThemeName"/></a>
+                        </div>
+                    }
+
+                    <div class="@(string.IsNullOrEmpty(theme.ImagePath) ? "col-md-12" : "col-md-9")">
+                        <h3>@theme.ThemeName @if (theme.IsActive)
+                                             {
+                                                 <span id="activeTheme">(@Index.ActiveTheme)</span>
+                                             }</h3>
+                        <p>
+                            @Index.MadeBy: <a href="@theme.AuthorUrl" target="_blank">@theme.Author</a>
+                            <span class="border"></span> @Index.Version: @theme.Version
+                        </p>
+                        <p>@theme.Description</p>
+
+                        <div class="actions">
+                            <ul>
+                                @if (!theme.IsActive)
+                                {
+                                    <li>@Html.ActionLink(Index.Activate, "Activate", new {@id = theme.Id})</li>
+                                }
+
+                                @if (!theme.IsActive)
+                                {
+                                    <li><a class="deleteTheme">@Index.Delete</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="modal fade deleteModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">@Index.DeleteTitle: @theme.ThemeName</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>@Index.DeleteConfirmationWarning</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                                        @Html.ActionLink(Index.Delete, "Uninstall", new { id = theme.Id }, new { @class = "btn btn-primary" })
+                                    </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                </div>
+            </li>
+        }
+    </ul>
+
+    <div id="installThemeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                @using (Html.BeginForm("Install", "Themes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@Index.InstallOrRepairThemeTitle</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div>@Html.LabelFor(m => m.InstallThemeModel.Theme)</div>
+                        @Html.TextBoxFor(m => m.InstallThemeModel.Theme, new { @type = "file" })
+
+                        <div class="row margin15">
+                            <div class="alert alert-warning col-md-11">
+                                <p>@Index.InstallationWarning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                        <button type="submit" class="btn btn-primary">@Index.Install</button>
+                    </div>
+                }
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+
+@section Head{
+    <link href="~/Areas/Administration/Content/Css/fancyBox/fancybox.css" rel="stylesheet" />
+}
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/fancyBox/fancybox.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/fancyBox/fancybox-pack.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#themes li .col-md-3 a").fancybox({
+                arrows : false
+            });
+
+            $('#themes #installOrUpdate').on('click', function() {
+                $('#themes #installThemeModal').modal('show');
+            });
+
+            $('#themes .deleteTheme').on('click', function() {
+                $(this).closest('.row').find('.deleteModal').modal('show');
+            });
+        });
+    </script>
+}

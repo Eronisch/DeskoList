@@ -1,0 +1,110 @@
+﻿@using Localization.Languages.Admin.Views.Plugin
+@using Web.Route
+@model Topsite.Areas.Administration.Models.Plugin.PluginModel
+
+<div id="pluginIndex">
+
+    <div class="clearfix">
+        <input type="button" id="installOrRepair" class="btn btn-default pull-right" value="@Index.InstallOrRepairButton" />
+    </div>
+
+    <div class="margin15">
+        @Html.ActionLink(Index.ListAll, "Index", null, new { @class = RouteProvider.GetAction() == "index" ? "active" : string.Empty }) <span class="amount">(@Model.AmountPlugins)</span> <span class="seperator">|</span>
+        @Html.ActionLink(Index.ListActive, "Active", null, new { @class = RouteProvider.GetAction() == "active" ? "active" : string.Empty }) <span class="amount">(@Model.AmountActivatePlugins)</span> <span class="seperator">|</span>
+        @Html.ActionLink(Index.ListInactive, "Inactive", null, new { @class = RouteProvider.GetAction() == "inactive" ? "active" : string.Empty }) <span class="amount">(@Model.AmountInActivatePlugins)</span>
+    </div>
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>@Index.TablePlugin</th>
+                <th>@Index.TableDescription</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var plugin in Model.Plugins)
+            {
+                <tr>
+                    <td>
+                        @plugin.Name
+
+                        <div class="boxActivation">
+                            @Html.ActionLink(plugin.Enabled ? Index.TableDeactivate : Index.TableActivate, "UpdateStatus", new { id = plugin.Id, status = !plugin.Enabled })
+                        </div>
+                    </td>
+                    <td>
+                        @plugin.Description
+
+                        <div class="boxDescription">
+                            @Index.TableVersion: @plugin.Version | @Index.TableBy: <a href="@plugin.AuthorUrl" target="_blank">@plugin.Author</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="deleteModal modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">@Index.DeleteTitle: @plugin.Name</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        @Index.DeleteDescription
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">@Localization.Languages.Admin.Common.Cancel</button>
+                                        @Html.ActionLink(Localization.Languages.Admin.Common.Delete, "Delete", new {id = plugin.Id}, new {@class = "btn btn-primary"})
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                        <button class="deleteBtn btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div id="installPluginModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                @using (Html.BeginForm("Install", "Plugins", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">@Index.InstallOrRepairPlugin</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div>@Html.LabelFor(m => m.PluginFile)</div>
+                        @Html.TextBoxFor(m => m.PluginFile, new { @type = "file" })
+
+                        <div class="row margin15">
+                            <div class="alert alert-warning col-md-11">
+                                <p>@Index.InstallWarning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@Localization.Languages.Admin.Common.Cancel</button>
+                        <button type="submit" class="btn btn-primary">@Localization.Languages.Admin.Common.Install</button>
+                    </div>
+                }
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+
+@section Footer{
+    <script>
+        $(document).ready(function () {
+            $('#installOrRepair').on('click', function () {
+                $('#installPluginModal').modal('show');
+            });
+
+            $('#pluginIndex .deleteBtn').on('click', function() {
+                $(this).parent().find('.deleteModal').modal('show');
+            });
+        });
+    </script>
+}

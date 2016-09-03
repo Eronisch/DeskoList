@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="deskoTopsiteModelStoreContainer" CdmEntityContainer="deskoTopsiteEntities">
+    <EntitySetMapping Name="ActiveDlls">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.ActiveDlls">
+        <MappingFragment StoreEntitySet="ActiveDlls">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+          <ScalarProperty Name="DllId" ColumnName="DllId" />
+          <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminBreadcrumbs">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.AdminBreadcrumbs">
+        <MappingFragment StoreEntitySet="AdminBreadcrumbs">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+          <ScalarProperty Name="LocalizedDescription" ColumnName="LocalizedDescription" />
+          <ScalarProperty Name="LocalizedTitle" ColumnName="LocalizedTitle" />
+          <ScalarProperty Name="LocalizedActionFriendlyName" ColumnName="LocalizedActionFriendlyName" />
+          <ScalarProperty Name="LocalizedControllerFriendlyName" ColumnName="LocalizedControllerFriendlyName" />
+          <ScalarProperty Name="LocalizationBase" ColumnName="LocalizationBase" />
+          <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminNavigation">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.AdminNavigation">
+        <MappingFragment StoreEntitySet="AdminNavigation">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="LocalizedBase" ColumnName="LocalizedBase" />
+          <ScalarProperty Name="LocalizedName" ColumnName="LocalizedName" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminPages">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.AdminPages">
+        <MappingFragment StoreEntitySet="AdminPages">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dlls">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Dlls">
+        <MappingFragment StoreEntitySet="Dlls">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicPages">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.DynamicPages">
+        <MappingFragment StoreEntitySet="DynamicPages">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELMAH_Error">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.ELMAH_Error">
+        <MappingFragment StoreEntitySet="ELMAH_Error">
+          <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailAccounts">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.EmailAccounts">
+        <MappingFragment StoreEntitySet="EmailAccounts">
+          <ScalarProperty Name="SMTPPort" ColumnName="SMTPPort" />
+          <ScalarProperty Name="SMTPSecure" ColumnName="SMTPSecure" />
+          <ScalarProperty Name="SMTPServer" ColumnName="SMTPServer" />
+          <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+          <ScalarProperty Name="SMTPEmail" ColumnName="SMTPEmail" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplates">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.EmailTemplates">
+        <MappingFragment StoreEntitySet="EmailTemplates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Languages">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Links">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Links">
+        <MappingFragment StoreEntitySet="Links">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginFails">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.LoginFails">
+        <MappingFragment StoreEntitySet="LoginFails">
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginTokens">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.LoginTokens">
+        <MappingFragment StoreEntitySet="LoginTokens">
+          <ScalarProperty Name="Selector" ColumnName="Selector" />
+          <ScalarProperty Name="Expires" ColumnName="Expires" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NavigationPages">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.NavigationPages">
+        <MappingFragment StoreEntitySet="NavigationPages">
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="Information" ColumnName="Information" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenUpdates">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.OpenUpdates">
+        <MappingFragment StoreEntitySet="OpenUpdates">
+          <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PluginOpenUpdates">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.PluginOpenUpdates">
+        <MappingFragment StoreEntitySet="PluginOpenUpdates">
+          <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+          <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+          <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plugins">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Plugins">
+        <MappingFragment StoreEntitySet="Plugins">
+          <ScalarProperty Name="Namespace" ColumnName="Namespace" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PluginUpdateSettings">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.PluginUpdateSettings">
+        <MappingFragment StoreEntitySet="PluginUpdateSettings">
+          <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+          <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+          <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+          <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+          <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Poll">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Poll">
+        <MappingFragment StoreEntitySet="Poll">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PollAnswers">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.PollAnswers">
+        <MappingFragment StoreEntitySet="PollAnswers">
+          <ScalarProperty Name="PollId" ColumnName="PollId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PollVotes">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.PollVotes">
+        <MappingFragment StoreEntitySet="PollVotes">
+          <ScalarProperty Name="PollAnswerId" ColumnName="PollAnswerId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Reports">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+          <ScalarProperty Name="SenderIP" ColumnName="SenderIP" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeoPages">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.SeoPages">
+        <MappingFragment StoreEntitySet="SeoPages">
+          <ScalarProperty Name="ResourceBaseName" ColumnName="ResourceBaseName" />
+          <ScalarProperty Name="ResourceDescriptionName" ColumnName="ResourceDescriptionName" />
+          <ScalarProperty Name="ResourceTitleName" ColumnName="ResourceTitleName" />
+          <ScalarProperty Name="PageIndex" ColumnName="PageIndex" />
+          <ScalarProperty Name="PageController" ColumnName="PageController" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Settings">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="IsAdminVerificationRequired" ColumnName="IsAdminVerificationRequired" />
+          <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="IsResetInAndOutsEnabled" ColumnName="IsResetInAndOutsEnabled" />
+          <ScalarProperty Name="IsEmailingUserStatisticsEnabled" ColumnName="IsEmailingUserStatisticsEnabled" />
+          <ScalarProperty Name="AutoUpdate" ColumnName="AutoUpdate" />
+          <ScalarProperty Name="UpdateWhenIncorrectVersion" ColumnName="UpdateWhenIncorrectVersion" />
+          <ScalarProperty Name="CronUpdate" ColumnName="CronUpdate" />
+          <ScalarProperty Name="CronPingServer" ColumnName="CronPingServer" />
+          <ScalarProperty Name="IsCreateThumbnailsEnabled" ColumnName="IsCreateThumbnailsEnabled" />
+          <ScalarProperty Name="CronWebsiteThumbnail" ColumnName="CronWebsiteThumbnail" />
+          <ScalarProperty Name="RecaptchaSiteKey" ColumnName="RecaptchaSiteKey" />
+          <ScalarProperty Name="RecaptchaSecretKey" ColumnName="RecaptchaSecretKey" />
+          <ScalarProperty Name="CronjobInAndOut" ColumnName="CronjobInAndOut" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="IsPingEnabled" ColumnName="IsPingEnabled" />
+          <ScalarProperty Name="Footer" ColumnName="Footer" />
+          <ScalarProperty Name="CronjobUserStatisticsEmail" ColumnName="CronjobUserStatisticsEmail" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="IsEmailVerificationRequired" ColumnName="IsEmailVerificationRequired" />
+          <ScalarProperty Name="SiteSlogan" ColumnName="SiteSlogan" />
+          <ScalarProperty Name="SiteTitle" ColumnName="SiteTitle" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+          <ScalarProperty Name="ShowAmountWebsites" ColumnName="ShowAmountWebsites" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoftwareUpdateSettings">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.SoftwareUpdateSettings">
+        <MappingFragment StoreEntitySet="SoftwareUpdateSettings">
+          <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+          <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+          <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+          <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+          <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeOpenUpdates">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.ThemeOpenUpdates">
+        <MappingFragment StoreEntitySet="ThemeOpenUpdates">
+          <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+          <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Themes">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Themes">
+        <MappingFragment StoreEntitySet="Themes">
+          <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+          <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeUpdateSettings">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.ThemeUpdateSettings">
+        <MappingFragment StoreEntitySet="ThemeUpdateSettings">
+          <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+          <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+          <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+          <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+          <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="NewEmailVerificationCode" ColumnName="NewEmailVerificationCode" />
+          <ScalarProperty Name="NewEmail" ColumnName="NewEmail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsAdminVerified" ColumnName="IsAdminVerified" />
+          <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="EmailVerificationCode" ColumnName="EmailVerificationCode" />
+          <ScalarProperty Name="BannedEndDate" ColumnName="BannedEndDate" />
+          <ScalarProperty Name="BannedStartDate" ColumnName="BannedStartDate" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteBlackList">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteBlackList">
+        <MappingFragment StoreEntitySet="WebsiteBlackList">
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteIn">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteIn">
+        <MappingFragment StoreEntitySet="WebsiteIn">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Unique" ColumnName="Unique" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteInDaily">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteInDaily">
+        <MappingFragment StoreEntitySet="WebsiteInDaily">
+          <ScalarProperty Name="TotalIn" ColumnName="TotalIn" />
+          <ScalarProperty Name="UniqueIn" ColumnName="UniqueIn" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteOut">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteOut">
+        <MappingFragment StoreEntitySet="WebsiteOut">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Unique" ColumnName="Unique" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteOutDaily">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteOutDaily">
+        <MappingFragment StoreEntitySet="WebsiteOutDaily">
+          <ScalarProperty Name="TotalOut" ColumnName="TotalOut" />
+          <ScalarProperty Name="UniqueOut" ColumnName="UniqueOut" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteRating">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteRating">
+        <MappingFragment StoreEntitySet="WebsiteRating">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Websites">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Websites">
+        <MappingFragment StoreEntitySet="Websites">
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="BannerFileName" ColumnName="BannerFileName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="MonitorCheckedDate" ColumnName="MonitorCheckedDate" />
+          <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+          <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+          <ScalarProperty Name="Sponsored" ColumnName="Sponsored" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="BannerURL" ColumnName="BannerURL" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WidgetOpenUpdates">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetOpenUpdates">
+        <MappingFragment StoreEntitySet="WidgetOpenUpdates">
+          <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+          <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+          <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+          <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Widgets">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.Widgets">
+        <MappingFragment StoreEntitySet="Widgets">
+          <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Namespace" ColumnName="Namespace" />
+          <ScalarProperty Name="StartIndex" ColumnName="StartIndex" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WidgetsTheme">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetsTheme">
+        <MappingFragment StoreEntitySet="WidgetsTheme">
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="ThemeSectionId" ColumnName="ThemeSectionId" />
+          <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WidgetsThemeSection">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetsThemeSection">
+        <MappingFragment StoreEntitySet="WidgetsThemeSection">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WidgetUpdateSettings">
+      <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetUpdateSettings">
+        <MappingFragment StoreEntitySet="WidgetUpdateSettings">
+          <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+          <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+          <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+          <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+          <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

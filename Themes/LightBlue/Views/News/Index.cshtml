@@ -1,0 +1,47 @@
+﻿@using Localization.Languages.Views.News
+@model Core.Models.News.NewsModel
+
+<div class="bar">
+    <div class="topMenu"><h1>@Model.Title</h1></div>
+    <div class="content">
+        <div id="newsInformation">
+            <div id="description">
+                @Model.Description
+            </div>
+            <div id="mainText">
+                @Html.Raw(Model.Information)
+            </div>
+
+            <div class="line"></div>
+
+            <div id="bottom">
+                <div class="row">
+                    <div class="leftRow">
+                        @Index.Author:
+                    </div>
+                    <div class="rightRow">@Model.AuthorName</div>
+                </div>
+                <div class="row">
+                    <div class="leftRow">
+                        @Index.Date:
+                    </div>
+                    <div class="rightRow">@Model.Date.ToShortDateString()</div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div id="socialRight">
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_preferred_1"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                </div>
+                <script type="text/javascript"> var addthis_config = { "data_track_addressbar": false }; </script>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505ed5076fcb4671"></script>
+                <!-- AddThis Button END -->
+            </div>
+        </div>
+    </div>
+</div>

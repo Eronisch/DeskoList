@@ -1,0 +1,41 @@
+﻿@using Localization.Languages.Views.Account
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.EditAccountModel
+
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <h4>@Global.Error</h4>
+        @Html.ValidationSummary()
+    </div>
+}
+
+<div class="bar">
+    <div class="topMenu"><h1>@Edit.MenuName</h1></div>
+    <div class="content">
+        @using (Html.BeginForm("Edit", "Account"))
+        {
+            @Html.AntiForgeryToken()
+
+            <p>@Edit.Email <span class='smallText'>@Edit.EmailVerification</span></p>
+            @Html.TextBoxFor(m => m.Email, new { @class = "longTextBox" })
+            
+            <p>@Edit.OldPassword <span class='smallText'>@Edit.LeaveEmtyPassword</span></p>
+            @Html.PasswordFor(m => m.OldPassword, new { @class = "longTextBox" })
+            
+            <p>@Edit.NewPassword <span class='smallText'>@Edit.LeaveEmtyPassword</span></p>
+            @Html.PasswordFor(m => m.NewPassword, new { @class = "longTextBox" })
+
+            @Html.LabelFor(m => m.QuestionId)
+            @Html.DropDownListFor(m => m.QuestionId, Model.Questions, new { id = "selectmatchtextbox" })
+
+            @Html.LabelFor(m => m.Answer)
+            @Html.TextBoxFor(m => m.Answer, new { @class = "longTextBox" })
+
+            <input type="submit" value="@Edit.UpdateAccount" class="btn btn-default" />
+        }
+
+    </div>
+</div>

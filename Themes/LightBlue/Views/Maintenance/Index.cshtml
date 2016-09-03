@@ -1,0 +1,50 @@
+﻿@using Localization.Languages.Views.Maintenance
+@{
+    Layout = null;
+}
+
+<!-- Maintenance Page by: http://www.blopig.com/blog/2013/03/a-free-sweet-valid-html4-site-maintenance-page/ -->
+<!DOCTYPE>
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>@Index.SeoTitle</title>
+    <style type="text/css">
+        body {
+            padding: 150px;
+            text-align: center;
+        }
+
+        h1 { font-size: 50px; }
+
+        body {
+            color: #333;
+            font: 20px Helvetica, sans-serif;
+        }
+
+        #article {
+            display: block;
+            margin: 0 auto;
+            text-align: left;
+            width: 650px;
+        }
+
+        a {
+            color: #dc8100;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div id="article">
+        <h1>@Index.Title</h1>
+        <div>
+            <p>@Index.Description</p>
+        </div>
+    </div>
+</body>

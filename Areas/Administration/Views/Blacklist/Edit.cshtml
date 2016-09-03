@@ -1,0 +1,29 @@
+﻿@using Localization.Languages.Admin.Views.Blacklist
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Blacklist.EditBlacklistModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.EditTitle</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Domain)
+                @Html.TextBoxFor(m => m.Domain, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="@Edit.UpdateDomain" class="btn btn-default" />
+}

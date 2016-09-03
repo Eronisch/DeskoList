@@ -1,0 +1,58 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Reports
+<table id="reportsTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Index.Id</th>
+            <th>@Index.Reason</th>
+            <th data-hide="phone, tablet">@Index.SenderIp</th>
+            <th data-hide="phone, tablet">@Index.Date</th>
+            <th data-hide="phone, tablet">@Index.ViewWebsite</th>
+            <th data-hide="phone, tablet">@Index.ViewReport</th>
+            <th data-hide="phone, tablet">@Common.Delete</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="deleteReportModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@Index.DeleteReportTitle: <span id="reportReason"></span></h4>
+            </div>
+            <div class="modal-body">
+                <p>@Index.ReportDeleteConfirmation</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Index.CancelButton</button>
+                <a href="" id="urlDelete" class="btn btn-primary">@Index.DeleteReport</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section Footer{
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/fooTable")
+
+    <script type="text/javascript">
+        $(function() {
+            setupFooTable.init('#reportsTable', '/Administration/Reports/GetReports', "@Common.Search", 7);
+
+            $('#reportsTable').on('click', 'a[data-id="deleteReport"]', function (e) {
+
+                var reportTitle = $(this).closest('tr').find('td:eq(1)').text();
+
+                var deleteReportLink = $(this).attr('href');
+
+                $('#deleteReportModal #urlDelete').attr('href', deleteReportLink);
+
+                $('#deleteReportModal #reportReason').text(reportTitle);
+
+                $('#deleteReportModal').modal('show');
+
+                return false;
+            });
+        });
+    </script>
+}

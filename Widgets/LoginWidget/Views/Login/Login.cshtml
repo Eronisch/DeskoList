@@ -1,0 +1,30 @@
+﻿@model Topsite_Login.Models.LoginModel
+
+<div class="bar">
+    <div class="topMenu"><h1>@Topsite_Login.Localization.Login.MenuName</h1></div>
+    <div class="content">
+        <div class="padding10">
+            @using (Html.BeginForm("Login", "Account", new {area = string.Empty}))
+            {
+                @Html.AntiForgeryToken()
+                @Html.LabelFor(m => m.Username, new { @class = "nospace" })
+                @Html.TextBoxFor(m => m.Username)
+
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                
+                <label id="rememberMe">
+                    @Html.CheckBoxFor(m => m.RememberMe) @Topsite_Login.Localization.Login.RememberMe
+                </label>
+                
+                <ul>
+                    <li><small>@Html.ActionLink(Topsite_Login.Localization.Login.ResetPassword, "ResetStep1", "Account",  new {area = string.Empty}, null)</small></li>
+                    <li><small>@Html.ActionLink(Topsite_Login.Localization.Login.RequestUsername, "RequestStep1", "Account", new {area  = string.Empty}, null)</small></li>
+                </ul>
+
+                <input type="submit" value="@Topsite_Login.Localization.Login.LoginSubmit" class="btn btn-default margin10" />
+            }
+            <!-- End Error -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@using Localization.Languages.Admin.Views.Shared
+@using Web.Bootstrap
+@model IEnumerable<Core.Business.Languages.TypeInfo>
+
+@if (!Model.Any())
+{
+    @Html.GenerateSuccess(Localization.Languages.Views.Shared.Global.Success, _CompareLanguage.NoMissingProperties, true)
+}
+else
+{
+    @Html.GenerateWarning(Localization.Languages.Views.Shared.Global.Warning, _CompareLanguage.MissingProperties, true)
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@_CompareLanguage.Resource</th>
+            <th>@_CompareLanguage.Path</th>
+            <th data-hide="phone">@_CompareLanguage.Properties</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var resource in Model)
+        {
+            <tr>
+                <td>@resource.ClassName</td>
+                <td>@resource.RelativePath</td>
+                <td>
+                    @for (int index = 0; index < resource.PropertyNames.Count; index++)
+                    {
+                        @resource.PropertyNames.ToList()[index]if (resource.PropertyNames.Count - index  > 1)  {<text>, </text>}}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

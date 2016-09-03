@@ -1,0 +1,18 @@
+﻿@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@using Web.Messages
+@model bool
+
+@{
+    Layout = null;
+}
+
+@if (TempData[MessageService.ErrorKey] != null)
+{
+    @Html.GenerateError(Global.Error, TempData["Error"].ToString(), Model)
+}
+
+@if (TempData[MessageService.SuccessKey] != null)
+{
+    @Html.GenerateSuccess(Global.Success, TempData["Success"].ToString(), Model)
+}

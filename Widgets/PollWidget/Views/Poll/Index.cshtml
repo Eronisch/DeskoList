@@ -1,0 +1,51 @@
+﻿@model  Topsite_Poll.Models.PollResultModel
+
+    <div class="bar">
+        <div class="topMenu"><h1>@Topsite_Poll.Localization.Poll.ModuleName</h1></div>
+        <div class="content">
+            <div id="poll">
+                <div class="padding10">
+                    @if (Model.PollModel.HasPoll)
+                    {
+                        <h2>@Model.PollModel.Question</h2>
+                        <div class="horizontalLine"></div>
+                        <div id="answers">
+
+                            @if (!Model.PollModel.ShowResult)
+                            {
+                                using (Html.BeginForm("SubmitPoll", "Poll", new {area = Model.AreaName}))
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    foreach (var answer in Model.PollModel.Answers)
+                                    {
+                                        <input type="radio" name="PollModel.Result" value="@answer.AnswerId"/>
+                                        @answer.Answer
+                                        <br/>
+                                    }
+
+                                    <input type="submit" value="@Topsite_Poll.Localization.Poll.SubmitPoll" class="btn"/>
+                                }
+                            }
+                            else
+                            {
+                                foreach (var answer in Model.PollModel.Answers)
+                                {
+                                    <div class="row">
+                                        <div class="column">
+                                            <div class="votebar" style="width: @answer.VotedPercentage%"></div>
+                                        </div>
+                                        <p>@answer.AmountVotes x @answer.Answer</p>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>@Topsite_Poll.Localization.Poll.NoPoll</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

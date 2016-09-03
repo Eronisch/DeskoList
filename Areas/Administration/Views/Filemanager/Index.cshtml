@@ -1,0 +1,30 @@
+﻿@model string
+@section Head{
+    <link href="~/Areas/Administration/Content/Css/jquery-ui-min.css" rel="stylesheet" />
+    <link href="~/Areas/Administration/Content/Css/Filemanager/elfinder-min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Administration/Content/Css/Filemanager/theme.css" rel="stylesheet" type="text/css" />
+}
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/jquery-migrate.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/jquery-ui.js"></script>
+    <script src="~/Areas/Administration/Content/Javascript/Filemanager/elfinder-min.js"></script>
+
+    @if (Model != "en")
+    {
+        <script src="~/Areas/Administration/Content/Javascript/Filemanager/i18n/elfinder.@(Model).js"></script>
+    }
+
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('#fileManager').elfinder({
+                url: '@Url.Content("~/elfinder.connector")',
+                height: 600,
+                lang: "@Model" // Language
+            });
+        });
+    </script>
+
+}
+
+<div id="fileManager"></div>  

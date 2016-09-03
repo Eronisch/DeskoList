@@ -1,0 +1,25 @@
+﻿@using Web.Account
+@model bool
+
+<div class="bar">
+    <div class="topMenu"><h1>@Topsite_Login.Localization.Login.MenuLoggedIn</h1></div>
+    <div class="content">
+        <div class="padding10">
+            <div id="logged">
+                <ul>
+                    <li><span class="white-arrow"></span> @Html.ActionLink(Topsite_Login.Localization.Login.Home, "Index", "Home", new {area = string.Empty}, null)</li>
+                    <li><span class="white-arrow"></span> @Html.ActionLink(Topsite_Login.Localization.Login.Account, "Edit", "Account", new {area = string.Empty}, null)</li>
+                    <li><span class="white-arrow"></span> @Html.ActionLink(Topsite_Login.Localization.Login.Panel, "Index", "Cp", new {area = string.Empty}, null)</li>
+                    <li><span class="white-arrow"></span> @Html.ActionLink(Topsite_Login.Localization.Login.Logout, "Logout", "Account", new {area = string.Empty}, null)</li>
+                </ul>
+
+                @if (Model)
+                {
+                    @Html.ActionLink("Administration panel", "Index", "Administration", null, new {style="margin-top: 10px;display: block;text-decoration: underline;"})
+                }
+
+                <p id="welcome-text">@Topsite_Login.Localization.Login.Welcome @LoginHelper.GetUsername()!</p>
+            </div>
+        </div>
+    </div>
+</div>

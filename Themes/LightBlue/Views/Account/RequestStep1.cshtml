@@ -1,0 +1,29 @@
+﻿@using Localization.Languages.Views.Account
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.RequestModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class='alert alert-danger'>
+        <h4>@Global.Error</h4>
+        @Html.ValidationSummary();
+    </div>
+}
+
+<div class="bar">
+    <div class="topMenu"><h1>@RequestStep1.MenuName</h1></div>
+    <div class="content">
+        <p class="nospace">@RequestStep1.Description</p>
+
+        @using (Html.BeginForm("RequestStep1", "Account"))
+        {
+            @Html.AntiForgeryToken()
+            
+            @Html.LabelFor(m => m.Email, new {@class = "margin10"})
+            @Html.TextBoxFor(m => m.Email)
+
+        <input type="submit" value="@RequestStep1.NextStep" class="btn btn-default" />
+        }
+    </div>
+</div>

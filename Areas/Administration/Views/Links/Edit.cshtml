@@ -1,0 +1,34 @@
+﻿@using Localization.Languages.Admin.Views.Links
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Links.EditLinkModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.EditTitle</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Url)
+                @Html.TextBoxFor(m => m.Url, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="@Edit.UpdateDomain" class="btn btn-default" />
+}

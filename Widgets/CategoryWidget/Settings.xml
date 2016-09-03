@@ -1,0 +1,37 @@
+<Settings>
+
+	<About>
+		<Name>Categories</Name>
+		<Description>Show all the categories users can add their websites to.</Description>
+		<Version>1.0</Version>
+		<Author>Jamie</Author>
+		<AuthorUrl>http://deskolist.com</AuthorUrl>
+	</About>
+
+	<Configuration>
+		<StartController>Categories</StartController>
+		<StartIndex>Index</StartIndex>
+		<Namespace>Topsite_Categories</Namespace>
+		<Image>categories.png</Image>
+	</Configuration>
+
+	<Sql>
+		<Install>
+			<Script Version="1.0" Location="Sql/1.0-install.sql" />	
+		</Install>
+
+		<Uninstall>
+			<Script Version="1.0" Location="Sql/1.0-uninstall.sql" />	
+		</Uninstall>
+	</Sql>
+
+	<Navigation>
+		<Link Controller="CategorySettingsController" Action="Index" LocalizedName = "WidgetSettings" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" Icon = "fa fa-wrench"/> 
+		<Link Controller="CategorySettings2Controller" Action="Index" LocalizedName = "WidgetSettings" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" Icon = "fa fa-wrench"/> 
+	</Navigation>
+
+	<Breadcrumbs>
+		<Crumb Controller = "CategoriesController" Action = "Index" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" LocalizedControllerFriendlyName = "WidgetSettings" LocalizedTitle = "WidgetSettings" LocalizedActionFriendlyName = "WidgetSettings" LocalizedDescription = "WidgetSettings" Icon="fa fa-wrench"></Crumb>
+	</Breadcrumbs>
+
+</Settings>

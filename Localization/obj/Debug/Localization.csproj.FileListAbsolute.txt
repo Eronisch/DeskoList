@@ -1,0 +1,325 @@
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\bin\Debug\Localization.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\bin\Debug\Localization.pdb
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\bin\Debug\nl\Localization.resources.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.csprojResolveAssemblyReference.cache
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Common.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Account.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Categories.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Dashboard.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Elmah.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Home.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Language.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Plugin.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Widgets.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.News.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Pages.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Reports.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Settings.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Shared.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Themes.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Websites.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.ActivateWidgetModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BaseCategoryViewModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BasicPageViewModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.FormDataAnalytics.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.InstallLanguageModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.InstallThemeModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.PluginModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.WidgetInstallModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.WidgetSettings.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BaseViewNewsModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Add.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Dashboard.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.SettingsModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Elmah.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Google.Website.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Home.Home.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Language.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Plugin.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Plugin.Updates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._CompareLanguage.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Languages.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._TabbedUpdates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Themes.Updates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Active.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Add.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Add.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Reports.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Reports.View.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.AvailableUpdates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.DateLastChecked.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.Updates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared.GlobalMessageUpdateAvailable.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared.Layout.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._WidgetsNavigation.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Navigation.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Reports.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Users.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Themes.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.View.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Websites.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Websites.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Updates.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Account.AccountService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Captcha.CaptchaService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Date.Date.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginSettingsService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginInstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginUninstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeInstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetInstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetSettingsService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetUninstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeSettingsService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeUninstallerService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Vote.Vote.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Website.WebsiteService.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Account.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.AutoInstaller.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Category.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Contact.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Shared.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Database.AdminBreadcrumbs.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Database.SeoPages.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Filters.ExceptionAction.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Filters.LoginRequired.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.HtmlHelpers.HtmlLoadMoreConfig.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.RequestStepTwoModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.WebsiteRatingModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.RequestStep2.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.WebsiteList.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Web.Widgets.WidgetHelper.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Widget.WidgetController.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.Login.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.RequestStep1.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.ResetStep1.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.ResetStep2.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Cp.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Install.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Join.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.News.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Page.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Website.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.BasicAccountModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.BasicWebsiteModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.EditAccountModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.EmailModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.InstallModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.JoinUsModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.LoginModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.PollModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.ReportUserModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.RequestModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.ResetModel.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.Shared.Shared.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Category.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Contact.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Error.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Join.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Maintenance.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.News.Index.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Cp_Navigation.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Navigation.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Report.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Search.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Statistics.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Thumbnail.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Website.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.WebsiteRating.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Shared.BasicWebsite.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Shared.Global.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Add.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Api.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Codes.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Edit.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.GetCodes.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Statistics.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.View.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.ViewAll.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Vote.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Home.Home.nl.resources
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.csproj.GenerateResource.Cache
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\nl\Localization.resources.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.dll
+C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\Localization\obj\Debug\Localization.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\bin\Debug\Localization.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\bin\Debug\Localization.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Common.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Account.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Categories.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Dashboard.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Elmah.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Home.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Language.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Plugin.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Widgets.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.News.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Pages.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Reports.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Settings.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Shared.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Themes.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Websites.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.ActivateWidgetModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BaseCategoryViewModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BasicPageViewModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.FormDataAnalytics.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.InstallLanguageModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.InstallThemeModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.PluginModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.WidgetInstallModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.WidgetSettings.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BaseViewNewsModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Categories.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Dashboard.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.EditWebsiteModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.SettingsModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Elmah.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Google.Website.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Home.Home.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Language.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Plugin.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Plugin.Updates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._CompareLanguage.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Languages.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._TabbedUpdates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Themes.Updates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Active.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.News.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Pages.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Reports.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Reports.View.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.AvailableUpdates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.DateLastChecked.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Settings.Updates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared.GlobalMessageUpdateAvailable.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared.Layout.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._WidgetsNavigation.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Navigation.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Reports.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Shared._Users.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Themes.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Users.View.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Websites.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Websites.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Widgets.Updates.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Account.AccountService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Captcha.CaptchaService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Date.Date.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginSettingsService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginInstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Plugin.PluginUninstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeInstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetInstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetSettingsService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Widgets.WidgetUninstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeSettingsService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Themes.ThemeUninstallerService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Vote.Vote.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Business.Website.WebsiteService.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Account.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.AutoInstaller.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Category.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Contact.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Shared.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Database.AdminBreadcrumbs.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Database.SeoPages.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Filters.ExceptionAction.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Filters.LoginRequired.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.HtmlHelpers.HtmlLoadMoreConfig.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.RequestStepTwoModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.WebsiteRatingModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.RequestStep2.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.WebsiteList.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Web.Widgets.WidgetHelper.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Widget.WidgetController.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.Login.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.RequestStep1.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.ResetStep1.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Account.ResetStep2.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Cp.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Install.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Join.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.News.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Page.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Controllers.Website.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.BasicAccountModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.BasicWebsiteModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.EditAccountModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.EmailModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.InstallModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.JoinUsModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.LoginModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.PollModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.ReportUserModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.RequestModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.ResetModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Models.Shared.Shared.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Category.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Contact.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Error.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Join.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Maintenance.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.News.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Cp_Navigation.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Navigation.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Report.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Search.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Statistics.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Thumbnail.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.Website.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Partials.WebsiteRating.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Shared.BasicWebsite.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Shared.Global.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Api.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Codes.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.GetCodes.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Statistics.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.View.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.ViewAll.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Views.Website.Vote.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.csproj.GenerateResource.Cache
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.dll
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.pdb
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.csprojResolveAssemblyReference.cache
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Blacklist.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Blacklist.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.BlacklistModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Blacklist.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Blacklist.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Poll.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Controllers.Links.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.LinkModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.PollAnswerModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Models.PollModel.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Poll.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Poll.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Poll.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Links.Add.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Links.Edit.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Links.Index.resources
+G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\Localization\obj\Debug\Localization.Languages.Admin.Views.Poll.View.resources

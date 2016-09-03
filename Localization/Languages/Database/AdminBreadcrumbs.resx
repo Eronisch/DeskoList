@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountsEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="AccountsEditController" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="AccountsEditDescription" xml:space="preserve">
+    <value>Modify account</value>
+  </data>
+  <data name="AccountsEditTitle" xml:space="preserve">
+    <value>Edit account</value>
+  </data>
+  <data name="AccountsHomeAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="AccountsHomeController" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="AccountsHomeTitle" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="AccountsIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="AccountsViewAction" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="AccountsViewController" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="AccountsViewDescription" xml:space="preserve">
+    <value>User information</value>
+  </data>
+  <data name="AccountsViewTitle" xml:space="preserve">
+    <value>View account</value>
+  </data>
+  <data name="CategoriesAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CategoriesAddController" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CategoriesAddDescription" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="CategoriesAddTitle" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="CategoriesEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CategoriesEditController" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CategoriesEditDescription" xml:space="preserve">
+    <value>Edit category</value>
+  </data>
+  <data name="CategoriesEditTitle" xml:space="preserve">
+    <value>Edit category</value>
+  </data>
+  <data name="CategoriesIndexAction" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CategoriesIndexController" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CategoriesIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="CategoriesIndexTitle" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="DashBoardIndexDescription" xml:space="preserve">
+    <value>Control panel</value>
+  </data>
+  <data name="FileManagerDescription" xml:space="preserve">
+    <value>Filemanager</value>
+  </data>
+  <data name="FileManagerIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="FilemanagerIndexController" xml:space="preserve">
+    <value>File manager</value>
+  </data>
+  <data name="FileManagerIndexTitle" xml:space="preserve">
+    <value>File manager</value>
+  </data>
+  <data name="HomeDashboardAction" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="HomeDashboardController" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="HomeDashboardTitle" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="WidgetsActiveAction" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="WidgetsActiveController" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="WidgetsActiveDescription" xml:space="preserve">
+    <value>Active widgets</value>
+  </data>
+  <data name="WidgetsActiveTitle" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="WidgetsIndexAction" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="WidgetsIndexController" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="WidgetsIndexDescription" xml:space="preserve">
+    <value>Installed widgets</value>
+  </data>
+  <data name="WidgetsIndexTitle" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="NewsAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="NewsAddController" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsAddDescription" xml:space="preserve">
+    <value>Add newsarticle</value>
+  </data>
+  <data name="NewsAddTitle" xml:space="preserve">
+    <value>Add article</value>
+  </data>
+  <data name="NewsEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="NewsEditController" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsEditDescription" xml:space="preserve">
+    <value>Edit newsarticle</value>
+  </data>
+  <data name="NewsEditTitle" xml:space="preserve">
+    <value>Edit article</value>
+  </data>
+  <data name="NewsIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NewsIndexController" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NewsIndexTitle" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="PagesAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="PagesAddController" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="PagesAddDescription" xml:space="preserve">
+    <value>Add page</value>
+  </data>
+  <data name="PagesAddTitle" xml:space="preserve">
+    <value>Add page</value>
+  </data>
+  <data name="PagesEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PagesEditController" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="PagesEditDescription" xml:space="preserve">
+    <value>Edit page</value>
+  </data>
+  <data name="PagesEditTitle" xml:space="preserve">
+    <value>Edit page</value>
+  </data>
+  <data name="PagesIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PagesIndexController" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="PagesIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PagesIndexTitle" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="ReportsIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ReportsIndexController" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ReportsIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ReportsIndexTitle" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ReportsViewAction" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ReportsViewController" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ReportsViewDescription" xml:space="preserve">
+    <value>Report information</value>
+  </data>
+  <data name="ReportsViewTitle" xml:space="preserve">
+    <value>View report</value>
+  </data>
+  <data name="SettingsEditDescription" xml:space="preserve">
+    <value>Modify settings</value>
+  </data>
+  <data name="SettingsUpdates" xml:space="preserve">
+    <value>System updates</value>
+  </data>
+  <data name="SettingsUpdatesAction" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="SettingsUpdatesController" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsUpdatesTitle" xml:space="preserve">
+    <value>System updates</value>
+  </data>
+  <data name="SettingsIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="SettingsIndexController" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsIndexTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ThemesIndexAction" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="ThemesIndexController" xml:space="preserve">
+    <value>Themes</value>
+  </data>
+  <data name="ThemesIndexDescription" xml:space="preserve">
+    <value>Installed themes</value>
+  </data>
+  <data name="ThemesIndexTitle" xml:space="preserve">
+    <value>Themes</value>
+  </data>
+  <data name="WebsitesEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="WebsitesEditController" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesEditDescription" xml:space="preserve">
+    <value>Modify website</value>
+  </data>
+  <data name="WebsitesEditTitle" xml:space="preserve">
+    <value>Modify website</value>
+  </data>
+  <data name="WebsitesIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="WebsitesIndexController" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesIndexDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="WebsitesIndexTitle" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesViewAction" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="WebsitesViewController" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesViewDescription" xml:space="preserve">
+    <value>Website information</value>
+  </data>
+  <data name="WebsitesViewTitle" xml:space="preserve">
+    <value>View website</value>
+  </data>
+  <data name="SettingsIndexDescription" xml:space="preserve">
+    <value>Modify Settings</value>
+  </data>
+  <data name="SettingsUpdatesDescription" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PluginIndexAction" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="PluginIndexController" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginIndexDescription" xml:space="preserve">
+    <value>Manage plugins</value>
+  </data>
+  <data name="PluginIndexTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="ElmahIndexAction" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="ElmahIndexController" xml:space="preserve">
+    <value>Elmah</value>
+  </data>
+  <data name="ElmahIndexDescription" xml:space="preserve">
+    <value>Logged errors</value>
+  </data>
+  <data name="ElmahIndexTitle" xml:space="preserve">
+    <value>Elmah</value>
+  </data>
+  <data name="PluginsActiveAction" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="PluginsActiveController" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsActiveDescription" xml:space="preserve">
+    <value>Active plugins</value>
+  </data>
+  <data name="PluginsActiveTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsInActiveAction" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="PluginsInActiveController" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsInActiveDescription" xml:space="preserve">
+    <value>Inactive plugins</value>
+  </data>
+  <data name="PluginsInActiveTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsIndexAction" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="PluginsIndexController" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsIndexDescription" xml:space="preserve">
+    <value>Installed plugins</value>
+  </data>
+  <data name="PluginsIndexTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginsUpdatesDescription" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="PluginUpdatesAction" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="PluginUpdatesController" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="PluginUpdatesTitle" xml:space="preserve">
+    <value>Plugin updates</value>
+  </data>
+  <data name="ThemeUpdatesAction" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="ThemeUpdatesController" xml:space="preserve">
+    <value>Themes</value>
+  </data>
+  <data name="ThemeUpdatesDescription" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="ThemeUpdatesTitle" xml:space="preserve">
+    <value>Theme updates</value>
+  </data>
+  <data name="WidgetsUpdatesAction" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="WidgetsUpdatesController" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="WidgetsUpdatesDescription" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="WidgetsUpdatesTitle" xml:space="preserve">
+    <value>Widget updates</value>
+  </data>
+  <data name="BlacklistAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="BlacklistAddController" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="BlacklistAddDescription" xml:space="preserve">
+    <value>Add domain</value>
+  </data>
+  <data name="BlacklistAddTitle" xml:space="preserve">
+    <value>Add blacklist domain</value>
+  </data>
+  <data name="BlacklistEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="BlacklistEditController" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="BlacklistEditDescription" xml:space="preserve">
+    <value>Edit domain</value>
+  </data>
+  <data name="BlacklistEditTitle" xml:space="preserve">
+    <value>Edit blacklist domain</value>
+  </data>
+  <data name="BlacklistIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="BlacklistIndexController" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="BlacklistIndexDescription" xml:space="preserve">
+    <value>Blacklisted domains</value>
+  </data>
+  <data name="BlacklistIndexTitle" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="LinksAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="LinksAddController" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LinksAddDescription" xml:space="preserve">
+    <value>Add partner</value>
+  </data>
+  <data name="LinksAddtitle" xml:space="preserve">
+    <value>Add link</value>
+  </data>
+  <data name="LinksEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="LinksEditController" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LinksEditDescription" xml:space="preserve">
+    <value>Edit partner</value>
+  </data>
+  <data name="LinksEditTitle" xml:space="preserve">
+    <value>Edit link</value>
+  </data>
+  <data name="LinksIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="LinksIndexController" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LinksIndexDescription" xml:space="preserve">
+    <value>Partners</value>
+  </data>
+  <data name="LinksIndexTitle" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="PollAddAction" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="PollAddController" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollAddDescription" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="PollAddTitle" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollEditAction" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PollEditController" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollEditDescription" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PollEditTitle" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollIndexAction" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PollIndexController" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollIndexDescription" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="PollIndexTitle" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollViewAction" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="PollViewController" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+  <data name="PollViewDescription" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="PollViewTitle" xml:space="preserve">
+    <value>Poll</value>
+  </data>
+</root>

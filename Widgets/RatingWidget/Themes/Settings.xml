@@ -1,0 +1,27 @@
+<Settings>
+
+	<About>
+		<Name>Rating Module</Name>
+		<Description>Rating module</Description>
+		<Version>1.1</Version>
+		<Author>Jamie</Author>
+		<AuthorUrl>http://deskolist.com</AuthorUrl>
+		<Image>rating.png</Image>
+	</About>
+
+	<Configuration>
+		<StartController>Rating</StartController>
+		<StartIndex>Index</StartIndex>
+		<Namespace>Topsite_Rating</Namespace>
+	</Configuration>
+
+	<Navigation>
+		<Link Controller="RatingWidgetController" Action="Index" LocalizedName = "WidgetSettings" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" Icon = "fa fa-wrench"/> 
+		<Link Controller="RatingWidget2Controller" Action="Index" LocalizedName = "WidgetSettings" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" Icon = "fa fa-wrench"/> 
+	</Navigation>
+
+	<Breadcrumbs>
+		<Crumb Controller = "RatingWidgetController" Action = "Index" LocalizedBase = "Localization.Languages.Admin.Views.Shared._ModulesNavigation" LocalizedTitle = "Test" LocalizedControllerFriendlyName = "WidgetSettings" LocalizedActionFriendlyName = "WidgetSettings" LocalizedDescription = "WidgetSettings" Icon="fa fa-wrench"></Crumb>
+	</Breadcrumbs>
+
+</Settings>

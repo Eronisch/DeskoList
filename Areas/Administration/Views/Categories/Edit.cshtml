@@ -1,0 +1,34 @@
+﻿@using Localization.Languages.Admin.Views.Categories
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Categories.EditCategoryViewModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => Model.CategoryId)
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">@Edit.EditCategory</div>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Keywords)
+                @Html.TextBoxFor(m => m.Keywords, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="@Edit.UpdateCategory" class="btn btn-default" />
+}

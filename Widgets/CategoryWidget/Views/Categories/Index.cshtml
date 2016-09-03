@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Core.Models.Categories.CategoryModel>
+
+<div class="bar">
+    <div class="topMenu"><h1>@Topsite_Categories.Localization.Categories.MenuName</h1></div>
+    <div class="content">
+        <div class="padding10">
+            <ul>
+                @foreach (var category in Model)
+                {
+					<li><span class="arrow"></span>@Html.ActionLink(category.Name, "Index", "Category", new { categoryId = category.CategoryId, link = category.Link}, null)</li>
+                }
+            </ul>
+
+            @if (!Model.Any())
+            {
+                <p>@Topsite_Categories.Localization.Categories.NoCategories</p>
+            }
+        </div>
+    </div>
+</div>

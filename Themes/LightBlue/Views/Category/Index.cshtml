@@ -1,0 +1,7 @@
+﻿@using Topsite.Themes.LightBlue.Helpers
+@model Topsite.Models.BundleCategoryModel
+
+@Html.GetLoadMoreHtmlConfig(Model.WebsitesRanking.StartIndex + Model.WebsitesRanking.Websites.Count(), Model.CategoryId)
+
+@{Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_WebsiteList.cshtml", Model.WebsitesRanking);}
+

@@ -1,0 +1,48 @@
+﻿@using Localization.Languages.Admin.Views.Reports
+@model Database.Entities.Reports
+
+<div id="reportView">
+    <h3 class="no-margin-top">@View.Report</h3>
+
+        <div id="report">
+
+            <div class="row">
+                <div class="col-md-1">
+                    @View.Reason
+                </div>
+                <div class="col-md-11">
+                    @Model.Message
+                </div>
+                <div class="col-md-12">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+                    @View.Sender
+                </div>
+                <div class="col-md-11">
+                    @Model.SenderIP
+                </div>
+                <div class="col-md-12">
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+                    @View.Date
+                </div>
+                <div class="col-md-11">
+                    @Model.Date
+                </div>
+                <div class="col-md-12">
+                    <div class="line no-padding-top"></div>
+                </div>
+            </div>
+        </div>
+
+    <h3>@View.Website</h3>
+    @{Html.RenderAction("View", "Websites", new { id = Model.WebsiteId, isPartialView = true });}
+</div>

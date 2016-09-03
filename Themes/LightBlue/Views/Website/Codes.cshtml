@@ -1,0 +1,36 @@
+﻿@using Core.Business.Websites
+@using Localization.Languages.Views.Website
+@using Web.Account
+@model IEnumerable<Topsite.Models.GetCodeModel>
+
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+<div id="getCode">
+    <div class="bar">
+        <div class="topMenu"><h1>@Codes.MenuName</h1></div>
+        <div class="content">
+            <p class="nospace">@Codes.Description</p>
+
+            <img src="/Themes/LightBlue/Content/images/Joinus.gif" alt="Join us image" class="margin10" />
+
+            <ul class="margin10" id="codeWebsites">
+                @foreach (var record in Model)
+                {
+                    <li>
+                        <a>» @record.Website.Title</a>
+                        <textarea class="codelink"><a href="@WebsiteVoteHelper.GetVotingUrl(LoginHelper.GetUsername(), record.Website.Id.ToString())"><img src="@WebsiteVoteHelper.GetVotingImage("Themes/LightBlue/Content/images/Joinus.gif")" alt="@record.TopsiteTitle - @Codes.AltImageVote" title="@Codes.TitleImageVote @record.Website.Title" border="0" /></a></textarea>
+                    </li>
+                }
+            </ul>
+
+            @if (Model.Any())
+            {
+                <p class="smallBoldText" id="tipsTitle">@Codes.Tips</p>
+                <ul id="tips">
+                    <li>@Codes.Tip1: @WebsiteVoteHelper.GetVotingUrl(LoginHelper.GetUsername(), Codes.requiredWebsiteId, Codes.optionalRedirectUrl)</li>
+                    <li>@Codes.Tip2: @WebsiteVoteHelper.GetApiUrl(Codes.requiredWebsiteId) it will return a false/true/error </li>
+                </ul>
+            }
+        </div>
+    </div>
+</div>

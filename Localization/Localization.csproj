@@ -1,0 +1,1558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3451A52F-21D1-489B-ABCA-7893B5484B67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Localization</RootNamespace>
+    <AssemblyName>Localization</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Languages\Admin\Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Poll.Designer.cs">
+      <DependentUpon>Poll.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Categories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Categories.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Dashboard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Elmah.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Elmah.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Home.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Blacklist.Designer.cs">
+      <DependentUpon>Blacklist.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Links.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Links.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Plugin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plugin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Widgets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Widgets.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\News.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>News.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Pages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Shared.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Themes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Themes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Controllers\Websites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Websites.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\ActivateWidgetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActivateWidgetModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\BaseCategoryViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseCategoryViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\BasicPageViewModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicPageViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\BlacklistModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlacklistModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\FormDataAnalytics.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormDataAnalytics.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\InstallLanguageModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstallLanguageModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\InstallThemeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstallThemeModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\LinkModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LinkModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\PluginModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PluginModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\PollAnswerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PollAnswerModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\PollModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PollModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\WidgetInstallModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetInstallModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\WidgetSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetSettings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Models\BaseViewNewsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseViewNewsModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Poll\Add.Designer.cs">
+      <DependentUpon>Add.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Poll\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Poll\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Links\Add.Designer.cs">
+      <DependentUpon>Add.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Links\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Links\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Blacklist\Add.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Add.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Blacklist\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Blacklist\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Categories\Add.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Add.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Categories\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Categories\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Dashboard\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Poll\View.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>View.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\EditWebsiteModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditWebsiteModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\SettingsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Elmah\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Google\Website.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Website.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Home\Home.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Language\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Plugin\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Plugin\Updates.Designer.cs">
+      <DependentUpon>Updates.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_CompareLanguage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CompareLanguage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_Languages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Languages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_TabbedUpdates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TabbedUpdates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Themes\Updates.Designer.cs">
+      <DependentUpon>Updates.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Widgets\Active.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Active.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Widgets\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\News\Add.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Add.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\News\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\News\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Pages\Add.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Add.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Pages\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Pages\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Reports\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Reports\View.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>View.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Settings\AvailableUpdates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvailableUpdates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Settings\DateLastChecked.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DateLastChecked.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Settings\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Settings\Updates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Updates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\GlobalMessageUpdateAvailable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalMessageUpdateAvailable.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_WidgetsNavigation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_WidgetsNavigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_Navigation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Navigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Reports.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Shared\_Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Users.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Themes\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Users\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Users\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Users\View.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>View.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Websites\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Websites\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Admin\Views\Widgets\Updates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Updates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Account\AccountService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Captcha\CaptchaService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaptchaService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Date\Date.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Date.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Plugin\PluginSettingsService.Designer.cs">
+      <DependentUpon>PluginSettingsService.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Business\Plugin\PluginInstallerService.Designer.cs">
+      <DependentUpon>PluginInstallerService.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Business\Plugin\PluginUninstallerService.Designer.cs">
+      <DependentUpon>PluginUninstallerService.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Business\Themes\ThemeInstallerService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemeInstallerService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Widgets\WidgetInstallerService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetInstallerService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Widgets\WidgetSettingsService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetSettingsService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Widgets\WidgetUninstallerService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetUninstallerService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Themes\ThemeSettingsService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemeSettingsService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Themes\ThemeUninstallerService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemeUninstallerService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Vote\Vote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vote.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Business\Website\WebsiteService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteService.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\AutoInstaller.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoInstaller.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Category.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Category.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Contact.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Shared.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Database\AdminBreadcrumbs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBreadcrumbs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Filters\ExceptionAction.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionAction.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Filters\LoginRequired.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginRequired.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\HtmlHelpers\HtmlLoadMoreConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HtmlLoadMoreConfig.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\RequestStepTwoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestStepTwoModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\WebsiteRatingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteRatingModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Account\RequestStep2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestStep2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\WebsiteList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Web\Widgets\WidgetHelper.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetHelper.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Widget\WidgetController.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WidgetController.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Account\Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Account\Login.Designer.cs">
+      <DependentUpon>Login.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Account\RequestStep1.Designer.cs">
+      <DependentUpon>RequestStep1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Account\ResetStep1.Designer.cs">
+      <DependentUpon>ResetStep1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Account\ResetStep2.Designer.cs">
+      <DependentUpon>ResetStep2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Cp\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Install.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Install.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Join.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Join.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\News.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>News.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Page.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Page.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Controllers\Website.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Website.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\BasicAccountModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicAccountModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\BasicWebsiteModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicWebsiteModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\EditAccountModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditAccountModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\EmailModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\InstallModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstallModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\JoinUsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoinUsModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\LoginModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\PollModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PollModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\ReportUserModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportUserModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\RequestModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\ResetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetModel.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Models\Shared\Shared.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Category\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Contact\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Error\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Join\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Maintenance\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\News\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Cp_Navigation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cp_Navigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Navigation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Navigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Search.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Statistics.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Statistics.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Thumbnail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Thumbnail.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\Website.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Website.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Partials\WebsiteRating.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebsiteRating.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Shared\BasicWebsite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicWebsite.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Shared\Global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Add.Designer.cs">
+      <DependentUpon>Add.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Api.Designer.cs">
+      <DependentUpon>Api.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Codes.Designer.cs">
+      <DependentUpon>Codes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\GetCodes.Designer.cs">
+      <DependentUpon>GetCodes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Statistics.Designer.cs">
+      <DependentUpon>Statistics.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\View.Designer.cs">
+      <DependentUpon>View.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\ViewAll.Designer.cs">
+      <DependentUpon>ViewAll.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\Views\Website\Vote.Designer.cs">
+      <DependentUpon>Vote.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LocalizationService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Languages\Admin\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Poll.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Poll.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Categories.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Categories.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Dashboard.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dashboard.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Elmah.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Elmah.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Language.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Blacklist.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Blacklist.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Links.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Links.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Plugin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Plugin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Widgets.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Widgets.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\News.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>News.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Pages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Reports.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reports.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Settings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Themes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Themes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Controllers\Websites.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Websites.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\ActivateWidgetModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActivateWidgetModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\BaseCategoryViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseCategoryViewModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\BasicPageViewModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BasicPageViewModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\BlacklistModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlacklistModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\FormDataAnalytics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormDataAnalytics.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\InstallLanguageModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InstallLanguageModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\InstallThemeModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InstallThemeModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\LinkModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LinkModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\PluginModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PluginModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\PollAnswerModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PollAnswerModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\PollModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PollModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\WidgetInstallModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetInstallModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\WidgetSettings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetSettings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Models\BaseViewNewsModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseViewNewsModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Poll\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Poll\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Poll\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Links\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Links\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Links\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Blacklist\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Blacklist\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Blacklist\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Categories\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Categories\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Categories\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Dashboard\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Poll\View.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>View.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\EditWebsiteModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditWebsiteModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\SettingsModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettingsModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Elmah\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Google\Website.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Website.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Home\Home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Language\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Plugin\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Plugin\Updates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Updates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_CompareLanguage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_CompareLanguage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_Languages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Languages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_TabbedUpdates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_TabbedUpdates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Themes\Updates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Updates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Widgets\Active.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Active.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Widgets\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\News\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\News\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\News\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Pages\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Pages\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Pages\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Reports\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Reports\View.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>View.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Settings\AvailableUpdates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AvailableUpdates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Settings\DateLastChecked.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DateLastChecked.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Settings\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Settings\Updates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Updates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\GlobalMessageUpdateAvailable.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalMessageUpdateAvailable.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_WidgetsNavigation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_WidgetsNavigation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_Navigation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Navigation.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_Reports.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Reports.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Shared\_Users.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Users.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Themes\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Users\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Users\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Users\View.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>View.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Websites\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Websites\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Admin\Views\Widgets\Updates.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Updates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Account\AccountService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Captcha\CaptchaService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CaptchaService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Date\Date.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Date.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Plugin\PluginSettingsService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PluginSettingsService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Plugin\PluginInstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PluginInstallerService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Plugin\PluginUninstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PluginUninstallerService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Themes\ThemeInstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThemeInstallerService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Widgets\WidgetInstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetInstallerService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Widgets\WidgetSettingsService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetSettingsService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Widgets\WidgetUninstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetUninstallerService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Themes\ThemeSettingsService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThemeSettingsService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Themes\ThemeUninstallerService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ThemeUninstallerService.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Vote\Vote.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Vote.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Business\Website\WebsiteService.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebsiteService.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\AutoInstaller.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AutoInstaller.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Category.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Contact.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contact.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Database\AdminBreadcrumbs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminBreadcrumbs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Database\SeoPages.resx" />
+    <EmbeddedResource Include="Languages\Filters\ExceptionAction.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionAction.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Filters\LoginRequired.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginRequired.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\HtmlHelpers\HtmlLoadMoreConfig.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HtmlLoadMoreConfig.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\RequestStepTwoModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequestStepTwoModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\WebsiteRatingModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebsiteRatingModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\RequestStep2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequestStep2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\WebsiteList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebsiteList.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Web\Widgets\WidgetHelper.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetHelper.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Widget\WidgetController.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WidgetController.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\RequestStep1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequestStep1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\ResetStep1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResetStep1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Account\ResetStep2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResetStep2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Cp\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Install.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Install.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Join.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Join.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\News.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>News.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Page.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Page.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Controllers\Website.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Website.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\BasicAccountModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BasicAccountModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\BasicWebsiteModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BasicWebsiteModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\EditAccountModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditAccountModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\EmailModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\InstallModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InstallModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\JoinUsModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>JoinUsModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\LoginModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\PollModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PollModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\ReportUserModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportUserModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\RequestModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RequestModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\ResetModel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResetModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Models\Shared\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Category\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Contact\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Error\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Join\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Maintenance\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\News\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Cp_Navigation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cp_Navigation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Navigation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Navigation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Report.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Report.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Search.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Search.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Statistics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Statistics.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Thumbnail.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Thumbnail.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\Website.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Website.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Partials\WebsiteRating.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebsiteRating.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Shared\BasicWebsite.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BasicWebsite.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Shared\Global.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Add.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Add.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Api.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Api.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Codes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Codes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\GetCodes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GetCodes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Statistics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Statistics.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\View.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>View.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\ViewAll.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ViewAll.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Views\Website\Vote.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Vote.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

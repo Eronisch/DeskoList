@@ -1,0 +1,23 @@
+﻿@model Topsite_Statistics.Models.StatisticsModel
+
+@{
+    Layout = null;
+}
+
+<div class="bar">
+    <div class="topMenu"><h1>@Model.ModuleName</h1></div>
+    <div class="content">
+        <div id="statistics">
+            <div class="padding10">
+                <div class="leftRow"><span class="white-arrow"></span>@Localization.Languages.Views.Partials.Statistics.Registerd:</div>
+                <div class="rightRow">@Model.UsersRegisterd</div>
+                <div class="leftRow"><span class="white-arrow"></span>@Localization.Languages.Views.Partials.Statistics.Active:</div>
+                <div class="rightRow">@Model.UsersActive</div>
+                <div class="leftRow"><span class="white-arrow"></span>@Localization.Languages.Views.Partials.Statistics.Websites:</div>
+                <div class="rightRow">@Model.Websites</div>
+                <div class="leftRow"><span class="white-arrow"></span>@Localization.Languages.Views.Partials.Statistics.Version:</div>
+                <div class="rightRow">@Model.Version</div>
+            </div>
+        </div>
+    </div>
+</div>

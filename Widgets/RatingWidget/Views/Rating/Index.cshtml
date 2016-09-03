@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Topsite_Rating.Models.RatingModel>
+
+<div class="bar">
+    <div class="topMenu"><h1>@Topsite_Rating.Localization.Rating.MenuName</h1></div>
+    <div class="content">
+        <div id="websiteLatestRatings">
+            <div class="padding10">
+                @if (Model.Any())
+                {
+                    <ul>
+                        @foreach (var rating in Model)
+                        {
+                            <li>
+                                <p>@rating.ServerName</p>
+                                <img src="/Themes/LightBlue/Content/images/rating/@rating.Rating%20_Star-Rating.png" alt="@rating.Rating @Localization.Languages.Views.Partials.WebsiteRating.StarRating" title="@rating.Rating @Localization.Languages.Views.Partials.WebsiteRating.StarRating">
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>@Topsite_Rating.Localization.Rating.NoRatings</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

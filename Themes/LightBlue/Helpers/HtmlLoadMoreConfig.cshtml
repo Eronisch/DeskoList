@@ -1,0 +1,17 @@
+﻿@* Generator : MvcHelper *@
+
+@*@helper GetLoadMoreHtmlConfig(this System.Web.Mvc.HtmlHelper htmlHelper, int startIndex, int? categoryId = null, string searchText = null)
+    {
+        <input type="hidden" id="categoryID" value="@categoryId" />
+        <input type="hidden" id="page" value="1" />
+        <input type="hidden" id="searchText" value="@searchText" />
+        <input type="hidden" id="startIndex" value="@startIndex" />
+    }
+
+    @helper DisplayNoResultsFoundAlert(this System.Web.Mvc.HtmlHelper htmlHelper)
+    {
+        <div class='alert alert-info'>
+            <h3>@Localization.Languages.Views.Shared.Global.Info</h3>
+            <p>@Localization.Languages.HtmlHelpers.HtmlLoadMoreConfig.NoWebsites</p>
+        </div>
+    }*@

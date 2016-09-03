@@ -1,0 +1,211 @@
+﻿@using System.Globalization
+@using Localization.Languages.Admin.Views.Users
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@using Web.jQuery
+@model Topsite.Areas.Administration.Models.Account.EditAccountAdminModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.AccountId)
+
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs pull-right">
+            
+            @if (!Model.IsEmailVerified())
+            {
+                <li id="tabActivateEmail"><a>Activate email</a></li>
+            }
+
+            @if (!Model.IsAdminVerified())
+            {
+                <li><a id="tabAcceptAdminVerification">Activate admin</a></li>
+            }
+            
+            @if (Model.IsBanned())
+            {
+                <li id="tabUnBanUser"><a>Unban</a></li>
+            }
+            else
+            {
+                <li id="tabBanUser"><a>Ban</a></li>
+            }
+
+            <li class="pull-left header"><i class="fa fa-th"></i> @Edit.Info</li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_1-1">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.NewPassword)
+                    @Html.TextBoxFor(m => m.NewPassword, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.QuestionId)
+                    @Html.DropDownListFor(m => m.QuestionId, Model.Questions, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Answer)
+                    @Html.TextBoxFor(m => m.Answer, new { @class = "form-control" })
+                </div>
+            </div><!-- /.tab-pane -->
+        </div><!-- /.tab-content -->
+    </div>
+
+    <input type="submit" value="@Edit.UpdateUser" class="btn btn-default" />
+}
+
+<div id="banUserModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("Ban", "Accounts"))
+            {
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@Edit.BanUserTitle</h4>
+                </div>
+                <div class="modal-body">
+
+                    @Html.HiddenFor(m => m.AccountBanModel.UserId)
+
+                    <div id="endDate" class="form-group">
+                        @Html.LabelFor(m => m.AccountBanModel.EndDate)
+                        @Html.TextBoxFor(m => m.AccountBanModel.EndDate, new {@class = "datepicker form-control"})
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.AccountBanModel.IsPermanent)
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.AccountBanModel.IsPermanent, new {id = "cbIsPermanent"})
+                                @Edit.BanPermanentlyCheckbox
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Edit.Cancel</button>
+                    <button type="submit" class="btn btn-primary">@Edit.BanUserButton</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="activateAdminVerificationModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("ActivateAdmin", "Accounts"))
+            {
+                @Html.HiddenFor(m => m.AccountId)
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@Edit.AdminVerificationTitle</h4>
+                </div>
+                <div class="modal-body">
+                    <p>@Edit.AdminVerificationDescription</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Edit.Cancel</button>
+                    <button type="submit" class="btn btn-primary">@Edit.Accept</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="unbanUserModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("UnBan", "Accounts"))
+            {
+                @Html.HiddenFor(m=> m.AccountId)
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@Edit.UnbanUserTitle</h4>
+                </div>
+                <div class="modal-body">
+                    <p>@Edit.UnbanUserDescription</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Edit.Cancel</button>
+                    <button type="submit" class="btn btn-primary">@Edit.Accept</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="activateEmailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("ActivateEmail", "Accounts"))
+            {
+                @Html.HiddenFor(m => m.AccountId)
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@Edit.ActivateEmailTitle</h4>
+                </div>
+                <div class="modal-body">
+                    <p>@Edit.ActivateEmailDescription</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Edit.Cancel</button>
+                    <button type="submit" class="btn btn-primary">@Edit.Accept</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Head{
+    <link href="~/Areas/Administration/Content/Css/datepicker/datepicker3.css" rel="stylesheet" />
+}
+
+@section Footer
+{
+    <script src="~/Areas/Administration/Content/Javascript/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#tabBanUser').on('click', function () {
+                $('#banUserModal').modal('show');
+            });
+
+            $('#tabUnBanUser').on('click', function () {
+                $('#unbanUserModal').modal('show');
+            });
+
+            $('#tabActivateEmail').on('click', function() {
+                $('#activateEmailModal').modal('show');
+            });
+
+            $('#tabAcceptAdminVerification').on('click', function () {
+                $('#activateAdminVerificationModal').modal('show');
+            });
+
+            $(".datepicker").datepicker({
+                format: "@Html.ConvertDateFormat(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern)"
+            });
+
+            $('#banUserModal #cbIsPermanent').on('ifChanged', function () {
+                $('#banUserModal #endDate').slideToggle();
+            });
+        });
+    </script>
+}

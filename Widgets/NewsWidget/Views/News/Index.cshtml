@@ -1,0 +1,23 @@
+﻿@using Core.Business.Url
+@using Topsite_News.Localization
+@model IEnumerable<Core.Models.News.NewsModel>
+
+<div class="bar">
+    <div class="topMenu"><h1>@News.MenuName</h1></div>
+    <div class="content">
+        <div id="news">
+            <div class="padding10">
+                @foreach (var newsArticle in Model)
+                {
+                    <div class="leftRow"><span class="arrow"></span>@Html.ActionLink(newsArticle.Subject, "Index", new { id = newsArticle.Id, title = UrlHelpers.GetCleanUrl(newsArticle.Title), area = string.Empty})</div>
+                    <div class="rightRow">@newsArticle.Date.ToShortDateString()</div>
+                }
+
+                @if (!Model.Any())
+                {
+                    <p>@News.NoArticles</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

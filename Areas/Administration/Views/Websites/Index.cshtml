@@ -1,0 +1,63 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Websites
+<table id="websitesTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th data-hide="phone">@Index.Id</th>
+            <th data-hide="phone">@Index.Url</th>
+            <th data-hide="phone">@Index.Date</th>
+            <th data-hide="phone, tablet">@Common.View</th>
+            <th data-hide="phone, tablet">@Common.Edit</th>
+            <th data-hide="phone, tablet">@Common.Delete</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="deleteWebsiteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@Index.Delete_Website: <span id="websiteTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <p>@Index.ConfirmDeleteMessage</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Index.CancelButton</button>
+                <a href="" id="urlDelete" class="btn btn-primary">@Index.DeleteButton</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section footer{
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/fooTable")
+
+    <script type="text/javascript">
+        $(function() {
+            setupFooTable.init('#websitesTable', '/Administration/Websites/GetWebsites', "@Common.Search", 7);
+
+            $('#websitesTable').on('click', 'a[data-id="deleteLink"]', function (e) {
+
+                var link = $(this).attr('href');
+
+                $('#urlDelete').attr('href', link);
+
+                $.ajax({
+                    url: '/Administration/Websites/GetWebsiteTitle',
+                    data: {
+                        id: link.substr(link.lastIndexOf('/') + 1)
+                    }
+                }).done(function (websiteTitle) {
+                    $('#websiteTitle').text(websiteTitle);
+                    $('#deleteWebsiteModal').modal('show');
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+}

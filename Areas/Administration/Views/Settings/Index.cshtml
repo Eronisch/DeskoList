@@ -1,0 +1,248 @@
+﻿@using Localization.Languages.Admin.Views.Settings
+@using Localization.Languages.Views.Shared
+@using Web.Bootstrap
+@model Topsite.Models.SettingsModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    @Html.GenerateError(Global.Error, Html.ValidationSummary().ToHtmlString(), displayIcon: true)
+}
+
+<div id="settings" class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#general" data-toggle="tab">@Index.GeneralTab</a></li>
+        <li class=""><a href="#cronjobs" data-toggle="tab">@Index.CronjobsTab</a></li>
+        <li class=""><a href="#recaptcha" data-toggle="tab">@Index.RecaptchaTab</a></li>
+        <li class=""><a href="#theme" data-toggle="tab">@Index.ThemeTab</a></li>
+    </ul>
+
+    @using (Html.BeginForm())
+    {
+        <div class="tab-content">
+            <div class="tab-pane active" id="general">
+                <div class="col-md-12 margin15">
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SiteTitle)
+                        @Html.TextBoxFor(m => m.SiteTitle, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Title)
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SiteSlogan)
+                        @Html.TextBoxFor(m => m.SiteSlogan, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Description)
+                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Keywords)
+                        @Html.TextBoxFor(m => m.Keywords, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Url)
+                        @Html.TextBoxFor(m => m.Url, new {@class = "form-control"})
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsUpdateWhenIncorrectVersionEnabled)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsUpdateWhenIncorrectVersionEnabled)
+                            <span>
+                                @Index.UpdateWhenIncorrectVersionDescription
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LanguageId)
+                        @Html.DropDownListFor(m => m.LanguageId, Model.Languages, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Timezone)
+                        @Html.DropDownListFor(m => m.Timezone, Model.Timezones, new {@class = "form-control"})
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ShowAmountWebsites)
+                        @Html.HiddenFor(m => m.ShowAmountWebsites, new { Value = "" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsMaintenance)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsMaintenance)
+                            <span>
+                                @Index.Maintenance
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.EmailVerification)
+                        <label>
+                            @Html.CheckBoxFor(m => m.EmailVerification)
+                            <span>
+                                @Index.EmailVerification
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsAdminVerificationRequired)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsAdminVerificationRequired)
+                            <span>
+                                @Index.AdminVerification
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="cronjobs">
+                <div class="col-md-12 margin15">
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsEmailingUserStatisticsEnabled)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsEmailingUserStatisticsEnabled)
+                            <span>
+                                @Index.EmailUserWebsiteStatisticsDescription
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CronjobUserStatisticsEmail)
+                        @Html.TextBoxFor(m => m.CronjobUserStatisticsEmail, new { @class = "form-control" })
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group">
+                    @Html.LabelFor(m => m.IsResetInAndOutsEnabled)
+                    <label>
+                        @Html.CheckBoxFor(m => m.IsResetInAndOutsEnabled)
+                        <span>
+                            @Index.ResetInAndOutsDescription
+                        </span>
+                    </label>
+                </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CronjobInAndOut)
+                        @Html.TextBoxFor(m => m.CronjobInAndOut, new {@class = "form-control"})
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsCreatingWebsiteThumbnailsEnabled)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsCreatingWebsiteThumbnailsEnabled)
+                            <span>
+                                @Index.CreateThumbnails
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CronWebsiteThumbnail)
+                        @Html.TextBoxFor(m => m.CronWebsiteThumbnail, new { @class = "form-control" })
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.IsMonitorEnabled)
+                        <label>
+                            @Html.CheckBoxFor(m => m.IsMonitorEnabled)
+                            <span>
+                                @Index.MonitorWebsites
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CronMonitorServer)
+                        @Html.TextBoxFor(m => m.CronMonitorServer, new {@class = "form-control"})
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.AutoUpdate)
+                        <label>
+                            @Html.CheckBoxFor(m => m.AutoUpdate)
+                            <span>
+                                @Index.AutoUpdateDescription
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CronUpdate)
+                        @Html.TextBoxFor(m => m.CronUpdate, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="recaptcha">
+                <div class="col-md-12 margin15">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RecaptchaSecretKey)
+                        @Html.TextBoxFor(m => m.RecaptchaSecretKey, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RecaptchaSiteKey)
+                        @Html.TextBoxFor(m => m.RecaptchaSiteKey, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="theme">
+                <div class="col-md-12 margin15">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ThemeId)
+                        @Html.DropDownListFor(m => m.ThemeId, Model.Themes, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="@Index.UpdateSettings" />
+            </div>
+        </div>
+    }
+</div>
+
+@section Head{
+    <!-- Ion Slider -->
+    <link href="~/Areas/Administration/Content/css/ionslider/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <!-- ion slider Nice -->
+    <link href="~/Areas/Administration/Content/Css/ionslider/ion.rangeSlider.skinNice.css" rel="stylesheet" type="text/css" />
+}
+
+@section footer{
+    <script src="~/Areas/Administration/Content/Javascript/plugins/ionslider/ion.rangeSlider.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#ShowAmountWebsites").ionRangeSlider({
+                min: 1,
+                max: 500,
+                type: 'single',
+                step: 5,
+                prettify: false,
+                hasGrid: true,
+                from : @Model.ShowAmountWebsites
+                });
+        });
+    </script>
+}

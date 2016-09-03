@@ -1,0 +1,69 @@
+﻿@using Web.Breadcrumbs
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@Html.GetBreadCrumbsTitle() | @Localization.Languages.Admin.Views.Shared.Layout.Admin</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+    @RenderSection("Head", false)
+
+    <link rel="icon" type="image/png" href="~/Areas/Administration/Content/Img/favicon.png" />
+
+    @Styles.Render("~/Areas/Administration/Content/Css")
+
+    <!--[if lt IE 9]>
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/Responsive")
+    <![endif]-->
+
+</head>
+<body class="skin-blue">
+    <header class="header">
+        <a href="@Url.Action("Index", "Dashboard")" class="logo">
+            @Localization.Languages.Admin.Views.Shared.Layout.Admin
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    @{Html.RenderAction("GetUnverifiedUsers", "Shared");}
+                    @{Html.RenderAction("GetUnsolvedReports", "Shared");}
+                    @{Html.RenderPartial("~/Areas/Administration/Views/Shared/_Account.cshtml");} 
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="left-side sidebar-offcanvas">
+            @{Html.RenderPartial("~/Areas/Administration/Views/Shared/_Navigation.cshtml");}
+        </aside>
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">
+            @{Html.RenderPartial("~/Areas/Administration/Views/Shared/_Breadcrumbs.cshtml");}
+
+            <!-- Main content -->
+            <section class="content">
+
+                @{Html.RenderPartial("~/Areas/Administration/Views/Shared/_Messages.cshtml", true);}
+
+                @{Html.RenderAction("GlobalMessageUpdateAvailable", "Settings");}
+
+                @RenderBody()
+
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript")
+
+    @RenderSection("Footer", false)
+</body>
+</html>

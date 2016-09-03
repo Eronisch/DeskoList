@@ -1,0 +1,94 @@
+﻿body {
+    padding-bottom: 51px;
+    font-size: 13px;
+}
+
+#mainContent {
+    margin-top: 65px;
+}
+
+    #mainContent h3, #mainContent h4, #mainContent h2, #mainContent h1 {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    #mainContent input[type=text], #mainContent input[type=password], #mainContent textarea, #mainContent select {
+        width: 100%;
+    }
+
+    #mainContent .form-control {
+        padding: 4px 6px;
+        height: 31px;
+    }
+
+    #mainContent h5 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #CBCBCB;
+    }
+
+    #mainContent form > div > p {
+        padding-bottom: 10px;
+    }
+
+    #mainContent h5:first-of-type {
+        margin-top: 0;
+    }
+
+    #mainContent .alert ul {
+        margin-top: 10px;
+        padding-left: 15px;
+    }
+
+    #mainContent form > div {
+        display: none;
+    }
+
+    #mainContent #databaseForm {
+        display: block;
+    }
+
+    #mainContent .col-md-10 > p {
+        padding-top: 2px;
+    }
+
+    #mainContent .btn + .btn {
+        margin-right: 10px;
+    }
+
+    #mainContent #alertInfo a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    #mainContent #alertInfo a:hover {
+        text-decoration: none;
+    }
+
+    #mainContent .smallAlert {
+          display: none;
+          padding: 5px 5px 7px 5px;
+    }
+
+    #mainContent .smallAlert .errorIcon, #mainContent .smallAlert .successIcon {
+        position: relative;
+        top:4px;
+        margin-right: 2px;
+    }
+
+    #mainContent .successIcon {
+        background-image: url(../Images/accept.png);
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+
+    #mainContent .errorIcon {
+        background-image: url(../Images/delete.png);
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+
+    #mainContent #cronjobsForm a {
+        font-size: 11px;
+    }

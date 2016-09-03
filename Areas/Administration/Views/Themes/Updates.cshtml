@@ -1,0 +1,74 @@
+﻿@using Localization.Languages.Admin.Views.Themes
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Settings.SettingsUpdateModel
+
+<div id="updates">
+
+    <div id="alertHolder">
+        @if (Model.UpdatesAvailable)
+        {
+            @Html.GenerateInfo(Model.SingleUpdateAvailable ? Updates.SingleUpdateAvailableTitle : Updates.MultipleUpdatesAvailableTitle, Model.SingleUpdateAvailable ? Localization.Languages.Admin.Views.Widgets.Updates.SingleNotLatestVersionDescription : Localization.Languages.Admin.Views.Widgets.Updates.MultipleNotLatestVersionDescription, displayIcon: true, hasCloseIcon: false)
+        }
+        else
+        {
+            @Html.GenerateSuccess(Updates.NoUpdatesAvailableTitle, Updates.NoUpdatesAvailableDescription, displayIcon: true, hasCloseIcon: false)
+        }
+    </div>
+
+    <div class="clearfix">
+        <button id="installUpdates" class="btn btn-default btn-sm pull-right">@Updates.InstallUpdates</button>
+    </div>
+
+    <h3>@Updates.ThemeUpdates</h3>
+
+    <p id="dateCheckedForUpdates">
+        @{Html.RenderPartial("_DateLastChecked", Model.LastCheckedForUpdates);}
+    </p>
+
+    <h3>@Updates.AvailableUpdates</h3>
+
+    <div id="themeUpdates">
+        @{ Html.RenderAction("GetAvailableSystemUpdates"); }
+    </div>
+
+</div>
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/SettingUpdates.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            settingsUpdater({
+                AlertUpToDateHtml: "@Html.GenerateSuccess(Updates.NoUpdatesAvailableTitle, Updates.NoUpdatesAvailableDescription, displayIcon: true, hasCloseIcon: false)",
+                AlertMultipleUpdatesInstalledHtml: "@Html.GenerateSuccess(Updates.MultipleUpdateInstalledTitle, Updates.MultipleUpdateInstalledDescription, displayIcon: true, hasCloseIcon: false)",
+                AlertSingleUpdateInstalledHtml: "@Html.GenerateSuccess(Updates.SingleUpdateInstalledTitle, Updates.SingleUpdateInstalledDescription, displayIcon: true, hasCloseIcon: false)",
+                AlertMultipleUpdatesAvailableHtml: "@Html.GenerateInfo(Updates.MultipleUpdatesAvailableTitle, Updates.MultipleNotLatestVersionDescription, displayIcon: true, hasCloseIcon: false)",
+                AlertSingleUpdateAvailableHtml: "@Html.GenerateInfo(Updates.SingleUpdateAvailableTitle, Updates.SingleNotLatestVersionDescription, displayIcon: true, hasCloseIcon: false)",
+                AlertUpdatingFailedHtml: "@Html.GenerateError(Updates.UpdatingFailedTitle, Updates.UpdatingFailedDescription, displayIcon: true, hasCloseIcon: false)",
+                CheckingForUpdatesText: "@Updates.CheckingForUpdates",
+                DownloadingUpdatesText: "@Updates.DownloadingUpdates",
+                InstallingUpdatesText: "@Updates.InstallingUpdatesButton",
+                InstallUpdatesText: "@Updates.InstallUpdates",
+                UpdateStatus: "@Model.StatusUpdates",
+                IsChecking: "@Model.IsChecking",
+                IsDownloading: "@Model.IsDownloading",
+                IsInstalling: "@Model.IsInstalling",
+                IsInstallingLink: "/Administration/Themes/IsInstallingSoftware",
+                IsDownloadingLink: "/Administration/Themes/IsDownloadingSoftware",
+                IsCheckingLink: "/Administration/Themes/IsCheckingSoftware",
+                GetDateCheckedLink: "/Administration/Themes/GetDateChecked",
+                GetAvailableUpdatesStatusLink: "/Administration/Themes/GetUpdateAvailableStatus",
+                GetAvailableUpdatesLink: "/Administration/Themes/GetAvailableSystemUpdates",
+                GetDownloadProgressLink: "/Administration/Themes/GetDownloadProgress",
+                InstallUpdatesLink: "/Administration/Themes/InstallUpdates",
+                UpdatingStatusLink: "/Administration/Themes/GetUpdatingStatus",
+                IsUpdatedSuccessfullyLink: "/Administration/Themes/WasUpdatingSuccess",
+                AvailableUpdatesContainer: "#themeUpdates",
+                InstallButton: "#installUpdates",
+                DateCheckedContainer: "#dateCheckedForUpdates",
+                AlertContainer: "#alertHolder",
+                IsThirdParty: true
+            });
+        });
+    </script>
+}

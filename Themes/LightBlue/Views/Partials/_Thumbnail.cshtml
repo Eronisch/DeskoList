@@ -1,0 +1,26 @@
+﻿@using Localization.Languages.Views.Partials
+@model Core.Models.Websites.WebsiteModel
+
+<div id="previewModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@Thumbnail.Close</span></button>
+                <h4 class="modal-title">@Thumbnail.ThumbnailTitle: @Model.Title</h4>
+            </div>
+                <div class="modal-body">
+                    @if (Model.HasThumbnail)
+                    {
+                        <img src="@string.Format("/Thumbnails/{0}/{1}", Model.Username, Model.Thumbnail)" alt="@Model.Thumbnail"/>
+                    }
+                    else
+                    {
+                        <p>@Thumbnail.NoThumbnail</p>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Thumbnail.Cancel</button>
+                </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+@using Localization.Languages.Admin.Views.Shared
+@model Topsite.Areas.Administration.Models.Account.BundleUnverifiedUsersModel
+
+<li class="dropdown messages-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-users"></i>
+        <span class="label label-success">@Model.AmountUnverifiedUsers</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li class="header">@string.Format(_Users.MessageUnread, Model.AmountUnverifiedUsers)</li>
+        @if (Model.UnverifiedUsers.Any())
+        {
+            <li>
+                <ul class="menu">
+                    @foreach (var unverifiedUser in Model.UnverifiedUsers)
+                    {
+                        <li>
+                            <a href="@Url.Action("View", "Accounts", new {id = unverifiedUser.UserId})">
+                                <h4>
+                                    @unverifiedUser.Username
+                                    <small><i class="fa fa-clock-o"></i> @unverifiedUser.TimeAgo</small>
+                                </h4>
+                                <p>@unverifiedUser.WebsiteTitle</p>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+        <li class="footer">@Html.ActionLink(_Users.ViewAllUnverified, "Unverified", "Accounts")</li>
+    </ul>
+</li>

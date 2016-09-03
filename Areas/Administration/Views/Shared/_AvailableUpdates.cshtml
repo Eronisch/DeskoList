@@ -1,0 +1,44 @@
+﻿@using Localization.Languages.Admin.Views.Settings
+@model IEnumerable<Topsite.Areas.Administration.Models.Updates.UpdateTableModel>
+
+@{
+    Layout = null;
+}
+
+@if (Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>@AvailableUpdates.DownloadName</th>
+            <th>@AvailableUpdates.DownloadDescription</th>
+            <th>@AvailableUpdates.DownloadVersion</th>
+            <th>@AvailableUpdates.DeskoVersion</th>
+            <th>@AvailableUpdates.DownloadProgress</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var update in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="hidden" id="version" value="@update.Version" />
+                        @update.Name
+                    </td>
+                    <td>@update.Description</td>
+                    <td><span class="label label-success">@update.Version</span></td>
+                    <td><span class="label @(update.IsVersionIncorrect ? "label-danger" : "label-success")">@update.DeskoVersion</span></td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-striped @if(update.IsDownloading){<text>active</text>}" style="width: @update.Progress%"></div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>@AvailableUpdates.NoAvailableUpdates</p>
+}

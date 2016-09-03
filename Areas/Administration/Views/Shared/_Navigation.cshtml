@@ -1,0 +1,104 @@
+﻿@using Localization.Languages.Admin.Views.Shared
+@using Web.Account
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left info">
+            <p>@_Navigation.HelloMessage, @LoginHelper.GetUsername()</p>
+            <a><i class="fa fa-circle text-success"></i> @_Navigation.Online</a>
+        </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input id="searchText" type="text" name="q" class="form-control" placeholder="@_Navigation.Search..." />
+            <span class="input-group-btn">
+                <button disabled="disabled" type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul id="sideBarNavigation" class="sidebar-menu">
+        <li class="active">
+            <a href="@Url.Action("Index", "Home")">
+                <i class="fa fa-home"></i> <span>@_Navigation.SideDashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Categories")">
+                <i class="fa fa-sitemap"></i> <span>@_Navigation.SideCategories</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Elmah")">
+                <i class="fa fa-bug"></i> <span>@_Navigation.SideElmah</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "FileManager")">
+                <i class="fa fa-pencil"></i> <span>@_Navigation.SideFilemanager</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Widgets")">
+                <i class="fa fa-puzzle-piece"></i> <span>@_Navigation.SideWidgets</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Plugins")">
+                <i class="fa fa-flash"></i> <span>@_Navigation.SidePlugins</span>
+            </a>
+        </li>
+        @{Html.RenderAction("WidgetNavigation", "Shared");}
+        <li>
+            <a href="@Url.Action("Index", "News")">
+                <i class="fa fa-tags"></i> <span>@_Navigation.SideNews</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Pages")">
+                <i class="fa fa-file-text"></i> <span>@_Navigation.SidePages</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Poll")">
+                <i class="fa fa-comment"></i> <span>@_Navigation.Poll</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Reports")">
+                <i class="fa fa-flag"></i> <span>@_Navigation.SideReports</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Settings")">
+                <i class="fa fa-cog"></i> <span>@_Navigation.SideSettings</span>
+            </a>
+            <ul>
+                <li>
+                    <a href="@Url.Action("Updates", "Settings")">
+                        <i class="fa fa-refresh"></i> <span>@_Navigation.SideUpdates</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Themes")">
+                <i class="fa fa-tint"></i> <span>@_Navigation.SideThemes</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Accounts")">
+                <i class="fa  fa-users"></i> <span>@_Navigation.SideUsers</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Websites")">
+                <i class="fa fa-external-link-square"></i> <span>@_Navigation.SideWebsites</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!-- /.sidebar -->

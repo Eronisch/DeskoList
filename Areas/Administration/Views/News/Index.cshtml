@@ -1,0 +1,71 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.News
+<div id="viewNews" class="resultsTable nav-tabs-custom">
+    <ul class="nav nav-tabs pull-right">
+        <li>@Html.ActionLink(Index.AddArticle, "Add", null, new { @class = "btn btn-default btn-sm" })</li>
+        <li class="pull-left header"><i class="fa fa-th"></i> @Index.ViewArticles</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <table id="newsTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>@Index.Id</th>
+                        <th data-hide="phone, tablet">@Index.Subject</th>
+                        <th>@Index.Title</th>
+                        <th data-hide="phone, tablet">@Index.Author</th>
+                        <th>@Index.Date</th>
+                        <th data-hide="phone, tablet">@Common.Edit</th>
+                        <th data-hide="phone, tablet">@Common.Delete</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div id="deleteNewsModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">@Index.DeleteArticle: <span id="newsTitle"></span></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>@Index.ConfirmArticleDeleteMessage</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                            <a href="" id="urlDelete" class="btn btn-primary">@Index.DeleteArticle</a>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div><!-- /.tab-pane -->
+    </div><!-- /.tab-content -->
+</div>
+
+
+@section Footer{
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/fooTable")
+
+    <script type="text/javascript">
+        $(function() {
+            setupFooTable.init('#newsTable', '/Administration/News/GetNews', "@Common.Search", 7);
+
+            $('#newsTable').on('click', 'a[data-id="deleteArticle"]', function (e) {
+
+                var newsTitle = $(this).closest('tr').find('td:eq(2)').text();
+
+                var deleteNewsLink = $(this).attr('href');
+
+                $('#deleteNewsModal #urlDelete').attr('href', deleteNewsLink);
+
+                $('#deleteNewsModal #newsTitle').text(newsTitle);
+
+                $('#deleteNewsModal').modal('show');
+
+                return false;
+            });
+
+        });
+    </script>
+}

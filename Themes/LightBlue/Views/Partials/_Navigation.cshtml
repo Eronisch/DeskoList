@@ -1,0 +1,13 @@
+﻿@using Localization.Languages.Views.Partials
+@model IEnumerable<Database.Entities.NavigationPages>
+
+<div id="navigation">
+    <ul>
+        <li id="home"><a href="@Url.Action("Index", "Home")"><img src="/Themes/LightBlue/Content/images/home.png" id="home-image" alt="@Navigation.TitleLink"/></a></li>
+        @foreach (var menu in Model)
+        {
+            <li><a href="@menu.Url">@menu.Title</a></li>
+        }
+                
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+﻿@using Localization.Languages.Views.Website
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+<div id="api">
+    <div class="bar">
+        <div class="topMenu"><h1>@Api.MenuName</h1></div>
+        <div class="content">
+            <p>@Api.Description</p>
+            
+            <h2>@Api.Instructions</h2>
+
+            <ol type="I" id="instruction">
+                <li>@Api.InstructionStep1</li>
+                <li>@Api.InstructionStep2</li>
+                <li>@Api.InstructionStep3</li>
+                <li>@Api.InstructionStep4</li>
+                <li>@Api.InstructionStep5</li>
+                <li>@Api.InstructionStep6</li>
+                <li>@Api.InstructionStep7</li>
+            </ol>
+
+            <h2>@Api.Tips</h2>
+
+            <ul id="tips">
+                <li>@Api.Tip1</li>
+                <li>@Api.Tip2</li>
+            </ul>
+
+            <a href="/Themes/LightBlue/Content/download/api.zip" class="btn" target="_blank">@Api.Download</a>
+
+        </div>
+    </div>
+</div>

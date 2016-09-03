@@ -1,0 +1,40 @@
+﻿@using Localization.Languages.Views.Contact
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.EmailModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <h4>@Global.Error</h4>
+       @Html.ValidationSummary()
+    </div>
+}  
+
+<div class="bar">
+    <div class="topMenu"><h1>@Index.MenuName</h1></div>
+    <div class="content">
+        <div id="contact">
+            @using (Html.BeginForm())
+            {
+                <div class="clearfix">
+                    <div id="leftRow">
+                        @Html.AntiForgeryToken()
+                        @Html.LabelFor(m => m.Name, new { @class = "nospace" })
+                        @Html.TextBoxFor(m => m.Name)
+                        @Html.LabelFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.LabelFor(m => m.Subject)
+                        @Html.TextBoxFor(m => m.Subject)
+                    </div>
+                    <div id="rightRow">
+                        @Html.LabelFor(m => m.Message, new { @class = "nospace" })
+                        @Html.TextAreaFor(m => m.Message)
+                    </div>
+                </div>
+
+            <input type="submit" value="@Index.SendEmail" class="btn btn-default" />
+            }
+        </div>
+    </div>
+</div>

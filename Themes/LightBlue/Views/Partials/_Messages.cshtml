@@ -1,0 +1,23 @@
+﻿@using Localization.Languages.Views.Shared
+@using Web.Messages
+@if (MessageService.HasError(TempData))
+{
+    <div class="container">
+        <div class="alert alert-danger">
+            <h3>@Global.Error</h3>
+
+            @MessageService.GetErrorMessage(TempData)
+        </div>
+    </div>
+}
+
+@if (MessageService.HasSuccess(TempData))
+{
+    <div class="container">
+        <div class="alert alert-success">
+            <h3>@Global.Success</h3>
+
+            @MessageService.GetSuccessMessage(TempData)
+        </div>
+    </div>
+}

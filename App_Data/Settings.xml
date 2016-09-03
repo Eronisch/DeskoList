@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Version>1.0</Version>
+  <Installer>
+    <Installed>False</Installed>
+  </Installer>
+  <Database>
+    <Host>-</Host>
+    <Name>-</Name>
+    <Username>-</Username>
+    <Password>-</Password>
+  </Database>
+</Settings>

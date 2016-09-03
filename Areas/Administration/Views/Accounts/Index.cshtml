@@ -1,0 +1,64 @@
+﻿@using Localization.Languages.Admin
+@using Localization.Languages.Admin.Views.Users
+<table id="usersTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Index.Id</th>
+            <th>@Index.Username</th>
+            <th>@Index.Email</th>
+            <th>@Index.RegistrationDate</th>
+            <th>@Index.LastLoggedInDate</th>
+            <th data-hide="phone, tablet">@Common.View</th>
+            <th data-hide="phone, tablet">@Common.Edit</th>
+            <th data-hide="phone, tablet">@Common.Delete</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="deleteUserModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@Index.Delete_User: <span id="userTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <p>@Index.ConfirmUserDeleteMessage</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Index.CancelButton</button>
+                <a href="" id="urlDelete" class="btn btn-primary">@Index.DeleteUserButton</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section footer{
+
+    @Scripts.Render("~/Areas/Administration/Content/Javascript/fooTable")
+
+    <script type="text/javascript">
+        $(function() {
+            window.setupFooTable.init('#usersTable', '/Administration/Accounts/GetUsers', "@Common.Search", 8);
+
+            $('#usersTable').on('click', 'a.btn-danger', function (e) {
+
+                var link = $(this).attr('href');
+
+                $('#urlDelete').attr('href', link);
+
+                $.ajax({
+                    url: '/Administration/Accounts/GetUsername',
+                    data: {
+                        id: link.substr(link.lastIndexOf('/') + 1)
+                    }
+                }).done(function (websiteTitle) {
+                    $('#userTitle').text(websiteTitle);
+                    $('#deleteUserModal').modal('show');
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+}

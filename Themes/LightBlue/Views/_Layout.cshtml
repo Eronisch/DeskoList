@@ -1,0 +1,89 @@
+﻿@using Core.Business.Settings
+@using Core.Business.Url
+@using Web.Html
+@using Web.Seo
+@using Web.Widgets
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@SeoService.GetSeoTitle(TempData) - @SettingsHelper.Title</title>
+    <meta name="description" content="@SeoService.GetSeoDescription(TempData)">
+    <meta name="keywords" content="@SeoService.GetSeoKeywords(TempData)">
+    <meta name="generator" content="DeskoList">
+    <link rel="icon" type="image/png" href="/Themes/LightBlue/Content/Images/icons/favico.ico">
+    <meta property="og:image" content="@UrlHelpers.GetCurrentBaseUrl()/Themes/LightBlue/Content/Images/gamecontroller.png" />
+
+    @Styles.Render("~/Themes/LightBlue/Content/Bootstrap.css")
+    @Styles.Render("~/Themes/LightBlue/Content/Custom.css")
+    @Styles.Render("~/Themes/LightBlue/Content/fonts/Opensans.woff")
+    @Styles.Render("~/Themes/LightBlue/Content/fonts/Oswald.woff")
+
+    @Scripts.Render("~/Themes/LightBlue/Content/scripts/JQuery.js")
+
+    <!--[if lt IE 10]>
+        @Styles.Render("~/Themes/LightBlue/Content/IE.css")
+    <![endif]-->
+</head>
+<body>
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=569108266502769";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="wrapper">
+
+        <!-- Languages -->
+        @{ Html.RenderLocalAction("GetLanguages", "Shared");}
+
+        <div id="content">
+            <div id="logo">
+                @Html.ActionLink(@SettingsHelper.ShortTitle, "Index", "Home")
+                <p>@SettingsHelper.Slogan</p>
+            </div>
+
+            <!-- Search -->
+            @{ Html.RenderLocalAction("GetSearch", "Shared"); }
+
+            <!-- Navigation -->
+            @{ Html.RenderLocalAction("GetMenu", "Shared"); }
+
+            <!-- Left Modules -->
+            <div id="leftContent">
+                @{ Html.LoadWidgets("LeftContent"); }
+            </div>
+
+            <!-- Middle Content -->
+            <div id="middleContent">
+                @{Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Messages.cshtml");}
+
+                @RenderBody()
+            </div>
+
+            <!-- Right Modules -->
+            <div id="rightContent">
+                @{ Html.LoadWidgets("RightContent"); }
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div id="footer-inner">
+                    <a href="http://deskolist.com" target="_blank">Powered by: DeskoList</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", false)
+    @Scripts.Render("~/Themes/LightBlue/Content/scripts/bootstrap.js")
+    @Scripts.Render("~/Themes/LightBlue/Content/scripts/Javascript.js")
+</body>
+</html>

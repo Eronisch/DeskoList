@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Core.Models.Widgets.WidgetNavigationModel>
+
+@if (Model.Any())
+{
+    <li>
+        <a>
+            <i class="fa fa-wrench"></i> <span>@Localization.Languages.Admin.Views.Shared._WidgetsNavigation.WidgetSettings</span>
+        </a>
+        <ul>
+            @foreach (var widgetNavigation in Model)
+            {
+                <li>
+                    <a href="@Url.Action(widgetNavigation.Action, widgetNavigation.Controller, new {area = widgetNavigation.AreaName})">
+                        <i class="@widgetNavigation.Icon"></i> <span>@widgetNavigation.Name</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </li>
+}

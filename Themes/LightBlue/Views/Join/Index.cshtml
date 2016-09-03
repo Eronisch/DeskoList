@@ -1,0 +1,140 @@
+﻿@using Localization.Languages.Views.Join
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.BundleJoinModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <h4>@Global.Error</h4>
+        @Html.ValidationSummary()
+    </div>
+}
+
+@using (Html.BeginForm("Index", "Join", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="bar">
+        <div class="topMenu">
+            <h1>@Index.MenuName</h1>
+        </div>
+        <div class="content">
+            <div id="joinUs">
+                <div id="firstRow">
+                    @Html.LabelFor(m => m.JoinusModel.Username, new { @class = "nospace" })
+                    @Html.TextBoxFor(m => m.JoinusModel.Username)
+                </div>
+                <div id="leftRow">
+                    @Html.LabelFor(m => m.JoinusModel.Password)
+                    @Html.PasswordFor(m => m.JoinusModel.Password)
+                </div>
+                <div id="rightRow">
+                    @Html.Label("Confirm Password")
+                    @Html.PasswordFor(m => m.JoinusModel.PasswordRepeat)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bar">
+        <div class="topMenu"><h1>@Index.MenuSecurityName</h1></div>
+        <div class="content">
+            @Html.LabelFor(m => m.JoinusModel.Account.QuestionId, new { @class = "nospace" })
+            @Html.DropDownListFor(m => m.JoinusModel.Account.QuestionId, Model.JoinusModel.Account.Questions)
+
+            @Html.LabelFor(m => m.JoinusModel.Account.Answer)
+            @Html.TextBoxFor(m => m.JoinusModel.Account.Answer, new { @id = "answerbox" })
+        </div>
+    </div>
+
+    <div class="bar">
+        <div class="topMenu">
+            <h1>@Index.MenuWebsiteName</h1>
+        </div>
+        <div class="content">
+
+            @Html.LabelFor(m => m.JoinusModel.Website.Url, new { @class = "nospace" })
+            @Html.TextBoxFor(m => m.JoinusModel.Website.Url, new { @class = "longTextBox" })
+            @Html.LabelFor(m => m.JoinusModel.Website.Title)
+            @Html.TextBoxFor(m => m.JoinusModel.Website.Title, new { @class = "longTextBox" })
+
+            @Html.LabelFor(m => m.JoinusModel.Website.Description)
+            @Html.TextAreaFor(m => m.JoinusModel.Website.Description)
+
+            @Html.LabelFor(m => m.JoinusModel.Website.Keywords)
+            @Html.TextBoxFor(m => m.JoinusModel.Website.Keywords, new { @class = "longTextBox" })
+
+            @Html.LabelFor(m => m.JoinusModel.Website.Category)
+            @Html.DropDownListFor(m => m.JoinusModel.Website.Category, Model.Categories)
+
+            @Html.LabelFor(m => m.JoinusModel.Account.Email)
+            @Html.TextBoxFor(m => m.JoinusModel.Account.Email, new { @class = "longTextBox" })
+        </div>
+    </div>
+
+    <div class='bar'>
+        <div class="topMenu">
+            <h1>@Index.BannerName</h1>
+        </div>
+        <div class="content">
+            <label>
+                @Html.CheckBoxFor(m => m.JoinusModel.Website.UseBannerUrl)
+                @BasicWebsite.InfoLocalRemoteBanner
+            </label>
+
+            <div id="bannerFile" style="display: @(Model.JoinusModel.Website.UseBannerUrl ? "none" : "block")">
+                @Html.LabelFor(m => m.JoinusModel.Website.BannerFile)
+                @Html.TextBoxFor(m => m.JoinusModel.Website.BannerFile, new { type = "file" })
+            </div>
+
+            <div id="bannerUrl" style="display: @(Model.JoinusModel.Website.UseBannerUrl ? "block" : "none")">
+                @Html.LabelFor(m => m.JoinusModel.Website.BannerUrl)
+                @Html.TextBoxFor(m => m.JoinusModel.Website.BannerUrl, new { @class = "longTextBox" })
+            </div>
+        </div>
+    </div>
+
+    if (Model.IsPingEnabled)
+    {
+        <div class="bar">
+            <div class="topMenu">
+                <h1>@Index.ServerName</h1>
+            </div>
+            <div class="content">
+                <small>@BasicWebsite.ServerDescription</small>
+                @Html.LabelFor(m => m.JoinusModel.Website.ServerIp, new { @class = "nospace" })
+                @Html.TextBoxFor(m => m.JoinusModel.Website.ServerIp, new { @class = "longTextBox" })
+
+                @Html.LabelFor(m => m.JoinusModel.Website.ServerPort)
+                @Html.TextBoxFor(m => m.JoinusModel.Website.ServerPort)
+            </div>
+        </div>
+    }
+
+    <div class="bar">
+        <div class="topMenu"><h1>@Index.MenuCaptchaName</h1></div>
+        <div class="content">
+            <div class="g-recaptcha" data-sitekey="@Model.JoinusModel.CaptchaKey"></div>
+        </div>
+    </div>
+
+     Html.RenderPartial("_HtmlPlugin");
+
+    <div class="bar">
+        <div class="topMenu"><h1>@Index.MenuDone</h1></div>
+        <div class="content">
+            <input type="submit" class="btn btn-default nospace-margin" value="@Index.Register" />
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/Themes/LightBlue/Content/scripts/BasicWebsite.js"></script>
+    <script>
+        $(document).ready(function () {
+            window.setBannerEvent('#JoinusModel_Website_UseBannerUrl');
+        });
+    </script>
+}

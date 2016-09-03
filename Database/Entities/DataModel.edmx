@@ -1,0 +1,2910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="deskoTopsiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActiveDlls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WidgetId" Type="int" />
+          <Property Name="DllId" Type="int" Nullable="false" />
+          <Property Name="PluginId" Type="int" />
+          <Property Name="ThemeId" Type="int" />
+        </EntityType>
+        <EntityType Name="AdminBreadcrumbs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Controller" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="WidgetId" Type="int" />
+          <Property Name="LocalizationBase" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedControllerFriendlyName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedActionFriendlyName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedTitle" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedDescription" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PluginId" Type="int" />
+          <Property Name="ThemeId" Type="int" />
+        </EntityType>
+        <EntityType Name="AdminNavigation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Controller" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Action" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LocalizedBase" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="PluginId" Type="int" />
+          <Property Name="WidgetId" Type="int" />
+          <Property Name="ThemeId" Type="int" />
+        </EntityType>
+        <EntityType Name="AdminPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Controller" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Keywords" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Dlls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DynamicPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Keywords" Type="varchar" MaxLength="250" />
+          <Property Name="Message" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ELMAH_Error">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Application" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Host" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StatusCode" Type="int" Nullable="false" />
+          <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+          <Property Name="Sequence" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AllXml" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailAccounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMTPEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SMTPPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SMTPServer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SMTPSecure" Type="bit" Nullable="false" />
+          <Property Name="SMTPPort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Culture" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginFails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Attempts" Type="tinyint" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginTokens">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="Expires" Type="datetime" Nullable="false" />
+          <Property Name="Selector" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NavigationPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="OrderNumber" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Information" Type="varchar(max)" Nullable="false" />
+          <Property Name="AuthorID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+          <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+          <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PluginOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PluginId" Type="int" Nullable="false" />
+          <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+          <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+          <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plugins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Author" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="AuthorUrl" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Namespace" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PluginUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsChecking" Type="bit" Nullable="false" />
+          <Property Name="IsInstalling" Type="bit" Nullable="false" />
+          <Property Name="IsDownloading" Type="bit" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poll">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PollAnswers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Answer" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PollId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PollVotes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PollAnswerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="SenderIP" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="WebsiteId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SeoPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageController" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="PageIndex" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ResourceTitleName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResourceDescriptionName" Type="varchar" MaxLength="255" />
+          <Property Name="ResourceBaseName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Keywords" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ShowAmountWebsites" Type="int" Nullable="false" />
+          <Property Name="Maintenance" Type="bit" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SiteTitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SiteSlogan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsEmailVerificationRequired" Type="bit" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CronjobUserStatisticsEmail" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Footer" Type="varchar" MaxLength="1000" />
+          <Property Name="IsPingEnabled" Type="bit" Nullable="false" />
+          <Property Name="ThemeId" Type="int" Nullable="false" />
+          <Property Name="CronjobInAndOut" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="RecaptchaSecretKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecaptchaSiteKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CronWebsiteThumbnail" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="IsCreateThumbnailsEnabled" Type="bit" Nullable="false" />
+          <Property Name="CronPingServer" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="GoogleSiteId" Type="varchar" MaxLength="25" />
+          <Property Name="CronUpdate" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="UpdateWhenIncorrectVersion" Type="bit" Nullable="false" />
+          <Property Name="AutoUpdate" Type="bit" Nullable="false" />
+          <Property Name="IsEmailingUserStatisticsEnabled" Type="bit" Nullable="false" />
+          <Property Name="IsResetInAndOutsEnabled" Type="bit" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Timezone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsAdminVerificationRequired" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SoftwareUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsChecking" Type="bit" Nullable="false" />
+          <Property Name="IsInstalling" Type="bit" Nullable="false" />
+          <Property Name="IsDownloading" Type="bit" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThemeOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThemeId" Type="int" Nullable="false" />
+          <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+          <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+          <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Themes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThemeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuthorName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuthorUrl" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FolderName" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ThemeUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsChecking" Type="bit" Nullable="false" />
+          <Property Name="IsInstalling" Type="bit" Nullable="false" />
+          <Property Name="IsDownloading" Type="bit" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Question" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="BannedStartDate" Type="datetime" />
+          <Property Name="BannedEndDate" Type="datetime" />
+          <Property Name="EmailVerificationCode" Type="varchar" MaxLength="30" />
+          <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="IsEmailVerified" Type="bit" Nullable="false" />
+          <Property Name="IsAdminVerified" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="72" Nullable="false" />
+          <Property Name="NewEmail" Type="varchar" MaxLength="50" />
+          <Property Name="NewEmailVerificationCode" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="WebsiteBlackList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Domain" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebsiteID" Type="int" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Unique" Type="bit" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteInDaily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebsiteId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="UniqueIn" Type="int" Nullable="false" />
+          <Property Name="TotalIn" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteOut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebsiteID" Type="int" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Unique" Type="bit" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteOutDaily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebsiteId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="UniqueOut" Type="int" Nullable="false" />
+          <Property Name="TotalOut" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteRating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebsiteID" Type="int" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Rating" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Websites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BannerURL" Type="varchar" MaxLength="75" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Keywords" Type="varchar" MaxLength="150" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="Sponsored" Type="bit" Nullable="false" />
+          <Property Name="ServerIP" Type="varchar" MaxLength="25" />
+          <Property Name="ServerPort" Type="int" />
+          <Property Name="MonitorCheckedDate" Type="datetime" />
+          <Property Name="IsOnline" Type="bit" Nullable="false" />
+          <Property Name="BannerFileName" Type="varchar" MaxLength="50" />
+          <Property Name="Thumbnail" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WidgetOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WidgetId" Type="int" Nullable="false" />
+          <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+          <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+          <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Widgets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="AreaName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Author" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="AuthorUrl" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Controller" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="StartIndex" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Namespace" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="WidgetsTheme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WidgetId" Type="int" Nullable="false" />
+          <Property Name="ThemeSectionId" Type="int" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WidgetsThemeSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThemeId" Type="int" Nullable="false" />
+          <Property Name="FriendlyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WidgetUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsChecking" Type="bit" Nullable="false" />
+          <Property Name="IsInstalling" Type="bit" Nullable="false" />
+          <Property Name="IsDownloading" Type="bit" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__AdminNavi__Theme__403A8C7D">
+          <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Dlls">
+          <End Role="Dlls" Type="Self.Dlls" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dlls">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="DllId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Plugins">
+          <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Themes">
+          <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Widgets">
+          <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_Plugins">
+          <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_Themes">
+          <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_Widgets">
+          <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminNavigation_Plugins">
+          <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminNavigation_Widgets">
+          <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginTokens_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LoginTokens" Type="Self.LoginTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NavigationPages_NavigationPages">
+          <End Role="NavigationPages" Type="Self.NavigationPages" Multiplicity="0..1" />
+          <End Role="NavigationPages1" Type="Self.NavigationPages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NavigationPages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NavigationPages1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PluginOpenUpdates_Plugins">
+          <End Role="Plugins" Type="Self.Plugins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PluginOpenUpdates" Type="Self.PluginOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PluginOpenUpdates">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollAnswers_Poll">
+          <End Role="Poll" Type="Self.Poll" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PollAnswers" Type="Self.PollAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollAnswers">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollVotes_PollAnswers">
+          <End Role="PollAnswers" Type="Self.PollAnswers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PollVotes" Type="Self.PollVotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PollAnswers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollVotes">
+              <PropertyRef Name="PollAnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollVotes_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PollVotes" Type="Self.PollVotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollVotes">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeOpenUpdates_Themes">
+          <End Role="Themes" Type="Self.Themes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ThemeOpenUpdates" Type="Self.ThemeOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThemeOpenUpdates">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteIn_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WebsiteIn" Type="Self.WebsiteIn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteIn">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteInDaily_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WebsiteInDaily" Type="Self.WebsiteInDaily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteInDaily">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteOut_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WebsiteOut" Type="Self.WebsiteOut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteOut">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteOutDaily_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WebsiteOutDaily" Type="Self.WebsiteOutDaily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteOutDaily">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteRating_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="WebsiteRating" Type="Self.WebsiteRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteRating">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteRating_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WebsiteRating" Type="Self.WebsiteRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteRating">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Websites_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Websites" Type="Self.Websites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Websites">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Websites_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Websites" Type="Self.Websites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Websites">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetOpenUpdates_Widgets">
+          <End Role="Widgets" Type="Self.Widgets" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WidgetOpenUpdates" Type="Self.WidgetOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetOpenUpdates">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetsTheme_Widgets">
+          <End Role="Widgets" Type="Self.Widgets" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WidgetsTheme" Type="Self.WidgetsTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetsTheme">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetsTheme_WidgetsThemeSection">
+          <End Role="WidgetsThemeSection" Type="Self.WidgetsThemeSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WidgetsTheme" Type="Self.WidgetsTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WidgetsThemeSection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetsTheme">
+              <PropertyRef Name="ThemeSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="deskoTopsiteModelStoreContainer">
+          <EntitySet Name="ActiveDlls" EntityType="Self.ActiveDlls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminBreadcrumbs" EntityType="Self.AdminBreadcrumbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminNavigation" EntityType="Self.AdminNavigation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminPages" EntityType="Self.AdminPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dlls" EntityType="Self.Dlls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DynamicPages" EntityType="Self.DynamicPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailAccounts" EntityType="Self.EmailAccounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginFails" EntityType="Self.LoginFails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginTokens" EntityType="Self.LoginTokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NavigationPages" EntityType="Self.NavigationPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpenUpdates" EntityType="Self.OpenUpdates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PluginOpenUpdates" EntityType="Self.PluginOpenUpdates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plugins" EntityType="Self.Plugins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PluginUpdateSettings" EntityType="Self.PluginUpdateSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Poll" EntityType="Self.Poll" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PollAnswers" EntityType="Self.PollAnswers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PollVotes" EntityType="Self.PollVotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeoPages" EntityType="Self.SeoPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SoftwareUpdateSettings" EntityType="Self.SoftwareUpdateSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThemeOpenUpdates" EntityType="Self.ThemeOpenUpdates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Themes" EntityType="Self.Themes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThemeUpdateSettings" EntityType="Self.ThemeUpdateSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteBlackList" EntityType="Self.WebsiteBlackList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteIn" EntityType="Self.WebsiteIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteInDaily" EntityType="Self.WebsiteInDaily" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteOut" EntityType="Self.WebsiteOut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteOutDaily" EntityType="Self.WebsiteOutDaily" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteRating" EntityType="Self.WebsiteRating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Websites" EntityType="Self.Websites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WidgetOpenUpdates" EntityType="Self.WidgetOpenUpdates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Widgets" EntityType="Self.Widgets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WidgetsTheme" EntityType="Self.WidgetsTheme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WidgetsThemeSection" EntityType="Self.WidgetsThemeSection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WidgetUpdateSettings" EntityType="Self.WidgetUpdateSettings" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AdminNavi__Theme__403A8C7D" Association="Self.FK__AdminNavi__Theme__403A8C7D">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Dlls" Association="Self.FK_ActiveDlls_Dlls">
+            <End Role="Dlls" EntitySet="Dlls" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Plugins" Association="Self.FK_ActiveDlls_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Themes" Association="Self.FK_ActiveDlls_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Widgets" Association="Self.FK_ActiveDlls_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_Plugins" Association="Self.FK_AdminBreadcrumbs_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_Themes" Association="Self.FK_AdminBreadcrumbs_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_Widgets" Association="Self.FK_AdminBreadcrumbs_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminNavigation_Plugins" Association="Self.FK_AdminNavigation_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminNavigation_Widgets" Association="Self.FK_AdminNavigation_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginTokens_Users" Association="Self.FK_LoginTokens_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginTokens" EntitySet="LoginTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NavigationPages_NavigationPages" Association="Self.FK_NavigationPages_NavigationPages">
+            <End Role="NavigationPages" EntitySet="NavigationPages" />
+            <End Role="NavigationPages1" EntitySet="NavigationPages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_Users" Association="Self.FK_News_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PluginOpenUpdates_Plugins" Association="Self.FK_PluginOpenUpdates_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="PluginOpenUpdates" EntitySet="PluginOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollAnswers_Poll" Association="Self.FK_PollAnswers_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollAnswers" EntitySet="PollAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollVotes_PollAnswers" Association="Self.FK_PollVotes_PollAnswers">
+            <End Role="PollAnswers" EntitySet="PollAnswers" />
+            <End Role="PollVotes" EntitySet="PollVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollVotes_Users" Association="Self.FK_PollVotes_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PollVotes" EntitySet="PollVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Websites" Association="Self.FK_Reports_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeOpenUpdates_Themes" Association="Self.FK_ThemeOpenUpdates_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="ThemeOpenUpdates" EntitySet="ThemeOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteIn_Websites" Association="Self.FK_WebsiteIn_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteIn" EntitySet="WebsiteIn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteInDaily_Websites" Association="Self.FK_WebsiteInDaily_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteInDaily" EntitySet="WebsiteInDaily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteOut_Websites" Association="Self.FK_WebsiteOut_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteOut" EntitySet="WebsiteOut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteOutDaily_Websites" Association="Self.FK_WebsiteOutDaily_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteOutDaily" EntitySet="WebsiteOutDaily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteRating_Users" Association="Self.FK_WebsiteRating_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteRating_Websites" Association="Self.FK_WebsiteRating_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Websites_Categories" Association="Self.FK_Websites_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Websites" EntitySet="Websites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Websites_Users" Association="Self.FK_Websites_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Websites" EntitySet="Websites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetOpenUpdates_Widgets" Association="Self.FK_WidgetOpenUpdates_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="WidgetOpenUpdates" EntitySet="WidgetOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetsTheme_Widgets" Association="Self.FK_WidgetsTheme_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetsTheme_WidgetsThemeSection" Association="Self.FK_WidgetsTheme_WidgetsThemeSection">
+            <End Role="WidgetsThemeSection" EntitySet="WidgetsThemeSection" />
+            <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="deskoTopsiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="deskoTopsiteEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="ELMAH_GetErrorsXml" ReturnType="Collection(String)">
+            <Parameter Name="Application" Mode="In" Type="String" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="TotalCount" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ELMAH_GetErrorXml" ReturnType="Collection(String)">
+            <Parameter Name="Application" Mode="In" Type="String" />
+            <Parameter Name="ErrorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="ELMAH_LogError">
+            <Parameter Name="ErrorId" Mode="In" Type="Guid" />
+            <Parameter Name="Application" Mode="In" Type="String" />
+            <Parameter Name="Host" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="Source" Mode="In" Type="String" />
+            <Parameter Name="Message" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+            <Parameter Name="AllXml" Mode="In" Type="String" />
+            <Parameter Name="StatusCode" Mode="In" Type="Int32" />
+            <Parameter Name="TimeUtc" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="ActiveDlls" EntityType="deskoTopsiteModel.ActiveDlls" />
+          <EntitySet Name="AdminBreadcrumbs" EntityType="deskoTopsiteModel.AdminBreadcrumbs" />
+          <EntitySet Name="AdminNavigation" EntityType="deskoTopsiteModel.AdminNavigation" />
+          <EntitySet Name="AdminPages" EntityType="deskoTopsiteModel.AdminPages" />
+          <EntitySet Name="Categories" EntityType="deskoTopsiteModel.Categories" />
+          <EntitySet Name="Dlls" EntityType="deskoTopsiteModel.Dlls" />
+          <EntitySet Name="DynamicPages" EntityType="deskoTopsiteModel.DynamicPages" />
+          <EntitySet Name="ELMAH_Error" EntityType="deskoTopsiteModel.ELMAH_Error" />
+          <EntitySet Name="EmailAccounts" EntityType="deskoTopsiteModel.EmailAccounts" />
+          <EntitySet Name="EmailTemplates" EntityType="deskoTopsiteModel.EmailTemplates" />
+          <EntitySet Name="Languages" EntityType="deskoTopsiteModel.Languages" />
+          <EntitySet Name="Links" EntityType="deskoTopsiteModel.Links" />
+          <EntitySet Name="LoginFails" EntityType="deskoTopsiteModel.LoginFails" />
+          <EntitySet Name="LoginTokens" EntityType="deskoTopsiteModel.LoginTokens" />
+          <EntitySet Name="NavigationPages" EntityType="deskoTopsiteModel.NavigationPages" />
+          <EntitySet Name="News" EntityType="deskoTopsiteModel.News" />
+          <EntitySet Name="OpenUpdates" EntityType="deskoTopsiteModel.OpenUpdates" />
+          <EntitySet Name="PluginOpenUpdates" EntityType="deskoTopsiteModel.PluginOpenUpdates" />
+          <EntitySet Name="Plugins" EntityType="deskoTopsiteModel.Plugins" />
+          <EntitySet Name="PluginUpdateSettings" EntityType="deskoTopsiteModel.PluginUpdateSettings" />
+          <EntitySet Name="Poll" EntityType="deskoTopsiteModel.Poll" />
+          <EntitySet Name="PollAnswers" EntityType="deskoTopsiteModel.PollAnswers" />
+          <EntitySet Name="PollVotes" EntityType="deskoTopsiteModel.PollVotes" />
+          <EntitySet Name="Reports" EntityType="deskoTopsiteModel.Reports" />
+          <EntitySet Name="SeoPages" EntityType="deskoTopsiteModel.SeoPages" />
+          <EntitySet Name="Settings" EntityType="deskoTopsiteModel.Settings" />
+          <EntitySet Name="SoftwareUpdateSettings" EntityType="deskoTopsiteModel.SoftwareUpdateSettings" />
+          <EntitySet Name="ThemeOpenUpdates" EntityType="deskoTopsiteModel.ThemeOpenUpdates" />
+          <EntitySet Name="Themes" EntityType="deskoTopsiteModel.Themes" />
+          <EntitySet Name="ThemeUpdateSettings" EntityType="deskoTopsiteModel.ThemeUpdateSettings" />
+          <EntitySet Name="Users" EntityType="deskoTopsiteModel.Users" />
+          <EntitySet Name="WebsiteBlackList" EntityType="deskoTopsiteModel.WebsiteBlackList" />
+          <EntitySet Name="WebsiteIn" EntityType="deskoTopsiteModel.WebsiteIn" />
+          <EntitySet Name="WebsiteInDaily" EntityType="deskoTopsiteModel.WebsiteInDaily" />
+          <EntitySet Name="WebsiteOut" EntityType="deskoTopsiteModel.WebsiteOut" />
+          <EntitySet Name="WebsiteOutDaily" EntityType="deskoTopsiteModel.WebsiteOutDaily" />
+          <EntitySet Name="WebsiteRating" EntityType="deskoTopsiteModel.WebsiteRating" />
+          <EntitySet Name="Websites" EntityType="deskoTopsiteModel.Websites" />
+          <EntitySet Name="WidgetOpenUpdates" EntityType="deskoTopsiteModel.WidgetOpenUpdates" />
+          <EntitySet Name="Widgets" EntityType="deskoTopsiteModel.Widgets" />
+          <EntitySet Name="WidgetsTheme" EntityType="deskoTopsiteModel.WidgetsTheme" />
+          <EntitySet Name="WidgetsThemeSection" EntityType="deskoTopsiteModel.WidgetsThemeSection" />
+          <EntitySet Name="WidgetUpdateSettings" EntityType="deskoTopsiteModel.WidgetUpdateSettings" />
+          <AssociationSet Name="FK_WidgetDlls_Dlls" Association="deskoTopsiteModel.FK_WidgetDlls_Dlls">
+            <End Role="Dlls" EntitySet="Dlls" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetDlls_Widgets" Association="deskoTopsiteModel.FK_WidgetDlls_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_ModuleInstallations" Association="deskoTopsiteModel.FK_AdminBreadcrumbs_ModuleInstallations">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_Plugins" Association="deskoTopsiteModel.FK_AdminBreadcrumbs_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminNavigation_Plugins" Association="deskoTopsiteModel.FK_AdminNavigation_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetsNavigation_ModuleInstallations" Association="deskoTopsiteModel.FK_WidgetsNavigation_ModuleInstallations">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Websites_Categories" Association="deskoTopsiteModel.FK_Websites_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Websites" EntitySet="Websites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Settings_Languages" Association="deskoTopsiteModel.FK_Settings_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Settings" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginTokens_Users" Association="deskoTopsiteModel.FK_LoginTokens_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginTokens" EntitySet="LoginTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NavigationPages_NavigationPages" Association="deskoTopsiteModel.FK_NavigationPages_NavigationPages">
+            <End Role="NavigationPages" EntitySet="NavigationPages" />
+            <End Role="NavigationPages1" EntitySet="NavigationPages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_Users" Association="deskoTopsiteModel.FK_News_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PluginOpenUpdates_Plugins" Association="deskoTopsiteModel.FK_PluginOpenUpdates_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="PluginOpenUpdates" EntitySet="PluginOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollAnswers_Poll" Association="deskoTopsiteModel.FK_PollAnswers_Poll">
+            <End Role="Poll" EntitySet="Poll" />
+            <End Role="PollAnswers" EntitySet="PollAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollVotes_PollAnswers" Association="deskoTopsiteModel.FK_PollVotes_PollAnswers">
+            <End Role="PollAnswers" EntitySet="PollAnswers" />
+            <End Role="PollVotes" EntitySet="PollVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PollVotes_Users" Association="deskoTopsiteModel.FK_PollVotes_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PollVotes" EntitySet="PollVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_Websites" Association="deskoTopsiteModel.FK_Reports_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Settings_Themes" Association="deskoTopsiteModel.FK_Settings_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="Settings" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeOpenUpdates_Themes" Association="deskoTopsiteModel.FK_ThemeOpenUpdates_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="ThemeOpenUpdates" EntitySet="ThemeOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeSectionModules_Themes" Association="deskoTopsiteModel.FK_ThemeSectionModules_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="WidgetsThemeSection" EntitySet="WidgetsThemeSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteRating_Users" Association="deskoTopsiteModel.FK_WebsiteRating_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Websites" Association="deskoTopsiteModel.Users_Websites">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Websites" EntitySet="Websites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Votes_Websites" Association="deskoTopsiteModel.FK_Votes_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteIn" EntitySet="WebsiteIn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteInDaily_Websites" Association="deskoTopsiteModel.FK_WebsiteInDaily_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteInDaily" EntitySet="WebsiteInDaily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Redirects_Websites" Association="deskoTopsiteModel.FK_Redirects_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteOut" EntitySet="WebsiteOut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteOutDaily_Websites" Association="deskoTopsiteModel.FK_WebsiteOutDaily_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteOutDaily" EntitySet="WebsiteOutDaily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteRating_Websites" Association="deskoTopsiteModel.FK_WebsiteRating_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WidgetOpenUpdates_Widgets" Association="deskoTopsiteModel.FK_WidgetOpenUpdates_Widgets">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="WidgetOpenUpdates" EntitySet="WidgetOpenUpdates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeModules_ModuleInstallations" Association="deskoTopsiteModel.FK_ThemeModules_ModuleInstallations">
+            <End Role="Widgets" EntitySet="Widgets" />
+            <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThemeModules_ThemeSectionModules" Association="deskoTopsiteModel.FK_ThemeModules_ThemeSectionModules">
+            <End Role="WidgetsThemeSection" EntitySet="WidgetsThemeSection" />
+            <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Plugins" Association="deskoTopsiteModel.FK_ActiveDlls_Plugins">
+            <End Role="Plugins" EntitySet="Plugins" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActiveDlls_Themes" Association="deskoTopsiteModel.FK_ActiveDlls_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminBreadcrumbs_Themes" Association="deskoTopsiteModel.FK_AdminBreadcrumbs_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdminNavigation_Themes" Association="deskoTopsiteModel.FK_AdminNavigation_Themes">
+            <End Role="Themes" EntitySet="Themes" />
+            <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="ActiveDlls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WidgetId" Type="Int32" />
+          <Property Name="DllId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dlls" Relationship="deskoTopsiteModel.FK_WidgetDlls_Dlls" FromRole="ActiveDlls" ToRole="Dlls" />
+          <NavigationProperty Name="Widgets" Relationship="deskoTopsiteModel.FK_WidgetDlls_Widgets" FromRole="ActiveDlls" ToRole="Widgets" />
+          <Property Name="PluginId" Type="Int32" />
+          <NavigationProperty Name="Plugins" Relationship="deskoTopsiteModel.FK_ActiveDlls_Plugins" FromRole="ActiveDlls" ToRole="Plugins" />
+          <Property Name="ThemeId" Type="Int32" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_ActiveDlls_Themes" FromRole="ActiveDlls" ToRole="Themes" />
+        </EntityType>
+        <EntityType Name="AdminBreadcrumbs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Icon" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="WidgetId" Type="Int32" />
+          <Property Name="LocalizationBase" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedControllerFriendlyName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedActionFriendlyName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedTitle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PluginId" Type="Int32" />
+          <NavigationProperty Name="Widgets" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_ModuleInstallations" FromRole="AdminBreadcrumbs" ToRole="Widgets" />
+          <NavigationProperty Name="Plugins" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_Plugins" FromRole="AdminBreadcrumbs" ToRole="Plugins" />
+          <Property Name="ThemeId" Type="Int32" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_Themes" FromRole="AdminBreadcrumbs" ToRole="Themes" />
+        </EntityType>
+        <EntityType Name="AdminNavigation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WidgetId" Type="Int32" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedBase" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Icon" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PluginId" Type="Int32" />
+          <NavigationProperty Name="Plugins" Relationship="deskoTopsiteModel.FK_AdminNavigation_Plugins" FromRole="AdminNavigation" ToRole="Plugins" />
+          <NavigationProperty Name="Widgets" Relationship="deskoTopsiteModel.FK_WidgetsNavigation_ModuleInstallations" FromRole="AdminNavigation" ToRole="Widgets" />
+          <Property Name="ThemeId" Type="Int32" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_AdminNavigation_Themes" FromRole="AdminNavigation" ToRole="Themes" />
+        </EntityType>
+        <EntityType Name="AdminPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Keywords" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_Websites_Categories" FromRole="Categories" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="Dlls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActiveDlls" Relationship="deskoTopsiteModel.FK_WidgetDlls_Dlls" FromRole="Dlls" ToRole="ActiveDlls" />
+        </EntityType>
+        <EntityType Name="DynamicPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Keywords" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ELMAH_Error">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="Guid" Nullable="false" />
+          <Property Name="Application" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Host" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="User" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="Int32" Nullable="false" />
+          <Property Name="TimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sequence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllXml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmailAccounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SMTPEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SMTPPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SMTPServer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SMTPSecure" Type="Boolean" Nullable="false" />
+          <Property Name="SMTPPort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Culture" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Abbreviation" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Settings" Relationship="deskoTopsiteModel.FK_Settings_Languages" FromRole="Languages" ToRole="Settings" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LoginFails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attempts" Type="Byte" Nullable="false" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LoginTokens">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" Nullable="false" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="Expires" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Selector" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="deskoTopsiteModel.FK_LoginTokens_Users" FromRole="LoginTokens" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="NavigationPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <NavigationProperty Name="NavigationPages1" Relationship="deskoTopsiteModel.FK_NavigationPages_NavigationPages" FromRole="NavigationPages" ToRole="NavigationPages1" />
+          <NavigationProperty Name="NavigationPages2" Relationship="deskoTopsiteModel.FK_NavigationPages_NavigationPages" FromRole="NavigationPages1" ToRole="NavigationPages" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Information" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Users" Relationship="deskoTopsiteModel.FK_News_Users" FromRole="News" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="OpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DownloadPath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsDownloaded" Type="Boolean" Nullable="false" />
+          <Property Name="DownloadUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PluginOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PluginId" Type="Int32" Nullable="false" />
+          <Property Name="DownloadPath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsDownloaded" Type="Boolean" Nullable="false" />
+          <Property Name="DownloadUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DeskoVersion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Plugins" Relationship="deskoTopsiteModel.FK_PluginOpenUpdates_Plugins" FromRole="PluginOpenUpdates" ToRole="Plugins" />
+        </EntityType>
+        <EntityType Name="Plugins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorUrl" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Area" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Namespace" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminBreadcrumbs" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_Plugins" FromRole="Plugins" ToRole="AdminBreadcrumbs" />
+          <NavigationProperty Name="AdminNavigation" Relationship="deskoTopsiteModel.FK_AdminNavigation_Plugins" FromRole="Plugins" ToRole="AdminNavigation" />
+          <NavigationProperty Name="PluginOpenUpdates" Relationship="deskoTopsiteModel.FK_PluginOpenUpdates_Plugins" FromRole="Plugins" ToRole="PluginOpenUpdates" />
+          <NavigationProperty Name="ActiveDlls" Relationship="deskoTopsiteModel.FK_ActiveDlls_Plugins" FromRole="Plugins" ToRole="ActiveDlls" />
+        </EntityType>
+        <EntityType Name="PluginUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsChecking" Type="Boolean" Nullable="false" />
+          <Property Name="IsInstalling" Type="Boolean" Nullable="false" />
+          <Property Name="IsDownloading" Type="Boolean" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poll">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PollAnswers" Relationship="deskoTopsiteModel.FK_PollAnswers_Poll" FromRole="Poll" ToRole="PollAnswers" />
+        </EntityType>
+        <EntityType Name="PollAnswers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PollId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Poll" Relationship="deskoTopsiteModel.FK_PollAnswers_Poll" FromRole="PollAnswers" ToRole="Poll" />
+          <NavigationProperty Name="PollVotes" Relationship="deskoTopsiteModel.FK_PollVotes_PollAnswers" FromRole="PollAnswers" ToRole="PollVotes" />
+        </EntityType>
+        <EntityType Name="PollVotes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PollAnswerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PollAnswers" Relationship="deskoTopsiteModel.FK_PollVotes_PollAnswers" FromRole="PollVotes" ToRole="PollAnswers" />
+          <NavigationProperty Name="Users" Relationship="deskoTopsiteModel.FK_PollVotes_Users" FromRole="PollVotes" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SenderIP" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_Reports_Websites" FromRole="Reports" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="SeoPages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageController" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PageIndex" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceTitleName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceDescriptionName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceBaseName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Keywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ShowAmountWebsites" Type="Int32" Nullable="false" />
+          <Property Name="Maintenance" Type="Boolean" Nullable="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SiteTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SiteSlogan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsEmailVerificationRequired" Type="Boolean" Nullable="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CronjobUserStatisticsEmail" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Footer" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="IsPingEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="ThemeId" Type="Int32" Nullable="false" />
+          <Property Name="CronjobInAndOut" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RecaptchaSecretKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RecaptchaSiteKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CronWebsiteThumbnail" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="IsCreateThumbnailsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CronPingServer" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CronUpdate" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateWhenIncorrectVersion" Type="Boolean" Nullable="false" />
+          <Property Name="AutoUpdate" Type="Boolean" Nullable="false" />
+          <Property Name="IsEmailingUserStatisticsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="IsResetInAndOutsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Timezone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsAdminVerificationRequired" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="deskoTopsiteModel.FK_Settings_Languages" FromRole="Settings" ToRole="Languages" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_Settings_Themes" FromRole="Settings" ToRole="Themes" />
+        </EntityType>
+        <EntityType Name="SoftwareUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsChecking" Type="Boolean" Nullable="false" />
+          <Property Name="IsInstalling" Type="Boolean" Nullable="false" />
+          <Property Name="IsDownloading" Type="Boolean" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThemeOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThemeId" Type="Int32" Nullable="false" />
+          <Property Name="DownloadPath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsDownloaded" Type="Boolean" Nullable="false" />
+          <Property Name="DownloadUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DeskoVersion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_ThemeOpenUpdates_Themes" FromRole="ThemeOpenUpdates" ToRole="Themes" />
+        </EntityType>
+        <EntityType Name="Themes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThemeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FolderName" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Settings" Relationship="deskoTopsiteModel.FK_Settings_Themes" FromRole="Themes" ToRole="Settings" />
+          <NavigationProperty Name="ThemeOpenUpdates" Relationship="deskoTopsiteModel.FK_ThemeOpenUpdates_Themes" FromRole="Themes" ToRole="ThemeOpenUpdates" />
+          <NavigationProperty Name="WidgetsThemeSection" Relationship="deskoTopsiteModel.FK_ThemeSectionModules_Themes" FromRole="Themes" ToRole="WidgetsThemeSection" />
+          <NavigationProperty Name="ActiveDlls" Relationship="deskoTopsiteModel.FK_ActiveDlls_Themes" FromRole="Themes" ToRole="ActiveDlls" />
+          <NavigationProperty Name="AdminBreadcrumbs" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_Themes" FromRole="Themes" ToRole="AdminBreadcrumbs" />
+          <NavigationProperty Name="AdminNavigation" Relationship="deskoTopsiteModel.FK_AdminNavigation_Themes" FromRole="Themes" ToRole="AdminNavigation" />
+        </EntityType>
+        <EntityType Name="ThemeUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsChecking" Type="Boolean" Nullable="false" />
+          <Property Name="IsInstalling" Type="Boolean" Nullable="false" />
+          <Property Name="IsDownloading" Type="Boolean" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Question" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="BannedStartDate" Type="DateTime" Precision="3" />
+          <Property Name="BannedEndDate" Type="DateTime" Precision="3" />
+          <Property Name="EmailVerificationCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="IsEmailVerified" Type="Boolean" Nullable="false" />
+          <Property Name="IsAdminVerified" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="72" FixedLength="false" Unicode="true" />
+          <Property Name="NewEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NewEmailVerificationCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LoginTokens" Relationship="deskoTopsiteModel.FK_LoginTokens_Users" FromRole="Users" ToRole="LoginTokens" />
+          <NavigationProperty Name="News" Relationship="deskoTopsiteModel.FK_News_Users" FromRole="Users" ToRole="News" />
+          <NavigationProperty Name="PollVotes" Relationship="deskoTopsiteModel.FK_PollVotes_Users" FromRole="Users" ToRole="PollVotes" />
+          <NavigationProperty Name="WebsiteRating" Relationship="deskoTopsiteModel.FK_WebsiteRating_Users" FromRole="Users" ToRole="WebsiteRating" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.Users_Websites" FromRole="Users" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="WebsiteBlackList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Domain" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WebsiteIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="WebsiteID" Type="Int32" Nullable="false" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Unique" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_Votes_Websites" FromRole="WebsiteIn" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="WebsiteInDaily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WebsiteId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UniqueIn" Type="Int32" Nullable="false" />
+          <Property Name="TotalIn" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_WebsiteInDaily_Websites" FromRole="WebsiteInDaily" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="WebsiteOut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="WebsiteID" Type="Int32" Nullable="false" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Unique" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_Redirects_Websites" FromRole="WebsiteOut" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="WebsiteOutDaily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WebsiteId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UniqueOut" Type="Int32" Nullable="false" />
+          <Property Name="TotalOut" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_WebsiteOutDaily_Websites" FromRole="WebsiteOutDaily" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="WebsiteRating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="WebsiteID" Type="Int32" Nullable="false" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="deskoTopsiteModel.FK_WebsiteRating_Users" FromRole="WebsiteRating" ToRole="Users" />
+          <NavigationProperty Name="Websites" Relationship="deskoTopsiteModel.FK_WebsiteRating_Websites" FromRole="WebsiteRating" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="Websites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BannerURL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Keywords" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sponsored" Type="Boolean" Nullable="false" />
+          <Property Name="ServerIP" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ServerPort" Type="Int32" />
+          <Property Name="MonitorCheckedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsOnline" Type="Boolean" Nullable="false" />
+          <Property Name="BannerFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Thumbnail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Categories" Relationship="deskoTopsiteModel.FK_Websites_Categories" FromRole="Websites" ToRole="Categories" />
+          <NavigationProperty Name="Reports" Relationship="deskoTopsiteModel.FK_Reports_Websites" FromRole="Websites" ToRole="Reports" />
+          <NavigationProperty Name="Users" Relationship="deskoTopsiteModel.Users_Websites" FromRole="Websites" ToRole="Users" />
+          <NavigationProperty Name="WebsiteIn" Relationship="deskoTopsiteModel.FK_Votes_Websites" FromRole="Websites" ToRole="WebsiteIn" />
+          <NavigationProperty Name="WebsiteInDaily" Relationship="deskoTopsiteModel.FK_WebsiteInDaily_Websites" FromRole="Websites" ToRole="WebsiteInDaily" />
+          <NavigationProperty Name="WebsiteOut" Relationship="deskoTopsiteModel.FK_Redirects_Websites" FromRole="Websites" ToRole="WebsiteOut" />
+          <NavigationProperty Name="WebsiteOutDaily" Relationship="deskoTopsiteModel.FK_WebsiteOutDaily_Websites" FromRole="Websites" ToRole="WebsiteOutDaily" />
+          <NavigationProperty Name="WebsiteRating" Relationship="deskoTopsiteModel.FK_WebsiteRating_Websites" FromRole="Websites" ToRole="WebsiteRating" />
+        </EntityType>
+        <EntityType Name="WidgetOpenUpdates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WidgetId" Type="Int32" Nullable="false" />
+          <Property Name="DownloadPath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsDownloaded" Type="Boolean" Nullable="false" />
+          <Property Name="DownloadUrl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DeskoVersion" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Widgets" Relationship="deskoTopsiteModel.FK_WidgetOpenUpdates_Widgets" FromRole="WidgetOpenUpdates" ToRole="Widgets" />
+        </EntityType>
+        <EntityType Name="Widgets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="AreaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorUrl" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="StartIndex" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Namespace" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ActiveDlls" Relationship="deskoTopsiteModel.FK_WidgetDlls_Widgets" FromRole="Widgets" ToRole="ActiveDlls" />
+          <NavigationProperty Name="AdminBreadcrumbs" Relationship="deskoTopsiteModel.FK_AdminBreadcrumbs_ModuleInstallations" FromRole="Widgets" ToRole="AdminBreadcrumbs" />
+          <NavigationProperty Name="AdminNavigation" Relationship="deskoTopsiteModel.FK_WidgetsNavigation_ModuleInstallations" FromRole="Widgets" ToRole="AdminNavigation" />
+          <NavigationProperty Name="WidgetOpenUpdates" Relationship="deskoTopsiteModel.FK_WidgetOpenUpdates_Widgets" FromRole="Widgets" ToRole="WidgetOpenUpdates" />
+          <NavigationProperty Name="WidgetsTheme" Relationship="deskoTopsiteModel.FK_ThemeModules_ModuleInstallations" FromRole="Widgets" ToRole="WidgetsTheme" />
+        </EntityType>
+        <EntityType Name="WidgetsTheme">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WidgetId" Type="Int32" Nullable="false" />
+          <Property Name="ThemeSectionId" Type="Int32" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Widgets" Relationship="deskoTopsiteModel.FK_ThemeModules_ModuleInstallations" FromRole="WidgetsTheme" ToRole="Widgets" />
+          <NavigationProperty Name="WidgetsThemeSection" Relationship="deskoTopsiteModel.FK_ThemeModules_ThemeSectionModules" FromRole="WidgetsTheme" ToRole="WidgetsThemeSection" />
+        </EntityType>
+        <EntityType Name="WidgetsThemeSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThemeId" Type="Int32" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Themes" Relationship="deskoTopsiteModel.FK_ThemeSectionModules_Themes" FromRole="WidgetsThemeSection" ToRole="Themes" />
+          <NavigationProperty Name="WidgetsTheme" Relationship="deskoTopsiteModel.FK_ThemeModules_ThemeSectionModules" FromRole="WidgetsThemeSection" ToRole="WidgetsTheme" />
+        </EntityType>
+        <EntityType Name="WidgetUpdateSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LastCheckedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsChecking" Type="Boolean" Nullable="false" />
+          <Property Name="IsInstalling" Type="Boolean" Nullable="false" />
+          <Property Name="IsDownloading" Type="Boolean" Nullable="false" />
+          <Property Name="IsUpdatingSuccess" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_WidgetDlls_Dlls">
+          <End Type="deskoTopsiteModel.Dlls" Role="Dlls" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.ActiveDlls" Role="ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dlls">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="DllId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetDlls_Widgets">
+          <End Type="deskoTopsiteModel.Widgets" Role="Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.ActiveDlls" Role="ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_ModuleInstallations">
+          <End Type="deskoTopsiteModel.Widgets" Role="Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminBreadcrumbs" Role="AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_Plugins">
+          <End Type="deskoTopsiteModel.Plugins" Role="Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminBreadcrumbs" Role="AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminNavigation_Plugins">
+          <End Type="deskoTopsiteModel.Plugins" Role="Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminNavigation" Role="AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetsNavigation_ModuleInstallations">
+          <End Type="deskoTopsiteModel.Widgets" Role="Widgets" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminNavigation" Role="AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Websites_Categories">
+          <End Type="deskoTopsiteModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Websites">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Settings_Languages">
+          <End Type="deskoTopsiteModel.Languages" Role="Languages" Multiplicity="1" />
+          <End Type="deskoTopsiteModel.Settings" Role="Settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Settings">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginTokens_Users">
+          <End Type="deskoTopsiteModel.Users" Role="Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.LoginTokens" Role="LoginTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NavigationPages_NavigationPages">
+          <End Type="deskoTopsiteModel.NavigationPages" Role="NavigationPages" Multiplicity="0..1" />
+          <End Type="deskoTopsiteModel.NavigationPages" Role="NavigationPages1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NavigationPages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NavigationPages1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_Users">
+          <End Type="deskoTopsiteModel.Users" Role="Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.News" Role="News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PluginOpenUpdates_Plugins">
+          <End Type="deskoTopsiteModel.Plugins" Role="Plugins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.PluginOpenUpdates" Role="PluginOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PluginOpenUpdates">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollAnswers_Poll">
+          <End Type="deskoTopsiteModel.Poll" Role="Poll" Multiplicity="1" />
+          <End Type="deskoTopsiteModel.PollAnswers" Role="PollAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poll">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollAnswers">
+              <PropertyRef Name="PollId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollVotes_PollAnswers">
+          <End Type="deskoTopsiteModel.PollAnswers" Role="PollAnswers" Multiplicity="1" />
+          <End Type="deskoTopsiteModel.PollVotes" Role="PollVotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PollAnswers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollVotes">
+              <PropertyRef Name="PollAnswerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PollVotes_Users">
+          <End Type="deskoTopsiteModel.Users" Role="Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.PollVotes" Role="PollVotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PollVotes">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.Reports" Role="Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Settings_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="1" />
+          <End Type="deskoTopsiteModel.Settings" Role="Settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Settings">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeOpenUpdates_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.ThemeOpenUpdates" Role="ThemeOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThemeOpenUpdates">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeSectionModules_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WidgetsThemeSection" Role="WidgetsThemeSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetsThemeSection">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteRating_Users">
+          <End Type="deskoTopsiteModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="deskoTopsiteModel.WebsiteRating" Role="WebsiteRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteRating">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_Websites">
+          <End Type="deskoTopsiteModel.Users" Role="Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Websites">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Votes_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WebsiteIn" Role="WebsiteIn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteIn">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteInDaily_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WebsiteInDaily" Role="WebsiteInDaily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteInDaily">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Redirects_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WebsiteOut" Role="WebsiteOut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteOut">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteOutDaily_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WebsiteOutDaily" Role="WebsiteOutDaily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteOutDaily">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteRating_Websites">
+          <End Type="deskoTopsiteModel.Websites" Role="Websites" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WebsiteRating" Role="WebsiteRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteRating">
+              <PropertyRef Name="WebsiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WidgetOpenUpdates_Widgets">
+          <End Type="deskoTopsiteModel.Widgets" Role="Widgets" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WidgetOpenUpdates" Role="WidgetOpenUpdates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetOpenUpdates">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeModules_ModuleInstallations">
+          <End Type="deskoTopsiteModel.Widgets" Role="Widgets" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WidgetsTheme" Role="WidgetsTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Widgets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetsTheme">
+              <PropertyRef Name="WidgetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThemeModules_ThemeSectionModules">
+          <End Type="deskoTopsiteModel.WidgetsThemeSection" Role="WidgetsThemeSection" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.WidgetsTheme" Role="WidgetsTheme" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WidgetsThemeSection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WidgetsTheme">
+              <PropertyRef Name="ThemeSectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Plugins">
+          <End Type="deskoTopsiteModel.Plugins" Role="Plugins" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.ActiveDlls" Role="ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plugins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActiveDlls_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="0..1" />
+          <End Type="deskoTopsiteModel.ActiveDlls" Role="ActiveDlls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ActiveDlls">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminBreadcrumbs_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminBreadcrumbs" Role="AdminBreadcrumbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminBreadcrumbs">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdminNavigation_Themes">
+          <End Type="deskoTopsiteModel.Themes" Role="Themes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="deskoTopsiteModel.AdminNavigation" Role="AdminNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Themes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AdminNavigation">
+              <PropertyRef Name="ThemeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="deskoTopsiteModelStoreContainer" CdmEntityContainer="deskoTopsiteEntities">
+          <EntitySetMapping Name="ActiveDlls">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.ActiveDlls">
+              <MappingFragment StoreEntitySet="ActiveDlls">
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="DllId" ColumnName="DllId" />
+                <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminBreadcrumbs">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.AdminBreadcrumbs">
+              <MappingFragment StoreEntitySet="AdminBreadcrumbs">
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="LocalizedDescription" ColumnName="LocalizedDescription" />
+                <ScalarProperty Name="LocalizedTitle" ColumnName="LocalizedTitle" />
+                <ScalarProperty Name="LocalizedActionFriendlyName" ColumnName="LocalizedActionFriendlyName" />
+                <ScalarProperty Name="LocalizedControllerFriendlyName" ColumnName="LocalizedControllerFriendlyName" />
+                <ScalarProperty Name="LocalizationBase" ColumnName="LocalizationBase" />
+                <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminNavigation">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.AdminNavigation">
+              <MappingFragment StoreEntitySet="AdminNavigation">
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="LocalizedBase" ColumnName="LocalizedBase" />
+                <ScalarProperty Name="LocalizedName" ColumnName="LocalizedName" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminPages">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.AdminPages">
+              <MappingFragment StoreEntitySet="AdminPages">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dlls">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Dlls">
+              <MappingFragment StoreEntitySet="Dlls">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DynamicPages">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.DynamicPages">
+              <MappingFragment StoreEntitySet="DynamicPages">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELMAH_Error">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.ELMAH_Error">
+              <MappingFragment StoreEntitySet="ELMAH_Error">
+                <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailAccounts">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.EmailAccounts">
+              <MappingFragment StoreEntitySet="EmailAccounts">
+                <ScalarProperty Name="SMTPPort" ColumnName="SMTPPort" />
+                <ScalarProperty Name="SMTPSecure" ColumnName="SMTPSecure" />
+                <ScalarProperty Name="SMTPServer" ColumnName="SMTPServer" />
+                <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+                <ScalarProperty Name="SMTPEmail" ColumnName="SMTPEmail" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailTemplates">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.EmailTemplates">
+              <MappingFragment StoreEntitySet="EmailTemplates">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Languages">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Links">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginFails">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.LoginFails">
+              <MappingFragment StoreEntitySet="LoginFails">
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="Attempts" ColumnName="Attempts" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginTokens">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.LoginTokens">
+              <MappingFragment StoreEntitySet="LoginTokens">
+                <ScalarProperty Name="Selector" ColumnName="Selector" />
+                <ScalarProperty Name="Expires" ColumnName="Expires" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NavigationPages">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.NavigationPages">
+              <MappingFragment StoreEntitySet="NavigationPages">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpenUpdates">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.OpenUpdates">
+              <MappingFragment StoreEntitySet="OpenUpdates">
+                <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PluginOpenUpdates">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.PluginOpenUpdates">
+              <MappingFragment StoreEntitySet="PluginOpenUpdates">
+                <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+                <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+                <ScalarProperty Name="PluginId" ColumnName="PluginId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plugins">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Plugins">
+              <MappingFragment StoreEntitySet="Plugins">
+                <ScalarProperty Name="Namespace" ColumnName="Namespace" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PluginUpdateSettings">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.PluginUpdateSettings">
+              <MappingFragment StoreEntitySet="PluginUpdateSettings">
+                <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+                <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+                <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+                <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poll">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Poll">
+              <MappingFragment StoreEntitySet="Poll">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PollAnswers">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.PollAnswers">
+              <MappingFragment StoreEntitySet="PollAnswers">
+                <ScalarProperty Name="PollId" ColumnName="PollId" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PollVotes">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.PollVotes">
+              <MappingFragment StoreEntitySet="PollVotes">
+                <ScalarProperty Name="PollAnswerId" ColumnName="PollAnswerId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Reports">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+                <ScalarProperty Name="SenderIP" ColumnName="SenderIP" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeoPages">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.SeoPages">
+              <MappingFragment StoreEntitySet="SeoPages">
+                <ScalarProperty Name="ResourceBaseName" ColumnName="ResourceBaseName" />
+                <ScalarProperty Name="ResourceDescriptionName" ColumnName="ResourceDescriptionName" />
+                <ScalarProperty Name="ResourceTitleName" ColumnName="ResourceTitleName" />
+                <ScalarProperty Name="PageIndex" ColumnName="PageIndex" />
+                <ScalarProperty Name="PageController" ColumnName="PageController" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Settings">
+              <MappingFragment StoreEntitySet="Settings">
+                <ScalarProperty Name="IsAdminVerificationRequired" ColumnName="IsAdminVerificationRequired" />
+                <ScalarProperty Name="Timezone" ColumnName="Timezone" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="IsResetInAndOutsEnabled" ColumnName="IsResetInAndOutsEnabled" />
+                <ScalarProperty Name="IsEmailingUserStatisticsEnabled" ColumnName="IsEmailingUserStatisticsEnabled" />
+                <ScalarProperty Name="AutoUpdate" ColumnName="AutoUpdate" />
+                <ScalarProperty Name="UpdateWhenIncorrectVersion" ColumnName="UpdateWhenIncorrectVersion" />
+                <ScalarProperty Name="CronUpdate" ColumnName="CronUpdate" />
+                <ScalarProperty Name="CronPingServer" ColumnName="CronPingServer" />
+                <ScalarProperty Name="IsCreateThumbnailsEnabled" ColumnName="IsCreateThumbnailsEnabled" />
+                <ScalarProperty Name="CronWebsiteThumbnail" ColumnName="CronWebsiteThumbnail" />
+                <ScalarProperty Name="RecaptchaSiteKey" ColumnName="RecaptchaSiteKey" />
+                <ScalarProperty Name="RecaptchaSecretKey" ColumnName="RecaptchaSecretKey" />
+                <ScalarProperty Name="CronjobInAndOut" ColumnName="CronjobInAndOut" />
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="IsPingEnabled" ColumnName="IsPingEnabled" />
+                <ScalarProperty Name="Footer" ColumnName="Footer" />
+                <ScalarProperty Name="CronjobUserStatisticsEmail" ColumnName="CronjobUserStatisticsEmail" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="IsEmailVerificationRequired" ColumnName="IsEmailVerificationRequired" />
+                <ScalarProperty Name="SiteSlogan" ColumnName="SiteSlogan" />
+                <ScalarProperty Name="SiteTitle" ColumnName="SiteTitle" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+                <ScalarProperty Name="ShowAmountWebsites" ColumnName="ShowAmountWebsites" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoftwareUpdateSettings">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.SoftwareUpdateSettings">
+              <MappingFragment StoreEntitySet="SoftwareUpdateSettings">
+                <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+                <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+                <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+                <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThemeOpenUpdates">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.ThemeOpenUpdates">
+              <MappingFragment StoreEntitySet="ThemeOpenUpdates">
+                <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+                <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Themes">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Themes">
+              <MappingFragment StoreEntitySet="Themes">
+                <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+                <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+                <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+                <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThemeUpdateSettings">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.ThemeUpdateSettings">
+              <MappingFragment StoreEntitySet="ThemeUpdateSettings">
+                <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+                <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+                <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+                <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="NewEmailVerificationCode" ColumnName="NewEmailVerificationCode" />
+                <ScalarProperty Name="NewEmail" ColumnName="NewEmail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsAdminVerified" ColumnName="IsAdminVerified" />
+                <ScalarProperty Name="IsEmailVerified" ColumnName="IsEmailVerified" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="EmailVerificationCode" ColumnName="EmailVerificationCode" />
+                <ScalarProperty Name="BannedEndDate" ColumnName="BannedEndDate" />
+                <ScalarProperty Name="BannedStartDate" ColumnName="BannedStartDate" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteBlackList">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteBlackList">
+              <MappingFragment StoreEntitySet="WebsiteBlackList">
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteIn">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteIn">
+              <MappingFragment StoreEntitySet="WebsiteIn">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Unique" ColumnName="Unique" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteInDaily">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteInDaily">
+              <MappingFragment StoreEntitySet="WebsiteInDaily">
+                <ScalarProperty Name="TotalIn" ColumnName="TotalIn" />
+                <ScalarProperty Name="UniqueIn" ColumnName="UniqueIn" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteOut">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteOut">
+              <MappingFragment StoreEntitySet="WebsiteOut">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Unique" ColumnName="Unique" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteOutDaily">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteOutDaily">
+              <MappingFragment StoreEntitySet="WebsiteOutDaily">
+                <ScalarProperty Name="TotalOut" ColumnName="TotalOut" />
+                <ScalarProperty Name="UniqueOut" ColumnName="UniqueOut" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteRating">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WebsiteRating">
+              <MappingFragment StoreEntitySet="WebsiteRating">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="WebsiteID" ColumnName="WebsiteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Websites">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Websites">
+              <MappingFragment StoreEntitySet="Websites">
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="BannerFileName" ColumnName="BannerFileName" />
+                <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+                <ScalarProperty Name="MonitorCheckedDate" ColumnName="MonitorCheckedDate" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+                <ScalarProperty Name="Sponsored" ColumnName="Sponsored" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="BannerURL" ColumnName="BannerURL" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WidgetOpenUpdates">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetOpenUpdates">
+              <MappingFragment StoreEntitySet="WidgetOpenUpdates">
+                <ScalarProperty Name="DeskoVersion" ColumnName="DeskoVersion" />
+                <ScalarProperty Name="DownloadUrl" ColumnName="DownloadUrl" />
+                <ScalarProperty Name="IsDownloaded" ColumnName="IsDownloaded" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="DownloadPath" ColumnName="DownloadPath" />
+                <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Widgets">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.Widgets">
+              <MappingFragment StoreEntitySet="Widgets">
+                <ScalarProperty Name="UpdateUrl" ColumnName="UpdateUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Namespace" ColumnName="Namespace" />
+                <ScalarProperty Name="StartIndex" ColumnName="StartIndex" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="AuthorUrl" ColumnName="AuthorUrl" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WidgetsTheme">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetsTheme">
+              <MappingFragment StoreEntitySet="WidgetsTheme">
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="ThemeSectionId" ColumnName="ThemeSectionId" />
+                <ScalarProperty Name="WidgetId" ColumnName="WidgetId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WidgetsThemeSection">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetsThemeSection">
+              <MappingFragment StoreEntitySet="WidgetsThemeSection">
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WidgetUpdateSettings">
+            <EntityTypeMapping TypeName="deskoTopsiteModel.WidgetUpdateSettings">
+              <MappingFragment StoreEntitySet="WidgetUpdateSettings">
+                <ScalarProperty Name="IsUpdatingSuccess" ColumnName="IsUpdatingSuccess" />
+                <ScalarProperty Name="IsDownloading" ColumnName="IsDownloading" />
+                <ScalarProperty Name="IsInstalling" ColumnName="IsInstalling" />
+                <ScalarProperty Name="IsChecking" ColumnName="IsChecking" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Database.Entities.Links>
+
+<div class="bar">
+    <!-- LinkModels -->
+    <div class="topMenu"><h1>@Topsite_Links.Localization.Links.MenuName</h1></div>
+    <div class="content">
+        <div class="padding10">
+            <ul>
+                @foreach (var link in Model)
+                {
+                    <li><span class="arrow"></span><a href="@link.Link" target="_blank">@link.Name</a></li>
+                }
+            </ul>
+
+            @if (!Model.Any())
+            {
+                <p>@Topsite_Links.Localization.Links.NoLinks</p>
+            }
+        </div>
+    </div>
+</div>

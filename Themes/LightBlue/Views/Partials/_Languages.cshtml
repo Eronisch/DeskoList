@@ -1,0 +1,13 @@
+﻿@using Core.Business.Settings
+@using Localization.Languages.Admin.Views.Shared
+@model IEnumerable<Database.Entities.Languages>
+
+<div id="languages">
+    <span id="text">@_Languages.Language:</span>
+    @foreach (var language in Model)
+    {
+        <a href="@Url.Action("SetLanguage", "Shared", new {culture = language.Culture})">
+            <img alt="@language.Name" title="@language.Name" src="@string.Format("/Themes/{0}/Content/Images/Flags/{1}.png", SettingsHelper.ThemeFolderName, language.Abbreviation)"/>
+        </a>
+    }
+</div>

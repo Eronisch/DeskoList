@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95e6ffb4b99a41ceae539b59b38a99af" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="deskoTopsiteModel.ActiveDlls" Width="1.5" PointX="14" PointY="12.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.AdminBreadcrumbs" Width="1.5" PointX="11" PointY="11.875" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.AdminNavigation" Width="1.5" PointX="11" PointY="8.125" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.AdminPages" Width="1.5" PointX="2.75" PointY="4.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Categories" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Dlls" Width="1.5" PointX="11.75" PointY="16.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.DynamicPages" Width="1.5" PointX="4.75" PointY="4.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.ELMAH_Error" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.EmailAccounts" Width="1.5" PointX="8.75" PointY="17.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.EmailTemplates" Width="1.5" PointX="13.75" PointY="16.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Languages" Width="1.5" PointX="12.5" PointY="30.125" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Links" Width="1.5" PointX="6.75" PointY="4.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.LoginFails" Width="1.5" PointX="10.75" PointY="19.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.LoginTokens" Width="1.5" PointX="3" PointY="30.5" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.NavigationPages" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.News" Width="1.5" PointX="3" PointY="39.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.OpenUpdates" Width="1.5" PointX="15.75" PointY="16.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.PluginOpenUpdates" Width="1.5" PointX="11" PointY="33.125" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Plugins" Width="1.5" PointX="8.75" PointY="6.875" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.PluginUpdateSettings" Width="1.5" PointX="12.75" PointY="19.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Poll" Width="1.5" PointX="1.5" PointY="8.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.PollAnswers" Width="1.5" PointX="3.75" PointY="8.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.PollVotes" Width="1.5" PointX="6" PointY="14.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Reports" Width="1.5" PointX="5.25" PointY="29.375" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.SeoPages" Width="1.5" PointX="16.75" PointY="4.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Settings" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.SoftwareUpdateSettings" Width="1.5" PointX="16.75" PointY="7.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.ThemeOpenUpdates" Width="1.5" PointX="11.75" PointY="26.125" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Themes" Width="1.5" PointX="9.5" PointY="2.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.ThemeUpdateSettings" Width="1.5" PointX="16.75" PointY="10.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Users" Width="1.5" PointX="0.75" PointY="16.125" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteBlackList" Width="1.875" PointX="7.75" PointY="20.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteIn" Width="1.5" PointX="5.25" PointY="11.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteInDaily" Width="1.5" PointX="5.25" PointY="20.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteOut" Width="1.5" PointX="5.25" PointY="26.5" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteOutDaily" Width="1.5" PointX="5.25" PointY="23.625" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WebsiteRating" Width="1.5" PointX="5.25" PointY="17.5" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Websites" Width="1.5" PointX="3" PointY="15.75" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WidgetOpenUpdates" Width="1.5" PointX="11" PointY="22.25" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.Widgets" Width="1.5" PointX="8.75" PointY="11.5" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WidgetsTheme" Width="1.5" PointX="14" PointY="9.375" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WidgetsThemeSection" Width="1.5" PointX="11.75" PointY="2.5" />
+        <EntityTypeShape EntityType="deskoTopsiteModel.WidgetUpdateSettings" Width="1.5" PointX="16.75" PointY="13.25" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WidgetDlls_Dlls" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WidgetDlls_Widgets" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_AdminBreadcrumbs_ModuleInstallations" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_AdminBreadcrumbs_Plugins" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_AdminNavigation_Plugins" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WidgetsNavigation_ModuleInstallations" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Websites_Categories" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Settings_Languages" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_LoginTokens_Users" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_NavigationPages_NavigationPages" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_News_Users" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_PluginOpenUpdates_Plugins" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_PollAnswers_Poll" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_PollVotes_PollAnswers" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_PollVotes_Users" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Reports_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Settings_Themes" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ThemeOpenUpdates_Themes" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ThemeSectionModules_Themes" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WebsiteRating_Users" />
+        <AssociationConnector Association="deskoTopsiteModel.Users_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Votes_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WebsiteInDaily_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_Redirects_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WebsiteOutDaily_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WebsiteRating_Websites" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_WidgetOpenUpdates_Widgets" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ThemeModules_ModuleInstallations" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ThemeModules_ThemeSectionModules" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ActiveDlls_Plugins" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_ActiveDlls_Themes" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_AdminBreadcrumbs_Themes" />
+        <AssociationConnector Association="deskoTopsiteModel.FK_AdminNavigation_Themes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

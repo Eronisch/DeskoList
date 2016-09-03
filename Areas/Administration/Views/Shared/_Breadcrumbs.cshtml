@@ -1,0 +1,24 @@
+﻿@using Web.Breadcrumbs
+@{
+    var breadCrumbs = Html.GetBreadCrumbs();
+}  
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    @if (breadCrumbs != null)
+    {
+        <h1>
+            @breadCrumbs.Title
+
+            @if (!string.IsNullOrEmpty(breadCrumbs.Description))
+            {
+                <small>@breadCrumbs.Description</small>
+            }
+        </h1>
+
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action(breadCrumbs.Action, breadCrumbs.Controller)"><i class="@breadCrumbs.Icon"></i> @breadCrumbs.FriendlyController</a></li>
+            <li class="active">@breadCrumbs.FriendlyAction</li>
+        </ol>
+    }
+</section>

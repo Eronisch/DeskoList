@@ -1,0 +1,67 @@
+﻿@using Localization.Languages.Views.Website
+@model IEnumerable<Core.Models.Statistics.BundleWebsiteStatisticsModel>
+
+
+@Html.Partial("~/Themes/LightBlue/Views/Partials/CP_Navigation.cshtml")
+
+<div class="bar">
+    <div class="topMenu"><h1>@Statistics.MenuName</h1></div>
+    <div class="content">
+        <p class="nospace">@Statistics.Description</p>
+             
+                
+        <div id="statsWebsites">
+            <ul class="margin10" id="list">
+                @foreach (var website in Model)
+                {
+                    <li><p class="websiteName">@website.Website.Title</p>
+
+                        <div class="pageStatistics">
+                            <div class="column">
+                                <p class="titleStatistics">@Statistics.DailyColumn</p>
+                               @foreach(var inStats in website.In)
+                                {
+                                    <p>@inStats.Date.ToString("MMMM")</p>
+                                }
+                            </div>
+
+                            <div class="column">
+                                <p class="boldText">@Statistics.UniqueInColumn</p>
+                                @foreach (var uniqueInStats in website.UniqueIn)
+                                {
+                                    <p>@uniqueInStats.Amount</p>
+                                }
+                            </div>
+
+                            <div class="column">
+                                <p class="boldText">@Statistics.TotalIn</p>
+                                @foreach (var inStats in website.In)
+                                {
+                                    <p>@inStats.Amount</p>
+                                }
+                            </div>
+
+                            <div class="column">
+                                <p class="boldText">@Statistics.UniqueOut</p>
+                                @foreach (var uniqueOutStats in website.UniqueOut)
+                                {
+                                    <p>@uniqueOutStats.Amount</p>
+                                }
+                            </div>
+                            <div class="column nospace-margin">
+                                <p class="boldText">@Statistics.TotalOut</p>
+                                @foreach (var outStats in website.Out)
+                                {
+                                    <p>@outStats.Amount</p>
+                                }
+                            </div>
+                 
+                        </div>
+
+                    </li>
+                }
+            </ul>
+            <p id="line"></p>
+        </div>
+    </div>
+</div>

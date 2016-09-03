@@ -1,0 +1,98 @@
+﻿@using Localization.Languages.Views.Shared
+@using Localization.Languages.Views.Website
+@model Topsite.Models.EditWebsiteModel
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <h4>@Global.Error</h4>
+
+        @Html.ValidationSummary()
+    </div>
+}
+
+@using (Html.BeginForm("Add", "Website", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <div class="bar">
+        <div class="topMenu">
+            <h1>@Add.MenuName</h1>
+        </div>
+        <div class="content">
+
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(m => m.Url)
+            @Html.TextBoxFor(m => m.Url)
+
+            @Html.LabelFor(m => m.Title)
+            @Html.TextBoxFor(m => m.Title)
+
+            @Html.LabelFor(m => m.Description)
+            @Html.TextAreaFor(m => m.Description)
+
+            @Html.LabelFor(m => m.Keywords)
+            @Html.TextBoxFor(m => m.Keywords)
+
+            @Html.LabelFor(m => m.Category)
+            @Html.DropDownListFor(m => m.Category, Model.Categories)
+        </div>
+    </div>
+
+    <div class='bar'>
+        <div class="topMenu">
+            <h1>@Add.BannerMenu</h1>
+        </div>
+        <div class="content">
+            <label>
+                @Html.CheckBoxFor(m => m.UseBannerUrl)
+                @BasicWebsite.InfoLocalRemoteBanner
+            </label>
+
+            <div id="bannerFile" style="display: @(Model.UseBannerUrl ? "none" : "block")">
+                @Html.LabelFor(m => m.BannerFile)
+                @Html.TextBoxFor(m => m.BannerFile, new { type = "file" })
+            </div>
+
+            <div id="bannerUrl" style="display: @(Model.UseBannerUrl ? "block" : "none")">
+                @Html.LabelFor(m => m.BannerUrl)
+                @Html.TextBoxFor(m => m.BannerUrl, new { @class = "longTextBox" })
+            </div>
+        </div>
+    </div>
+
+    if (Model.IsMonitoringEnabled)
+    {
+        <div id="server" class='bar'>
+            <div class="topMenu">
+                <h1>@Add.ServerMenu</h1>
+            </div>
+            <div class="content">
+                <small>@BasicWebsite.ServerDescription</small>
+
+                @Html.LabelFor(m => m.ServerIp)
+                @Html.TextBoxFor(m => m.ServerIp)
+
+                @Html.LabelFor(m => m.ServerPort)
+                @Html.TextBoxFor(m => m.ServerPort)
+            </div>
+        </div>
+    }
+
+    <div id="done" class='bar'>
+        <div class="topMenu">
+            <h1>@Add.DoneMenu</h1>
+        </div>
+        <div class="content">
+            <input type="submit" value="@Add.SubmitAddWebsite" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script src="~/Themes/LightBlue/Content/scripts/BasicWebsite.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.setBannerEvent('#UseBannerUrl');
+        });
+    </script>
+}

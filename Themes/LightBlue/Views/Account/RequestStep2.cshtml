@@ -1,0 +1,32 @@
+﻿@using Localization.Languages.Views.Account
+@using Localization.Languages.Views.Shared
+@model Topsite.Models.RequestStepTwoModel
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class='alert alert-danger'>
+        <h4>@Global.Error</h4>
+        @Html.ValidationSummary()
+    </div>
+}
+
+<div class="bar">
+    <div class="topMenu"><h1>@RequestStep2.MenuName</h1></div>
+    <div class="content">
+        <p class="nospace">@RequestStep2.Description</p>
+
+        @using (Html.BeginForm("RequestStep2", "Account"))
+        {
+            @Html.HiddenFor(m=> m.Email)
+            
+            @Html.AntiForgeryToken()
+            
+            @Html.Label(Model.Question)
+
+            @Html.TextBoxFor(m => m.Answer)
+
+            <input type="submit" value="@RequestStep2.RequestUsername" class="btn btn-default" />
+        }
+    </div>
+</div>

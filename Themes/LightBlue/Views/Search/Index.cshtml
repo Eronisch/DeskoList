@@ -1,0 +1,7 @@
+﻿@using Topsite.Themes.LightBlue.Helpers
+@using Web.Search
+@model Topsite.Models.BundleWebsitesRanking
+
+@Html.GetLoadMoreHtmlConfig(Model.StartIndex + Model.Websites.Count(), null, SearchHelper.GetSearchText(TempData))
+
+@{Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_WebsiteList.cshtml", Model);}

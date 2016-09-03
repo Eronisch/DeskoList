@@ -1,0 +1,157 @@
+﻿@using Localization.Languages.Admin.Views.Widgets
+@model Topsite.Areas.Administration.Models.Widgets.BundleInstalledWidgets
+
+<div id="widgets">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            @Html.ActionLink(Index.ViewActiveWidgets, "Active", "Widgets", null, new { @id = "viewActiveWidgets", @class = "btn btn-info pull-right" })
+            <input type="button" id="installWidget" class="btn btn-default pull-right" value="@Index.InstallOrRepairWidget" />
+        </div>
+
+        <div id="list" class="col-md-12">
+            <div class="row">
+                @foreach (var widget in Model.InstalledWidgets)
+            {
+                    <div class="col-md-3">
+                        <div class="well">
+                            <h4>@widget.Name</h4>
+                            <p class="text-muted">@widget.Description</p>
+                            @if (!string.IsNullOrEmpty(widget.Image))
+                            {
+                                <div class="image">
+                                    <img src="~/Widgets/@widget.AreaName/@widget.Image" alt="@widget.Name" title="@widget.Name">
+                                </div>
+                            }
+
+                            @if (widget.IsEnabledInActiveTheme)
+                            {
+                                @Html.ActionLink(Index.Activate, "Activate", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId }, new { @class = "btn btn-block btn-default activate", disabled = true })
+                            }
+                            else
+                            {
+                                @Html.ActionLink(Index.Activate, "Activate", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId }, new { @class = "btn btn-block btn-default activate" })
+                            }
+
+                            @if (widget.IsUsedInAllThemes)
+                            {
+                                @Html.ActionLink(Index.EnableGlobally, "UpdateGlobalStatus", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId, status = true }, new { @class = "btn btn-block btn-info", disabled = true })
+                            }
+                            else
+                            {
+                                @Html.ActionLink(Index.EnableGlobally, "UpdateGlobalStatus", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId, status = true }, new { @class = "btn btn-block btn-info" })
+                            }
+
+                            @if (widget.IsUsedInAnyOfTheThemes)
+                            {
+                                @Html.ActionLink(Index.DisableGlobally, "UpdateGlobalStatus", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId, status = false }, new { @class = "btn btn-block btn-warning" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink(Index.DisableGlobally, "UpdateGlobalStatus", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId, status = false }, new { @class = "btn btn-block btn-warning", disabled = true })
+                            }
+
+
+
+                            @Html.ActionLink(Index.Delete, "Delete", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId }, new { @class = "delete btn btn-block btn-danger" })
+
+                            <div class="activateWidgetModal modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        @using (Html.BeginForm("Activate", "Widgets"))
+                                        {
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">@Index.ActivateTitle: @widget.Name</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                @Html.HiddenFor(m => widget.ActivateWidget.WidgetId)
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(m => widget.ActivateWidget.Order)
+                                                    @Html.HiddenFor(m => widget.ActivateWidget.Order, new { @class = "order", data_orgvalue = widget.ActivateWidget.Order, data_from = widget.ActivateWidget.Order, Value = "" })
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(m => widget.ActivateWidget.ThemeSectionId)
+                                                    @Html.DropDownListFor(m => widget.ActivateWidget.ThemeSectionId, Model.Themes, new { @class = "form-control", data_orgValue = Model.Themes.Any() ? Model.Themes.First().Value : "-1" })
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Close</button>
+                                                <button type="submit" class="btn btn-primary">@Index.Add_Widget</button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deleteModal modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">@Index.DeleteTitle: @widget.Name</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>@Index.DeleteConfirmationMessage</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Close</button>
+                                            @Html.ActionLink(Index.Delete, "Delete", "Widgets", new { widgetId = widget.ActivateWidget.WidgetId }, new { @class = "btn btn-primary" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div id="installWidgetModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    @using (Html.BeginForm("Install", "Widgets", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">@Index.TitleInstallOrRepairWidget</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>@Html.LabelFor(m => m.WidgetInstallModel.File)</div>
+                            @Html.TextBoxFor(m => m.WidgetInstallModel.File, new { @type = "file" })
+
+                            <div class="row margin15">
+                                <div class="alert alert-warning col-md-11">
+                                    <p>@Index.InstallWarning</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">@Index.Cancel</button>
+                            <button type="submit" class="btn btn-primary">@Index.Install</button>
+                        </div>
+                    }
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+
+@section Head{
+    <!-- Ion Slider -->
+    <link href="~/Areas/Administration/Content/css/ionslider/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <!-- ion slider Nice -->
+    <link href="~/Areas/Administration/Content/Css/ionslider/ion.rangeSlider.skinNice.css" rel="stylesheet" type="text/css" />
+}
+
+@section Footer{
+    <script src="~/Areas/Administration/Content/Javascript/InstalledWidgets.js"></script>
+
+    <script src="~/Areas/Administration/Content/Javascript/plugins/ionslider/ion.rangeSlider.min.js" type="text/javascript"></script>
+}

@@ -1,0 +1,30 @@
+﻿@model IList<Topsite.Areas.Administration.Models.Updates.TabbedUpdateTableModel>
+
+@{
+    Layout = null;
+}
+
+@if (!Model.Any())
+{
+    <p>@Localization.Languages.Admin.Views.Shared._TabbedUpdates.NoUpdatesAvailable</p>
+}
+else
+{
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            @for (int index = 0; Model.Count > index; index++)
+            {
+                <li @if (index == 0) { <text> class="active" </text>}><a href="#@Model[index].Id" data-toggle="tab">@Model[index].Name</a></li>
+            }
+        </ul>
+        <div class="tab-content">
+            @for (int index = 0; Model.Count > index; index++)
+            {
+                <div class="tab-pane @if (index == 0){<text>active</text>}" id="@Model[index].Id">
+                    @{Html.RenderPartial("_AvailableUpdates", Model[index].Updates);}
+                </div>
+            }
+        </div>
+    </div>
+}
+

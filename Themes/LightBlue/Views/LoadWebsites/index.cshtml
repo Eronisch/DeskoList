@@ -1,0 +1,15 @@
+﻿@using Topsite.Themes.LightBlue.Helpers
+@model Topsite.Models.BundleWebsitesRanking
+
+@{
+    Layout = null;
+}
+
+@if (!Model.Websites.Any())
+{
+   @Html.DisplayNoResultsFoundAlert()
+}
+else
+{
+        Html.RenderPartial("~/Themes/LightBlue/Views/Partials/_Website.cshtml", Model);
+}

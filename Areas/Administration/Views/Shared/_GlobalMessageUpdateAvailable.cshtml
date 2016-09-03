@@ -1,0 +1,22 @@
+﻿@using Localization.Languages.Admin.Views.Shared
+@using Topsite.Areas.Administration.Models.Settings
+@using Web.Bootstrap
+@model Topsite.Areas.Administration.Models.Settings.GlobalMessageUpdateModel
+
+@if (!Model.IsSettingsUpdatePage)
+{
+    switch (Model.UpdateStatus)
+    {
+        case UpdateAvailableStatus.SingleUpdateAvailable:
+        {
+            @Html.GenerateInfo(GlobalMessageUpdateAvailable.TitleSingleUpdateAvailable, GlobalMessageUpdateAvailable.DescriptionSingleUpdateAvailable, displayIcon: true, hasCloseIcon: false)
+            break;
+        }
+
+        case UpdateAvailableStatus.MultipleUpdatesAvailable:
+        {
+            @Html.GenerateInfo(GlobalMessageUpdateAvailable.TitleMultipleUpdatesAvailable, GlobalMessageUpdateAvailable.DescriptionMultipleUpdatesAvailable, displayIcon: true, hasCloseIcon: false)
+            break;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿@using Topsite.Models
+@model Topsite.Models.BundleModels
+@{
+    ViewBag.Title = "DaTop100.com - " + Configuration.Settings.Title;
+    ViewBag.Description = Configuration.Settings.Description;
+    ViewBag.Keywords = Configuration.Settings.Keywords;
+    Layout = "~/Themes/LightBlue/Views/_Layout.cshtml";
+}
+
+<input type="hidden" id="categoryID" value="" />
+<input type="hidden" id="page" value="1" />
+<input type="hidden" id="searchText" value="" />
+
+
+@if (Model.WebsiteModels.Count != 0)
+{
+    {
+        Html.RenderPartial("~/Themes/LightBlue/Views/Partials/Website.cshtml");
+    }
+}
+else
+{
+    <div class="alert alert-info">
+        <h4>Ooooh dear!</h4>
+        <p>There are no websites yet, be the first one on the list. Join now!</p>
+    </div>
+}
+
+
+<!-- Ajax Call Load Websites Data -->
+<div id="newwebsites"></div>
+<div>
+    <input type="button" value="Load more websites" id="loadwebsites" class="btn" />
+</div>
+
+<!-- Report Model -->
+@Html.Partial("~/Themes/LightBlue/Views/Partials/Report.cshtml")

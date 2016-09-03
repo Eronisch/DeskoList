@@ -1,0 +1,28 @@
+﻿@using Localization.Languages.Views.Account
+@model Topsite.Models.LoginModel
+
+
+@using (Html.BeginForm("Login", "Account"))
+{
+    @Html.AntiForgeryToken()
+    <div class="bar">
+        <div class="topMenu"><h1>@Login.MenuName</h1></div>
+        <div class="content">
+
+            @Html.HiddenFor(m=> m.ReturnUrl)
+
+            @Html.LabelFor(m => m.Username, new {@class = "nospace"})
+            @Html.TextBoxFor(m => m.Username)
+
+
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+
+            <label id="rememberMe">
+                @Html.CheckBoxFor(m => m.RememberMe) @Login.RememberMe
+            </label>
+
+            <input type="submit" class="btn btn-default" value="@Login.LoginSubmit" />
+        </div>
+    </div>
+}
