@@ -4,6 +4,7 @@ using Core.Business.Pages;
 using Core.Business.Settings;
 using DatabaseXML;
 using Localization.Services;
+using Web.Account;
 using Web.Route;
 using Web.Seo;
 

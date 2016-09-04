@@ -46,11 +46,11 @@
   <ItemGroup>
     <Content Include="Autofac.dll" />
     <Content Include="Common.Logging.dll" />
-    <Content Include="elFinder.Connector.dll" />
     <Content Include="elFinder.Connector.Integration.Autofac.dll" />
     <Content Include="Google.GData.Analytics.dll" />
     <Content Include="Google.GData.Client.dll" />
     <Content Include="Ionic.Zip.Reduced.dll" />
+    <Content Include="Newtonsoft.Json.dll" />
     <Content Include="Quartz.dll" />
   </ItemGroup>
   <ItemGroup>

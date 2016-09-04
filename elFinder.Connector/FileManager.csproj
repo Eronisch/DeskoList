@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53FE1298-2B81-4BAE-9255-1C9B7589C644}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>elFinder.Connector</RootNamespace>
+    <AssemblyName>elFinder.Connector</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\DuplicateCommand.cs" />
+    <Compile Include="Command\FileCommand.cs" />
+    <Compile Include="Command\GetCommand.cs" />
+    <Compile Include="Command\MkfileCommand.cs" />
+    <Compile Include="Command\MkdirCommand.cs" />
+    <Compile Include="Command\PasteCommand.cs" />
+    <Compile Include="Command\PutCommand.cs" />
+    <Compile Include="Command\RenameCommand.cs" />
+    <Compile Include="Command\ResizeCommand.cs" />
+    <Compile Include="Command\RmCommand.cs" />
+    <Compile Include="Command\TmbCommand.cs" />
+    <Compile Include="Command\TreeCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\OpenCommand.cs" />
+    <Compile Include="Command\ParentsCommand.cs" />
+    <Compile Include="Command\UploadCommand.cs" />
+    <Compile Include="Config\AppConnectorConfig.cs" />
+    <Compile Include="Connector.cs" />
+    <Compile Include="Model\DirectoryModel.cs" />
+    <Compile Include="Model\FileModel.cs" />
+    <Compile Include="Model\ObjectModel.cs" />
+    <Compile Include="Model\OptionsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response\BinaryFileResponse.cs" />
+    <Compile Include="Response\DuplicateResponse.cs" />
+    <Compile Include="Response\PutResponse.cs" />
+    <Compile Include="Response\GetResponse.cs" />
+    <Compile Include="Response\PasteResponse.cs" />
+    <Compile Include="Response\ResizeResponse.cs" />
+    <Compile Include="Response\RmResponse.cs" />
+    <Compile Include="Response\MkfileResponse.cs" />
+    <Compile Include="Response\MkdirResponse.cs" />
+    <Compile Include="Response\RenameResponse.cs" />
+    <Compile Include="Response\TmbResponse.cs" />
+    <Compile Include="Response\TreeResponse.cs" />
+    <Compile Include="Response\DirectoryResponse.cs" />
+    <Compile Include="Response\ErrorResponse.cs" />
+    <Compile Include="Response\InitDirectoryResponse.cs" />
+    <Compile Include="Response\IResponse.cs" />
+    <Compile Include="Response\JSONResponse.cs" />
+    <Compile Include="Config\IConnectorConfig.cs" />
+    <Compile Include="Response\UploadResponse.cs" />
+    <Compile Include="Service\Base64CryptoService.cs" />
+    <Compile Include="Service\DefaultImageEditorService.cs" />
+    <Compile Include="Service\DefaultVolumeManager.cs" />
+    <Compile Include="Service\ICryptoService.cs" />
+    <Compile Include="Service\IDependencyResolver.cs" />
+    <Compile Include="Service\IImageEditorService.cs" />
+    <Compile Include="Service\IVolume.cs" />
+    <Compile Include="Service\IVolumeManager.cs" />
+    <Compile Include="Service\LocalFileSystemVolume.cs" />
+    <Compile Include="Model\MimeTypes.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Core.csproj">
+      <Project>{6828f104-04c8-471e-b6e0-17095edd1c02}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\Web.csproj">
+      <Project>{1be9eaa7-7eef-4f9d-8775-a5c92d4e79d7}</Project>
+      <Name>Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

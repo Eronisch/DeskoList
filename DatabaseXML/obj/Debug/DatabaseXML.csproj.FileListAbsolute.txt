@@ -3,8 +3,3 @@ C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\DatabaseXML\bin\Debug\Data
 C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.csprojResolveAssemblyReference.cache
 C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.dll
 C:\Users\Jamie\Source\Workspaces\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.pdb
-G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\DatabaseXML\bin\Debug\DatabaseXML.dll
-G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\DatabaseXML\bin\Debug\DatabaseXML.pdb
-G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.csprojResolveAssemblyReference.cache
-G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.dll
-G:\Dropbox\Programmeer Projecten\Topsite\Versions\1.5\DatabaseXML\obj\Debug\DatabaseXML.pdb

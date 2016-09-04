@@ -23,6 +23,17 @@ namespace Web.Account
         }
 
         /// <summary>
+        /// Get the logged in userid, throws an exception when the user is not logged in
+        /// </summary>
+        /// <returns></returns>
+        public static int GetUserId(HttpContext context)
+        {
+            if (!IsLoggedIn()) { throw new Exception("You can't get the userid, because the user is not logged in"); }
+
+            return (int)context.Session[SessionUserIdKey];
+        }
+
+        /// <summary>
         /// Gets the logged in username, throws an exception when the user is not logged in
         /// </summary>
         /// <returns></returns>
@@ -40,6 +51,22 @@ namespace Web.Account
         public static bool IsLoggedIn()
         {
             var userId = HttpContext.Current.Session[SessionUserIdKey];
+
+            if (userId != null && !string.IsNullOrEmpty(userId.ToString()))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if the current user is logged in
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsLoggedIn(HttpContext context)
+        {
+            var userId = context.Session[SessionUserIdKey];
 
             if (userId != null && !string.IsNullOrEmpty(userId.ToString()))
             {

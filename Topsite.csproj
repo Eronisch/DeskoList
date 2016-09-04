@@ -58,9 +58,6 @@
     <Reference Include="Common.Logging">
       <HintPath>External\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="elFinder.Connector">
-      <HintPath>External\elFinder.Connector.dll</HintPath>
-    </Reference>
     <Reference Include="elFinder.Connector.Integration.Autofac">
       <HintPath>External\elFinder.Connector.Integration.Autofac.dll</HintPath>
     </Reference>
@@ -509,6 +506,7 @@
     <Content Include="Areas\Administration\Content\Css\iCheck\square\yellow.css" />
     <Content Include="Areas\Administration\Content\Css\iCheck\square\yellow.png" />
     <Content Include="Areas\Administration\Content\Css\iCheck\square\_all.css" />
+    <Content Include="Areas\Administration\Content\Fonts\ionicons\ionicons.svg" />
     <Content Include="Areas\Administration\Content\Img\favicon.png" />
     <Content Include="Areas\Administration\Content\Img\flags\ad.png" />
     <Content Include="Areas\Administration\Content\Img\flags\ae.png" />
@@ -1419,6 +1417,9 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Administration\Content\Fonts\ionicons\ionicons.eot" />
+    <Content Include="Areas\Administration\Content\Fonts\ionicons\ionicons.ttf" />
+    <Content Include="Areas\Administration\Content\Fonts\ionicons\ionicons.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Install\Content\Database\Script.sql" />
     <Content Include="Install\Content\Scripts\bootstrap.js" />
@@ -1610,6 +1611,10 @@
       <Project>{1ed679d9-f933-40f7-89e2-359ffd1c3350}</Project>
       <Name>Database</Name>
     </ProjectReference>
+    <ProjectReference Include="elFinder.Connector\FileManager.csproj">
+      <Project>{53fe1298-2b81-4bae-9255-1c9b7589c644}</Project>
+      <Name>FileManager</Name>
+    </ProjectReference>
     <ProjectReference Include="External\External.csproj">
       <Project>{c6212262-5cce-43e3-ab21-354257fe1a86}</Project>
       <Name>External</Name>
@@ -1634,9 +1639,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Administration\Content\Fonts\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

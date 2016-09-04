@@ -1,0 +1,1096 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="deskoTopsiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActiveDlls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WidgetId" Type="int" />
+    <Property Name="DllId" Type="int" Nullable="false" />
+    <Property Name="PluginId" Type="int" />
+    <Property Name="ThemeId" Type="int" />
+  </EntityType>
+  <EntityType Name="AdminBreadcrumbs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Controller" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Icon" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="WidgetId" Type="int" />
+    <Property Name="LocalizationBase" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedControllerFriendlyName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedActionFriendlyName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedTitle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedDescription" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PluginId" Type="int" />
+    <Property Name="ThemeId" Type="int" />
+  </EntityType>
+  <EntityType Name="AdminNavigation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Controller" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LocalizedBase" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Icon" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PluginId" Type="int" />
+    <Property Name="WidgetId" Type="int" />
+    <Property Name="ThemeId" Type="int" />
+  </EntityType>
+  <EntityType Name="AdminPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Controller" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Keywords" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Dlls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DynamicPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="125" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Keywords" Type="varchar" MaxLength="250" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Application" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Host" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusCode" Type="int" Nullable="false" />
+    <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AllXml" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailAccounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SMTPEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTPPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTPServer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTPSecure" Type="bit" Nullable="false" />
+    <Property Name="SMTPPort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailTemplates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Culture" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Abbreviation" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Links">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Link" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginFails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Attempts" Type="tinyint" Nullable="false" />
+    <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginTokens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Token" Type="nvarchar" MaxLength="72" Nullable="false" />
+    <Property Name="Expires" Type="datetime" Nullable="false" />
+    <Property Name="Selector" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NavigationPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="125" Nullable="false" />
+    <Property Name="OrderNumber" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Information" Type="varchar(max)" Nullable="false" />
+    <Property Name="AuthorID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OpenUpdates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+    <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+    <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PluginOpenUpdates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PluginId" Type="int" Nullable="false" />
+    <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+    <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+    <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plugins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Author" Type="varchar" MaxLength="201" Nullable="false" />
+    <Property Name="AuthorUrl" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Namespace" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PluginUpdateSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsChecking" Type="bit" Nullable="false" />
+    <Property Name="IsInstalling" Type="bit" Nullable="false" />
+    <Property Name="IsDownloading" Type="bit" Nullable="false" />
+    <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Poll">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PollAnswers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PollId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PollVotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="PollAnswerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="SenderIP" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SeoPages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageController" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PageIndex" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ResourceTitleName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ResourceDescriptionName" Type="varchar" MaxLength="255" />
+    <Property Name="ResourceBaseName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Keywords" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ShowAmountWebsites" Type="int" Nullable="false" />
+    <Property Name="Maintenance" Type="bit" Nullable="false" />
+    <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SiteTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SiteSlogan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsEmailVerificationRequired" Type="bit" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CronjobUserStatisticsEmail" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Footer" Type="varchar" MaxLength="1000" />
+    <Property Name="IsPingEnabled" Type="bit" Nullable="false" />
+    <Property Name="ThemeId" Type="int" Nullable="false" />
+    <Property Name="CronjobInAndOut" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="RecaptchaSecretKey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecaptchaSiteKey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CronWebsiteThumbnail" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IsCreateThumbnailsEnabled" Type="bit" Nullable="false" />
+    <Property Name="CronPingServer" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="GoogleSiteId" Type="varchar" MaxLength="25" />
+    <Property Name="CronUpdate" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="UpdateWhenIncorrectVersion" Type="bit" Nullable="false" />
+    <Property Name="AutoUpdate" Type="bit" Nullable="false" />
+    <Property Name="IsEmailingUserStatisticsEnabled" Type="bit" Nullable="false" />
+    <Property Name="IsResetInAndOutsEnabled" Type="bit" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Timezone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsAdminVerificationRequired" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SoftwareUpdateSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsChecking" Type="bit" Nullable="false" />
+    <Property Name="IsInstalling" Type="bit" Nullable="false" />
+    <Property Name="IsDownloading" Type="bit" Nullable="false" />
+    <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThemeOpenUpdates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThemeId" Type="int" Nullable="false" />
+    <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+    <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+    <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Themes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThemeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorUrl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FolderName" Type="varchar" MaxLength="201" Nullable="false" />
+    <Property Name="Version" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ThemeUpdateSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsChecking" Type="bit" Nullable="false" />
+    <Property Name="IsInstalling" Type="bit" Nullable="false" />
+    <Property Name="IsDownloading" Type="bit" Nullable="false" />
+    <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Question" Type="int" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="BannedStartDate" Type="datetime" />
+    <Property Name="BannedEndDate" Type="datetime" />
+    <Property Name="EmailVerificationCode" Type="varchar" MaxLength="30" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+    <Property Name="IsEmailVerified" Type="bit" Nullable="false" />
+    <Property Name="IsAdminVerified" Type="bit" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="72" Nullable="false" />
+    <Property Name="NewEmail" Type="varchar" MaxLength="50" />
+    <Property Name="NewEmailVerificationCode" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="WebsiteBlackList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Domain" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteIn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebsiteID" Type="int" Nullable="false" />
+    <Property Name="IP" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Unique" Type="bit" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteInDaily">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="UniqueIn" Type="int" Nullable="false" />
+    <Property Name="TotalIn" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteOut">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebsiteID" Type="int" Nullable="false" />
+    <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unique" Type="bit" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteOutDaily">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="UniqueOut" Type="int" Nullable="false" />
+    <Property Name="TotalOut" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteRating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebsiteID" Type="int" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="Websites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BannerURL" Type="varchar" MaxLength="75" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Keywords" Type="varchar" MaxLength="150" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Sponsored" Type="bit" Nullable="false" />
+    <Property Name="ServerIP" Type="varchar" MaxLength="25" />
+    <Property Name="ServerPort" Type="int" />
+    <Property Name="MonitorCheckedDate" Type="datetime" />
+    <Property Name="IsOnline" Type="bit" Nullable="false" />
+    <Property Name="BannerFileName" Type="varchar" MaxLength="50" />
+    <Property Name="Thumbnail" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WidgetOpenUpdates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WidgetId" Type="int" Nullable="false" />
+    <Property Name="DownloadPath" Type="varchar" MaxLength="255" />
+    <Property Name="Version" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDownloaded" Type="bit" Nullable="false" />
+    <Property Name="DownloadUrl" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DeskoVersion" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Widgets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="AreaName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Author" Type="varchar" MaxLength="201" Nullable="false" />
+    <Property Name="AuthorUrl" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Controller" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="StartIndex" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Namespace" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UpdateUrl" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="WidgetsTheme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WidgetId" Type="int" Nullable="false" />
+    <Property Name="ThemeSectionId" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WidgetsThemeSection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThemeId" Type="int" Nullable="false" />
+    <Property Name="FriendlyName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WidgetUpdateSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastCheckedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsChecking" Type="bit" Nullable="false" />
+    <Property Name="IsInstalling" Type="bit" Nullable="false" />
+    <Property Name="IsDownloading" Type="bit" Nullable="false" />
+    <Property Name="IsUpdatingSuccess" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AdminNavi__Theme__403A8C7D">
+    <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Themes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminNavigation">
+        <PropertyRef Name="ThemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActiveDlls_Dlls">
+    <End Role="Dlls" Type="Self.Dlls" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dlls">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActiveDlls">
+        <PropertyRef Name="DllId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActiveDlls_Plugins">
+    <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plugins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActiveDlls">
+        <PropertyRef Name="PluginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActiveDlls_Themes">
+    <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Themes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActiveDlls">
+        <PropertyRef Name="ThemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActiveDlls_Widgets">
+    <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ActiveDlls" Type="Self.ActiveDlls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Widgets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActiveDlls">
+        <PropertyRef Name="WidgetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminBreadcrumbs_Plugins">
+    <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plugins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminBreadcrumbs">
+        <PropertyRef Name="PluginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminBreadcrumbs_Themes">
+    <End Role="Themes" Type="Self.Themes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Themes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminBreadcrumbs">
+        <PropertyRef Name="ThemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminBreadcrumbs_Widgets">
+    <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminBreadcrumbs" Type="Self.AdminBreadcrumbs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Widgets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminBreadcrumbs">
+        <PropertyRef Name="WidgetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminNavigation_Plugins">
+    <End Role="Plugins" Type="Self.Plugins" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plugins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminNavigation">
+        <PropertyRef Name="PluginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminNavigation_Widgets">
+    <End Role="Widgets" Type="Self.Widgets" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AdminNavigation" Type="Self.AdminNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Widgets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdminNavigation">
+        <PropertyRef Name="WidgetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginTokens_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LoginTokens" Type="Self.LoginTokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginTokens">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NavigationPages_NavigationPages">
+    <End Role="NavigationPages" Type="Self.NavigationPages" Multiplicity="0..1" />
+    <End Role="NavigationPages1" Type="Self.NavigationPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NavigationPages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NavigationPages1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PluginOpenUpdates_Plugins">
+    <End Role="Plugins" Type="Self.Plugins" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PluginOpenUpdates" Type="Self.PluginOpenUpdates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plugins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PluginOpenUpdates">
+        <PropertyRef Name="PluginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PollAnswers_Poll">
+    <End Role="Poll" Type="Self.Poll" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PollAnswers" Type="Self.PollAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Poll">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PollAnswers">
+        <PropertyRef Name="PollId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PollVotes_PollAnswers">
+    <End Role="PollAnswers" Type="Self.PollAnswers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PollVotes" Type="Self.PollVotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PollAnswers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PollVotes">
+        <PropertyRef Name="PollAnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PollVotes_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PollVotes" Type="Self.PollVotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PollVotes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reports_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThemeOpenUpdates_Themes">
+    <End Role="Themes" Type="Self.Themes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ThemeOpenUpdates" Type="Self.ThemeOpenUpdates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Themes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ThemeOpenUpdates">
+        <PropertyRef Name="ThemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteIn_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WebsiteIn" Type="Self.WebsiteIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteIn">
+        <PropertyRef Name="WebsiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteInDaily_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WebsiteInDaily" Type="Self.WebsiteInDaily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteInDaily">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteOut_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WebsiteOut" Type="Self.WebsiteOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteOut">
+        <PropertyRef Name="WebsiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteOutDaily_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WebsiteOutDaily" Type="Self.WebsiteOutDaily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteOutDaily">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteRating_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="WebsiteRating" Type="Self.WebsiteRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteRating">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteRating_Websites">
+    <End Role="Websites" Type="Self.Websites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WebsiteRating" Type="Self.WebsiteRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteRating">
+        <PropertyRef Name="WebsiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Websites_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Websites" Type="Self.Websites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Websites">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Websites_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Websites" Type="Self.Websites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Websites">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WidgetOpenUpdates_Widgets">
+    <End Role="Widgets" Type="Self.Widgets" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WidgetOpenUpdates" Type="Self.WidgetOpenUpdates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Widgets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WidgetOpenUpdates">
+        <PropertyRef Name="WidgetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WidgetsTheme_Widgets">
+    <End Role="Widgets" Type="Self.Widgets" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WidgetsTheme" Type="Self.WidgetsTheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Widgets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WidgetsTheme">
+        <PropertyRef Name="WidgetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WidgetsTheme_WidgetsThemeSection">
+    <End Role="WidgetsThemeSection" Type="Self.WidgetsThemeSection" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WidgetsTheme" Type="Self.WidgetsTheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WidgetsThemeSection">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WidgetsTheme">
+        <PropertyRef Name="ThemeSectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="deskoTopsiteModelStoreContainer">
+    <EntitySet Name="ActiveDlls" EntityType="Self.ActiveDlls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminBreadcrumbs" EntityType="Self.AdminBreadcrumbs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminNavigation" EntityType="Self.AdminNavigation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminPages" EntityType="Self.AdminPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dlls" EntityType="Self.Dlls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DynamicPages" EntityType="Self.DynamicPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailAccounts" EntityType="Self.EmailAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginFails" EntityType="Self.LoginFails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginTokens" EntityType="Self.LoginTokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NavigationPages" EntityType="Self.NavigationPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OpenUpdates" EntityType="Self.OpenUpdates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PluginOpenUpdates" EntityType="Self.PluginOpenUpdates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plugins" EntityType="Self.Plugins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PluginUpdateSettings" EntityType="Self.PluginUpdateSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Poll" EntityType="Self.Poll" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PollAnswers" EntityType="Self.PollAnswers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PollVotes" EntityType="Self.PollVotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeoPages" EntityType="Self.SeoPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SoftwareUpdateSettings" EntityType="Self.SoftwareUpdateSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThemeOpenUpdates" EntityType="Self.ThemeOpenUpdates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Themes" EntityType="Self.Themes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThemeUpdateSettings" EntityType="Self.ThemeUpdateSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteBlackList" EntityType="Self.WebsiteBlackList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteIn" EntityType="Self.WebsiteIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteInDaily" EntityType="Self.WebsiteInDaily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteOut" EntityType="Self.WebsiteOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteOutDaily" EntityType="Self.WebsiteOutDaily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteRating" EntityType="Self.WebsiteRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Websites" EntityType="Self.Websites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WidgetOpenUpdates" EntityType="Self.WidgetOpenUpdates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Widgets" EntityType="Self.Widgets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WidgetsTheme" EntityType="Self.WidgetsTheme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WidgetsThemeSection" EntityType="Self.WidgetsThemeSection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WidgetUpdateSettings" EntityType="Self.WidgetUpdateSettings" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AdminNavi__Theme__403A8C7D" Association="Self.FK__AdminNavi__Theme__403A8C7D">
+      <End Role="Themes" EntitySet="Themes" />
+      <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActiveDlls_Dlls" Association="Self.FK_ActiveDlls_Dlls">
+      <End Role="Dlls" EntitySet="Dlls" />
+      <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActiveDlls_Plugins" Association="Self.FK_ActiveDlls_Plugins">
+      <End Role="Plugins" EntitySet="Plugins" />
+      <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActiveDlls_Themes" Association="Self.FK_ActiveDlls_Themes">
+      <End Role="Themes" EntitySet="Themes" />
+      <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActiveDlls_Widgets" Association="Self.FK_ActiveDlls_Widgets">
+      <End Role="Widgets" EntitySet="Widgets" />
+      <End Role="ActiveDlls" EntitySet="ActiveDlls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminBreadcrumbs_Plugins" Association="Self.FK_AdminBreadcrumbs_Plugins">
+      <End Role="Plugins" EntitySet="Plugins" />
+      <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminBreadcrumbs_Themes" Association="Self.FK_AdminBreadcrumbs_Themes">
+      <End Role="Themes" EntitySet="Themes" />
+      <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminBreadcrumbs_Widgets" Association="Self.FK_AdminBreadcrumbs_Widgets">
+      <End Role="Widgets" EntitySet="Widgets" />
+      <End Role="AdminBreadcrumbs" EntitySet="AdminBreadcrumbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminNavigation_Plugins" Association="Self.FK_AdminNavigation_Plugins">
+      <End Role="Plugins" EntitySet="Plugins" />
+      <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminNavigation_Widgets" Association="Self.FK_AdminNavigation_Widgets">
+      <End Role="Widgets" EntitySet="Widgets" />
+      <End Role="AdminNavigation" EntitySet="AdminNavigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginTokens_Users" Association="Self.FK_LoginTokens_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="LoginTokens" EntitySet="LoginTokens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NavigationPages_NavigationPages" Association="Self.FK_NavigationPages_NavigationPages">
+      <End Role="NavigationPages" EntitySet="NavigationPages" />
+      <End Role="NavigationPages1" EntitySet="NavigationPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Users" Association="Self.FK_News_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PluginOpenUpdates_Plugins" Association="Self.FK_PluginOpenUpdates_Plugins">
+      <End Role="Plugins" EntitySet="Plugins" />
+      <End Role="PluginOpenUpdates" EntitySet="PluginOpenUpdates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PollAnswers_Poll" Association="Self.FK_PollAnswers_Poll">
+      <End Role="Poll" EntitySet="Poll" />
+      <End Role="PollAnswers" EntitySet="PollAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PollVotes_PollAnswers" Association="Self.FK_PollVotes_PollAnswers">
+      <End Role="PollAnswers" EntitySet="PollAnswers" />
+      <End Role="PollVotes" EntitySet="PollVotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PollVotes_Users" Association="Self.FK_PollVotes_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PollVotes" EntitySet="PollVotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reports_Websites" Association="Self.FK_Reports_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThemeOpenUpdates_Themes" Association="Self.FK_ThemeOpenUpdates_Themes">
+      <End Role="Themes" EntitySet="Themes" />
+      <End Role="ThemeOpenUpdates" EntitySet="ThemeOpenUpdates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteIn_Websites" Association="Self.FK_WebsiteIn_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteIn" EntitySet="WebsiteIn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteInDaily_Websites" Association="Self.FK_WebsiteInDaily_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteInDaily" EntitySet="WebsiteInDaily" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteOut_Websites" Association="Self.FK_WebsiteOut_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteOut" EntitySet="WebsiteOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteOutDaily_Websites" Association="Self.FK_WebsiteOutDaily_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteOutDaily" EntitySet="WebsiteOutDaily" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteRating_Users" Association="Self.FK_WebsiteRating_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteRating_Websites" Association="Self.FK_WebsiteRating_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteRating" EntitySet="WebsiteRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Websites_Categories" Association="Self.FK_Websites_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Websites" EntitySet="Websites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Websites_Users" Association="Self.FK_Websites_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Websites" EntitySet="Websites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WidgetOpenUpdates_Widgets" Association="Self.FK_WidgetOpenUpdates_Widgets">
+      <End Role="Widgets" EntitySet="Widgets" />
+      <End Role="WidgetOpenUpdates" EntitySet="WidgetOpenUpdates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WidgetsTheme_Widgets" Association="Self.FK_WidgetsTheme_Widgets">
+      <End Role="Widgets" EntitySet="Widgets" />
+      <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WidgetsTheme_WidgetsThemeSection" Association="Self.FK_WidgetsTheme_WidgetsThemeSection">
+      <End Role="WidgetsThemeSection" EntitySet="WidgetsThemeSection" />
+      <End Role="WidgetsTheme" EntitySet="WidgetsTheme" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

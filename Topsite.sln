@@ -23,6 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Plugin\Plugin.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widget", "Widget\Widget.csproj", "{29A45E86-383D-48D9-8511-91813A4BA28D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "elFinder.Connector\FileManager.csproj", "{53FE1298-2B81-4BAE-9255-1C9B7589C644}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6212262-5CCE-43E3-AB21-354257FE1A86} = {C6212262-5CCE-43E3-AB21-354257FE1A86}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +74,10 @@ Global
 		{29A45E86-383D-48D9-8511-91813A4BA28D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A45E86-383D-48D9-8511-91813A4BA28D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A45E86-383D-48D9-8511-91813A4BA28D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FE1298-2B81-4BAE-9255-1C9B7589C644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FE1298-2B81-4BAE-9255-1C9B7589C644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FE1298-2B81-4BAE-9255-1C9B7589C644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FE1298-2B81-4BAE-9255-1C9B7589C644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
