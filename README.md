@@ -6,7 +6,7 @@ Desko List is a new premium topsite for free. We provide a rich experience for u
 You can extend the functionality of Desko with widgets, plugins and themes. You decide how your topsite looks like, you can change anything.
 
 ### Fast
-We are using some of the latest technologies. We are using ASP.NET which runs smoothly on IIS web servers and is also faster than any other web server.
+We are using some of the latest technologies. We are using ASP.NET MVC which runs very fast on IIS.
 
 ### Free
 Desko is free to use, you may modify it to your needs and share it with others. It comes with the license GPLv3. We are free to use and this will never change.
